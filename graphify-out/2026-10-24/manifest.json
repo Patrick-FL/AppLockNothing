@@ -1,0 +1,797 @@
+{
+  "app/build.gradle.kts": {
+    "mtime": 1792290646.2089617,
+    "ast_hash": "575c2899db3cd776e3c1bcba6c447c4c",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/AppLockApplication.kt": {
+    "mtime": 1792290646.2097073,
+    "ast_hash": "1f665caa8a7a8038a2c7c8570b74bedb",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/MainActivity.kt": {
+    "mtime": 1792290646.209739,
+    "ast_hash": "f35fd4c25968db8be471be6435bb1d93",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/core/broadcast/AppLockServiceStarter.kt": {
+    "mtime": 1792290646.2097676,
+    "ast_hash": "337966fd6f8ec00a5f8edd8e87daff7b",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/core/broadcast/BootReceiver.kt": {
+    "mtime": 1792290646.2097938,
+    "ast_hash": "41c4e8db9f6b209edd2609f9902f1873",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/core/broadcast/DeviceAdmin.kt": {
+    "mtime": 1792290646.2097938,
+    "ast_hash": "472751d333fe2fb1716b47ca8c5703d9",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/core/broadcast/DeviceUnlockReciever.kt": {
+    "mtime": 1792290646.2097938,
+    "ast_hash": "b3a49503b11cfbb6359655a10f6ad986",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/core/navigation/AppNavigator.kt": {
+    "mtime": 1792299486.167,
+    "ast_hash": "6636273b4ff584a2e937625240c26f4a",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/core/navigation/NavigationManager.kt": {
+    "mtime": 1792290646.2098885,
+    "ast_hash": "7521891bee16693791f5c61d0d752253",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/core/navigation/Screen.kt": {
+    "mtime": 1792290646.2098885,
+    "ast_hash": "e622cb83e0d229e1dae5485ad7c59e50",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/core/ui/CommonElements.kt": {
+    "mtime": 1792290646.2098885,
+    "ast_hash": "e04a794351d9595ae9b628cce3b98e3a",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/core/utils/AccessibilitySettingsHelper.kt": {
+    "mtime": 1792290646.2098885,
+    "ast_hash": "f13f2ed70544188fad5263fe9213dc8d",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/core/utils/AppLockUtils.kt": {
+    "mtime": 1792290646.2099762,
+    "ast_hash": "eeeb71415620465b4c625b425d705861",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/core/utils/LogUtils.kt": {
+    "mtime": 1792290646.2099762,
+    "ast_hash": "6b70843600e66d3f1cc5228d52005842",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt": {
+    "mtime": 1792290646.2099762,
+    "ast_hash": "a15c123c05a9231b1005501c6fba7aea",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/core/utils/Shizuku.kt": {
+    "mtime": 1792290646.2099762,
+    "ast_hash": "5e322bfa6ec89cdb2b952654dc5344c9",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/data/manager/BackendServiceManager.kt": {
+    "mtime": 1792290646.2100735,
+    "ast_hash": "acc482c626b9c7b32a8dcffde8362d25",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/data/repository/AnkiRepository.kt": {
+    "mtime": 1792298749.963,
+    "ast_hash": "381cc64868f1adb179e65ed15d677d96",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt": {
+    "mtime": 1792299356.014,
+    "ast_hash": "1b0670d46f750a9cf8596a3057368d6a",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/data/repository/LockedAppsRepository.kt": {
+    "mtime": 1792290646.2101414,
+    "ast_hash": "9b92c8d7a16d2d298e224f0b61ed946b",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/data/repository/PreferencesRepository.kt": {
+    "mtime": 1792299334.925,
+    "ast_hash": "4cabdc3c93d647c7ffaaa2d7c55c358c",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/admin/AdminDisableActivity.kt": {
+    "mtime": 1792290646.2102163,
+    "ast_hash": "3ea6c1ba86f969dc581636f5ab84d683",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/antiuninstall/ui/AntiUninstallScreen.kt": {
+    "mtime": 1792290646.2102866,
+    "ast_hash": "d65bc6afa5898579b256eabb1bdac45f",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/appintro/domain/AppIntroManager.kt": {
+    "mtime": 1792290646.2103803,
+    "ast_hash": "08fc74abaebdffee42f345712fd79f1c",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/appintro/ui/AppIntroScreen.kt": {
+    "mtime": 1792290646.2103803,
+    "ast_hash": "fe65b487d03c53725ee099fb45e0aefe",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/applist/domain/AppInfo.kt": {
+    "mtime": 1792290646.210723,
+    "ast_hash": "11c553d8cb64b8fbe4188a3421dbff77",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/applist/domain/AppSearchManager.kt": {
+    "mtime": 1792290646.210744,
+    "ast_hash": "44f946e583e3042ae62b1704d84e2753",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/applist/ui/AppIconCache.kt": {
+    "mtime": 1792290646.210744,
+    "ast_hash": "74082578070511b72e37560864b0cac0",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/applist/ui/MainScreen.kt": {
+    "mtime": 1792290646.2108126,
+    "ast_hash": "1cafff817ae14109526d035a6782af36",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/applist/ui/MainViewModel.kt": {
+    "mtime": 1792290646.2108126,
+    "ast_hash": "2c9e0ed2c8abc92175acce2639f7e0f3",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/AlphanumericPasswordOverlayScreen.kt": {
+    "mtime": 1792290646.2109523,
+    "ast_hash": "80fd5bca49f6a0ba9e48cc046642c061",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/AnkiCardOverlayScreen.kt": {
+    "mtime": 1792297824.193,
+    "ast_hash": "9fe061545823365979554514552e3937",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/LockScreenOverlayManager.kt": {
+    "mtime": 1792299422.131,
+    "ast_hash": "d22cba476d3c79ddadedb99565b2d791",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/PasswordOverlayScreen.kt": {
+    "mtime": 1792299442.14,
+    "ast_hash": "bec83573d6ea8600164922cc8eb963bf",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/PatternLockScreen.kt": {
+    "mtime": 1792290646.211051,
+    "ast_hash": "7b00350a04d729ef77cc958baa3ac7a1",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt": {
+    "mtime": 1792290646.211051,
+    "ast_hash": "19fc9658ae45d17bd451d15fbfcff8b5",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/setpassword/ui/AlphanumericSetPasswordScreen.kt": {
+    "mtime": 1792290646.2112615,
+    "ast_hash": "798507b3421266d52b3965558acc6e1e",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/setpassword/ui/PatternSetPasswordScreen.kt": {
+    "mtime": 1792290646.2112854,
+    "ast_hash": "e629e05951259eb3ab807f1927195913",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/setpassword/ui/SetPasswordScreen.kt": {
+    "mtime": 1792290646.2112854,
+    "ast_hash": "e338be8dfdf766035e47639671686770",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/settings/ui/SettingsScreen.kt": {
+    "mtime": 1792302996.34,
+    "ast_hash": "623c435839f1ee24c00f52556803ee4a",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/triggerexclusions/ui/TriggerExclusionsScreen.kt": {
+    "mtime": 1792290646.211542,
+    "ast_hash": "ef91d0ca5d8866a3b99b9bb58da10673",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/triggerexclusions/ui/TriggerExclusionsViewModel.kt": {
+    "mtime": 1792290646.211671,
+    "ast_hash": "62fd32ee9b3ab2aeb1d3d5a37a5c3294",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/services/AppLockAccessibilityService.kt": {
+    "mtime": 1792302765.536,
+    "ast_hash": "2c383e0388df31b37c6031154f272f4a",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/services/AppLockManager.kt": {
+    "mtime": 1792302745.436,
+    "ast_hash": "afa921fb5d89cd8a398fcbcb50a94740",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/services/ShizukuAppLockService.kt": {
+    "mtime": 1792302841.255,
+    "ast_hash": "25a07590c0cef8d5defd5ee85bf56ef2",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/services/UsageLockService.kt": {
+    "mtime": 1792302784.924,
+    "ast_hash": "6a4c1c4982466eb2390f83b616f8b70c",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/shizuku/ShizukuActivityManager.kt": {
+    "mtime": 1792290646.2117941,
+    "ast_hash": "25c701d20c90eb76c119ce8ec8344baa",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/components/AccessibilityServiceGuideDialog.kt": {
+    "mtime": 1792290646.2119575,
+    "ast_hash": "5e2c4772a4bae6ecfaf468b8cce53be6",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/components/AdminPasswordVerificationDialog.kt": {
+    "mtime": 1792290646.211986,
+    "ast_hash": "47d2e68adf37da8a51abc4b1ff006e59",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/components/AntiUninstallAccessibilityPermissionDialog.kt": {
+    "mtime": 1792290646.211986,
+    "ast_hash": "150774caf3ddd019dc71844020be619e",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/components/DeviceAdminPermissionDialog.kt": {
+    "mtime": 1792290646.211986,
+    "ast_hash": "4d3674215dd296249f8d533c2197ac25",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/components/DonateButton.kt": {
+    "mtime": 1792290646.211986,
+    "ast_hash": "cf3936673654c677f998316554f94fd9",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/components/ShizukuPermissionDialog.kt": {
+    "mtime": 1792290646.211986,
+    "ast_hash": "25e8be0c0bc338f9c0ffbdfd3502f90a",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/components/UsageStatsPermission.kt": {
+    "mtime": 1792290646.211986,
+    "ast_hash": "7cb68c55c03c27a53476d6b3f9068f58",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/icons/Accessibility.kt": {
+    "mtime": 1792290646.211986,
+    "ast_hash": "6f89a8509884da18d0651d342e9f65c1",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/icons/BackspaceIcon.kt": {
+    "mtime": 1792290646.2121851,
+    "ast_hash": "be9fcd475414373723bfda5dfe183072",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/icons/BatterySaver.kt": {
+    "mtime": 1792290646.2121851,
+    "ast_hash": "78db4a4992eb85bf574e6318499c19b7",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/icons/BrightnessHigh.kt": {
+    "mtime": 1792290646.2121851,
+    "ast_hash": "d87ab83e5eef0e6e2d87a111b9e37a6c",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/icons/Discord.kt": {
+    "mtime": 1792290646.2121851,
+    "ast_hash": "34c07108571f8c0e68ac3ee359dfa6df",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/icons/Display.kt": {
+    "mtime": 1792290646.2121851,
+    "ast_hash": "66e93728348505512c5b42ae93a119d4",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/icons/Fingerprint.kt": {
+    "mtime": 1792290646.2121851,
+    "ast_hash": "f34004605926288eb4afb31823530a26",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/icons/FingerprintOff.kt": {
+    "mtime": 1792290646.2121851,
+    "ast_hash": "3f889f881d5057cb4c99f8722b34de0d",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/icons/Github.kt": {
+    "mtime": 1792290646.2121851,
+    "ast_hash": "94919439b3801d79a688ac22bd8bd93f",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/icons/Timer.kt": {
+    "mtime": 1792290646.2121851,
+    "ast_hash": "d087cdb0d91f9ac40dd5c08d6e230076",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/theme/Theme.kt": {
+    "mtime": 1792290646.2121851,
+    "ast_hash": "333a90eb225a31b9cf71a3f3bb0aa5fd",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/ui/theme/Type.kt": {
+    "mtime": 1792290646.212464,
+    "ast_hash": "08ad68c72075259661e3fc047c6f0b9a",
+    "semantic_hash": ""
+  },
+  "appintro/build.gradle.kts": {
+    "mtime": 1792290646.2130504,
+    "ast_hash": "4860bd7ee25d2fc3c0ed6dc11bed6ffc",
+    "semantic_hash": ""
+  },
+  "appintro/src/androidTest/java/dev/pranav/appintro/ExampleInstrumentedTest.kt": {
+    "mtime": 1792290646.2131386,
+    "ast_hash": "5182e02b805d20907149444c0a34a1aa",
+    "semantic_hash": ""
+  },
+  "appintro/src/main/java/dev/pranav/appintro/AnimatedIntroPager.kt": {
+    "mtime": 1792290646.2132018,
+    "ast_hash": "d44cf4d701615ef8dd3c62117ef269b1",
+    "semantic_hash": ""
+  },
+  "appintro/src/main/java/dev/pranav/appintro/AppIntro.kt": {
+    "mtime": 1792290646.213236,
+    "ast_hash": "34083c1ab405f95da602bffee742c3cb",
+    "semantic_hash": ""
+  },
+  "appintro/src/main/java/dev/pranav/appintro/IntroPage.kt": {
+    "mtime": 1792290646.213236,
+    "ast_hash": "9d473329f17cd22696b41f1a9652e6f1",
+    "semantic_hash": ""
+  },
+  "appintro/src/main/java/dev/pranav/appintro/IntroPageContent.kt": {
+    "mtime": 1792290646.213236,
+    "ast_hash": "4416f7194480809b7ca6c6af806a1712",
+    "semantic_hash": ""
+  },
+  "appintro/src/main/java/dev/pranav/appintro/PageIndicator.kt": {
+    "mtime": 1792290646.213236,
+    "ast_hash": "d330495c0f5301def5775bcde56874f4",
+    "semantic_hash": ""
+  },
+  "appintro/src/test/java/dev/pranav/appintro/ExampleUnitTest.kt": {
+    "mtime": 1792290646.2134643,
+    "ast_hash": "d9ee927434b159afab45ecef39ea9632",
+    "semantic_hash": ""
+  },
+  "build.gradle.kts": {
+    "mtime": 1792290646.2134643,
+    "ast_hash": "a464301747b461dc2606a8f7e0837759",
+    "semantic_hash": ""
+  },
+  "gradlew": {
+    "mtime": 1792290646.2175863,
+    "ast_hash": "45bf2667b1fbec0e07e42808dc662b6b",
+    "semantic_hash": ""
+  },
+  "hidden-api/build.gradle.kts": {
+    "mtime": 1792290646.2176874,
+    "ast_hash": "d54c26d6dea5b34c6ba5b7158fd27dc4",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/ActivityManager.kt": {
+    "mtime": 1792290646.217768,
+    "ast_hash": "f6da0aa4532bf4977427acda85a19e8e",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/ActivityTaskManager.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "de128ef22e2224e9aec8b16af01bfe43",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/ActivityTaskManager.kt": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "dceae700da50db092470976187aa3984",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/ContentProviderHolder.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "2e8a5728b72c85070da15ae5d6493dc6",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/IActivityController.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "10527a3bb7e250f561f594eb4c9616a6",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/IActivityManager.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "e6b538fdb45227fc7faacc820a74195f",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/IActivityTaskManager.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "13a1d8d01ff016b92e91aa38b4c8cad0",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/IApplicationStartInfoCompleteListener.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "e585a0374567c2ca8b7d18165aaad9ff",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/IApplicationThread.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "599ea3fee9f17fc32ec05a64aa85029a",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/IForegroundServiceObserver.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "8815085271a44ad6842d720e2a541379",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/IIntentReceiver.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "5754712b36c3f14951d8201c6230c7c0",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/IIntentSender.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "8717e39cd7c0e84df80e564e8b653e35",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/IProcessObserver.kt": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "2a4831b5ff5df9129d0d2f4fd68c6217",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/IProgressListener.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "78252aaae6d96c2ea6b6e4cc0fb29ae9",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/ITaskStackListener.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "7fee1429a9f9626a445ec7d2e1ee2c74",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/IUidFrozenStateChangedCallback.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "9b9b815ce6fe950df517d95f1b5d1b6a",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/IUidObserver.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "ec8207eb54f4ab38e096dfdf88bedab8",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/ProfilerInfo.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "77e4f9151338278466a0fe0cd5354db9",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/RemoteAnimationDefinition.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "9f9099328fb4880f5d7d497820295e46",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/SplashScreenViewParcelable.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "1e766ffc0fcd5fa9771f1b813479a8b8",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/TaskInfo.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "59165cb9dc327711bd9c60e9a838bbc8",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/TaskStackListener.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "6c3f1a04d607055e36adcf12d9f0eb0e",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/app/WindowConfiguration.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "45dea5f41d782f84327c31310eb2cd03",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/content/ContentProviderNative.java": {
+    "mtime": 1792290646.2178884,
+    "ast_hash": "c9abb983853da20eb2cdbb076e15a320",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/content/IContentProvider.java": {
+    "mtime": 1792290646.2184167,
+    "ast_hash": "81289d212358e2a667bc6835ad814bbf",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/content/pm/IPackageDataObserver.java": {
+    "mtime": 1792290646.2184167,
+    "ast_hash": "3add9acbc231b0ffb8ab85339322fc6c",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/content/pm/IPackageManager.java": {
+    "mtime": 1792290646.2184548,
+    "ast_hash": "e36554f706218e3eb3c3448875102282",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/content/pm/ParceledListSlice.java": {
+    "mtime": 1792290646.2184548,
+    "ast_hash": "10621d1aacc84018b1167fb7db6b6bbf",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/os/ICancellationSignal.java": {
+    "mtime": 1792290646.2184548,
+    "ast_hash": "03a39fa8750423ba9fa7cb0bbf232078",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/view/DisplayInfo.java": {
+    "mtime": 1792290646.2184548,
+    "ast_hash": "b827b508ef531cc7e3ec4d5089823e23",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/view/IWindowManager.java": {
+    "mtime": 1792290646.2186072,
+    "ast_hash": "39ed62b4a6373b418e05c0daee3ed93f",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/view/WindowManagerHidden.java": {
+    "mtime": 1792290646.2186072,
+    "ast_hash": "1d473e416e52c5d61bdb4a573a3c6a80",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/view/WindowManagerImpl.java": {
+    "mtime": 1792290646.2186072,
+    "ast_hash": "646fd56f9331871c893b4e4cb95170f2",
+    "semantic_hash": ""
+  },
+  "hidden-api/src/main/java/android/window/TaskSnapshot.kt": {
+    "mtime": 1792290646.2186072,
+    "ast_hash": "629460c2fe630525e2f15596e7576fae",
+    "semantic_hash": ""
+  },
+  "patternlock/build.gradle.kts": {
+    "mtime": 1792290646.2186904,
+    "ast_hash": "a1ba641545021f1f5f22b6234abca2c4",
+    "semantic_hash": ""
+  },
+  "patternlock/src/main/java/com/mrhwsn/composelock/Dot.kt": {
+    "mtime": 1792290646.2187674,
+    "ast_hash": "b226a78b2a2714b6940bcdd48b5db06e",
+    "semantic_hash": ""
+  },
+  "patternlock/src/main/java/com/mrhwsn/composelock/Line.kt": {
+    "mtime": 1792290646.2187994,
+    "ast_hash": "5eece357f291754af5fb863070a57dfd",
+    "semantic_hash": ""
+  },
+  "patternlock/src/main/java/com/mrhwsn/composelock/PatternLock.kt": {
+    "mtime": 1792290646.2187994,
+    "ast_hash": "f76b5ee1146adb2e69356edf3b0deaa4",
+    "semantic_hash": ""
+  },
+  "settings.gradle.kts": {
+    "mtime": 1792290646.2187994,
+    "ast_hash": "cb77cc39d9452cb63795639942ea3e12",
+    "semantic_hash": ""
+  },
+  ".github/FUNDING.yml": {
+    "mtime": 1792290646.2083356,
+    "ast_hash": "dd16a8579635bc1dc9723079f5834ba4",
+    "semantic_hash": ""
+  },
+  ".github/workflows/android.yml": {
+    "mtime": 1792290646.2087753,
+    "ast_hash": "78c03410851808d298398179d9f8c68d",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1792290646.2087753,
+    "ast_hash": "5e95a88570f420221771ca86d8629f41",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/1.txt": {
+    "mtime": 1792290646.2135372,
+    "ast_hash": "077d45a00183d12f725ee70a8f9c9dd0",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/2.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "cd227642a055185efae6686244552c12",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/200.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "453abccb544b95559f3611fcd362d561",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/221.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "e02c8e1a755bc3c418b38905cc671bb7",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/222.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "725586d6397d588ab8185ef597c8eefd",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/223.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "3f35ec74c08e1a7d46477bf5cf6e1251",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/241.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "d576014d96b6c0b2ae3230475aebc463",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/242.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "d576014d96b6c0b2ae3230475aebc463",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/250.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "43eb07562c90735747ad2e2cb77f68ac",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/251.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "0e309c1c4e25725256ae2de78fdd1431",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/3.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "0178fe79155a103e8a27d0b8de5cc523",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/4.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "61e3c4898daf6652bedc1225af4c4d0a",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/5.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "b87e2af586ecadb02301977d4f66ece5",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/6.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "b61789d8caf79a88a713b3584faadb24",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/7.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "f88118a0780579207d17786d1bdd1e51",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/changelogs/8.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "af0c574e7766274af19c81a38b067d44",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/full_description.txt": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "9b6ba52af33b4c6e4372a6d451ccce66",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/short_description.txt": {
+    "mtime": 1792290646.21607,
+    "ast_hash": "68da85abe16df89ef88f8bd3321538d7",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/title.txt": {
+    "mtime": 1792290646.21607,
+    "ast_hash": "f1b65d3ba2296dab3515817eaeae3fa4",
+    "semantic_hash": ""
+  },
+  "app/src/main/ic_launcher-playstore.png": {
+    "mtime": 1792290646.2090697,
+    "ast_hash": "3a0a8abd4e7c59a9e45f619fb04c9160",
+    "semantic_hash": ""
+  },
+  "app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp": {
+    "mtime": 1792290646.2126057,
+    "ast_hash": "ed75054afa830a98700a5902fa66724d",
+    "semantic_hash": ""
+  },
+  "app/src/main/res/mipmap-hdpi/ic_launcher_round.webp": {
+    "mtime": 1792290646.2126405,
+    "ast_hash": "acbbc51f3668b9a8699a52df718ff72e",
+    "semantic_hash": ""
+  },
+  "app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp": {
+    "mtime": 1792290646.2126405,
+    "ast_hash": "218919203ec229fbd01a358604a0ed55",
+    "semantic_hash": ""
+  },
+  "app/src/main/res/mipmap-mdpi/ic_launcher_round.webp": {
+    "mtime": 1792290646.2126741,
+    "ast_hash": "77dad38094254a7779afc425e4aa5964",
+    "semantic_hash": ""
+  },
+  "app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp": {
+    "mtime": 1792290646.2126741,
+    "ast_hash": "590344bec65387ecde812770c7bf1cb8",
+    "semantic_hash": ""
+  },
+  "app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp": {
+    "mtime": 1792290646.2127085,
+    "ast_hash": "48e3800febdc3e2585f024b05a5215d1",
+    "semantic_hash": ""
+  },
+  "app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp": {
+    "mtime": 1792290646.2127085,
+    "ast_hash": "43c3836661793a9ec7821a8fa882d058",
+    "semantic_hash": ""
+  },
+  "app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp": {
+    "mtime": 1792290646.212752,
+    "ast_hash": "e27b172dfe85169e285944a11250bc32",
+    "semantic_hash": ""
+  },
+  "app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp": {
+    "mtime": 1792290646.212752,
+    "ast_hash": "ae2c2e4698cf07de134486f5da675b1d",
+    "semantic_hash": ""
+  },
+  "app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp": {
+    "mtime": 1792290646.2128055,
+    "ast_hash": "05eb094a1db29cf8c5f8ced77a3fd443",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/images/featureGraphic.png": {
+    "mtime": 1792290646.2135744,
+    "ast_hash": "5de38e66efd3ec0da4863fbbfad4601e",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/images/icon.png": {
+    "mtime": 1792290646.2143538,
+    "ast_hash": "ae90dcfd414ee58806059bfa4c22841c",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/images/phoneScreenshots/1.png": {
+    "mtime": 1792290646.2143538,
+    "ast_hash": "d0ec6756770f9546baf406ba633ff832",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/images/phoneScreenshots/2.png": {
+    "mtime": 1792290646.214961,
+    "ast_hash": "2523da1518352410dc42c8ed3c8ab0d3",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/images/phoneScreenshots/3.png": {
+    "mtime": 1792290646.2150698,
+    "ast_hash": "c3d8dbb0f95cd0ef6cc52b6dcd862231",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/images/phoneScreenshots/4.png": {
+    "mtime": 1792290646.2150698,
+    "ast_hash": "e27f890b6ef0d547242da950a2102b71",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/images/phoneScreenshots/5.png": {
+    "mtime": 1792290646.21607,
+    "ast_hash": "7d09102cfaa3aaffd6d5afd26d3492c8",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/images/phoneScreenshots/6.png": {
+    "mtime": 1792290646.21607,
+    "ast_hash": "24c387af3eba976d7742bab2754438f5",
+    "semantic_hash": ""
+  },
+  "fastlane/metadata/android/en-US/images/phoneScreenshots/7.png": {
+    "mtime": 1792290646.21607,
+    "ast_hash": "1af4d918c51e137d21bf2335d849f6d8",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/CreditLockOverlayScreen.kt": {
+    "mtime": 1792302868.881,
+    "ast_hash": "1b35f7e1d986bb5dea2ee333e39db6f5",
+    "semantic_hash": ""
+  }
+}
