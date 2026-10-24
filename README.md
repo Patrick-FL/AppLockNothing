@@ -1,7 +1,3 @@
-<div align="center">
-  <img src="fastlane/metadata/android/en-US/images/featureGraphic.png" alt="AppLock Android Privacy Security" width="600" />
-</div>
-
 <h1 align="center">App Lock Nothing</h1>
 <p align="center"><b>Open Source Android App Locker & Privacy Guard with Anki & Usage Credit Integration</b></p>
 
@@ -12,21 +8,6 @@
   <a href="https://github.com/Patrick-FL/AppLockNothing/releases">
     <img src="https://img.shields.io/github/v/release/Patrick-FL/AppLockNothing?label=Release" alt="Latest Release">
   </a>
-</p>
-
-<p align="center">
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="30%" alt="App List"/>
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="30%" alt="Settings"/>
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="30%" alt="Password Screen"/>
-</p>
-
-<p align="center">
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="30%" alt="Set Password"/>
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" width="30%" alt="Unlock time"/>
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/6.png" width="30%" alt="Unlock time"/>
-</p>
-<p align="center">
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/7.png" width="30%" alt="Set Password"/>
 </p>
 
 ---

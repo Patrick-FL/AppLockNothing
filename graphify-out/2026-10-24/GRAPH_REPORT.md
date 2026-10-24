@@ -1,11 +1,11 @@
-# Graph Report - AppLock  (2026-10-18)
+# Graph Report - AppLock  (2026-10-24)
 
 ## Corpus Check
-- 118 files · ~111,616 words
+- 118 files · ~111,549 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1727 nodes · 3038 edges · 103 communities (64 shown, 39 thin omitted)
+- 1732 nodes · 3043 edges · 108 communities (66 shown, 42 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 37 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -41,7 +41,7 @@
 - PasswordOverlayActivity
 - ShizukuAppLockService
 - IActivityManager.java
-- Dp
+- AppIntroScreen.kt
 - AnkiRepository
 - TaskDescription
 - ShizukuActivityManager.kt
@@ -50,7 +50,7 @@
 - AppLockManager
 - RunningAppProcessInfo
 - IProcessObserver
-- android.os.Binder
+- IActivityTaskManager
 - LogUtils
 - AdminDisableActivity.kt
 - PasswordOverlayScreen.kt
@@ -60,24 +60,28 @@
 - IIntentSender
 - NavigationManager
 - IActivityTaskManage
-- android.os.Parcel
-- IContentProvider
+- Dp
+- android.net.Uri
 - IPackageManager.java
 - AlphanumericPasswordOverlayScreen
-- androidx.annotation.Nullable
+- RunningTaskInfo
 - TransparentBiometricActivity.kt
+- androidx.annotation.NonNull
 - Screen
 - AppLockApplication
 - BootReceiver.kt
 - IPackageDataObserver
 - AppTask
 - IActivityController
-- SecurityUtils
+- vibrate
+- AppIntroManager
 - OnUidImportanceListener
 - IProgressListener
 - README.md
 - AppLockServiceStarter.kt
 - AppIconCache.kt
+- PageIndicator.kt
+- WindowManagerImpl
 - ResolveInfo
 - TaskSnapshot
 - PreferencesRepository.kt
@@ -91,6 +95,7 @@
 - .getPackageInfoVersioned
 - ExampleInstrumentedTest
 - ExampleUnitTest
+- Stub
 - .addPermission
 - .getInstalledModules
 - .getChangedPackages
@@ -110,8 +115,8 @@
 1. `IActivityManager` - 247 edges
 2. `IPackageManager` - 205 edges
 3. `ActivityManager` - 130 edges
-4. `AppLockRepository` - 89 edges
-5. `PreferencesRepository` - 65 edges
+4. `AppLockRepository` - 91 edges
+5. `PreferencesRepository` - 67 edges
 6. `WindowConfiguration` - 54 edges
 7. `AppLockAccessibilityService` - 38 edges
 8. `TaskStackListener` - 35 edges
@@ -119,6 +124,8 @@
 10. `TaskInfo` - 33 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `PatternSetPasswordScreen()` --calls--> `PatternLock()`  [EXTRACTED]
+  app/src/main/java/dev/pranav/applock/features/setpassword/ui/PatternSetPasswordScreen.kt → patternlock/src/main/java/com/mrhwsn/composelock/PatternLock.kt
 - `ShizukuActivityManager` --references--> `IWindowManager`  [EXTRACTED]
   app/src/main/java/dev/pranav/applock/shizuku/ShizukuActivityManager.kt → hidden-api/src/main/java/android/view/IWindowManager.java
 - `getTasksWrapper()` --references--> `ActivityManager`  [EXTRACTED]
@@ -127,13 +134,11 @@
   app/src/main/java/dev/pranav/applock/shizuku/ShizukuActivityManager.kt → hidden-api/src/main/java/android/app/ActivityManager.kt
 - `AppLockRepository` --calls--> `LockedAppsRepository`  [INFERRED]
   app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt → app/src/main/java/dev/pranav/applock/data/repository/LockedAppsRepository.kt
-- `AppLockRepository` --calls--> `PreferencesRepository`  [INFERRED]
-  app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt → app/src/main/java/dev/pranav/applock/data/repository/PreferencesRepository.kt
 
 ## Import Cycles
 - None detected.
 
-## Communities (103 total, 39 thin omitted)
+## Communities (108 total, 42 thin omitted)
 
 ### Community 2 - "ActivityManager"
 Cohesion: 0.03
@@ -141,19 +146,19 @@ Nodes (11): ActivityManager, ForegroundServiceApiEvent, ForegroundServiceApiType
 
 ### Community 3 - "SettingsScreen.kt"
 Cohesion: 0.06
-Nodes (61): enableAccessibilityServiceWithShizuku(), exec(), isAccessibilityServiceEnabled(), ComponentName, Context, openAccessibilitySettings(), BackendServiceManager, BackendImplementation (+53 more)
+Nodes (63): enableAccessibilityServiceWithShizuku(), exec(), isAccessibilityServiceEnabled(), ComponentName, Context, openAccessibilitySettings(), BackendServiceManager, BackendImplementation (+55 more)
 
 ### Community 5 - "AntiUninstallScreen.kt"
-Cohesion: 0.08
-Nodes (30): blockUninstallForUser(), unblockUninstallForUser(), AntiUninstallScreen(), AntiUninstallViewModel, AppProtectionItem(), checkShizukuState(), isShizukuInstalled(), ApplicationInfo (+22 more)
+Cohesion: 0.07
+Nodes (31): appLockRepository(), blockUninstallForUser(), unblockUninstallForUser(), AntiUninstallScreen(), AntiUninstallViewModel, AppProtectionItem(), checkShizukuState(), isShizukuInstalled() (+23 more)
 
 ### Community 6 - "Dot"
-Cohesion: 0.09
-Nodes (29): createBatteryOptimizationIntent(), getVibrator(), Context, Intent, launchBatterySettings(), launchGeneralBatterySettings(), showBatteryOptimizationToast(), vibrate() (+21 more)
+Cohesion: 0.10
+Nodes (18): LockCallback, Modifier, PatternLockScreen(), LockCallback, LockCallback, LockCallback, LockCallback, pattern (+10 more)
 
 ### Community 8 - "android.content.Intent"
-Cohesion: 0.08
-Nodes (6): android.content.Intent, android.os.Bundle, ContentProviderHolder, IApplicationThread, IIntentReceiver, ProfilerInfo
+Cohesion: 0.09
+Nodes (5): android.content.Intent, android.os.Bundle, IApplicationThread, IIntentReceiver, ProfilerInfo
 
 ### Community 9 - "AppLockAccessibilityService"
 Cohesion: 0.12
@@ -164,24 +169,24 @@ Cohesion: 0.11
 Nodes (7): android.app.ActivityManager.RunningTaskInfo, Deprecated, dev.rikka.tools.refine.RefineAs, Override, TaskStackListener, LayoutParams, WindowManagerHidden
 
 ### Community 11 - "android.os.IBinder"
-Cohesion: 0.06
-Nodes (6): android.os.IBinder, ApplicationErrorReport, Notification, Stub, IForegroundServiceObserver, ContentProviderProxy
+Cohesion: 0.05
+Nodes (11): android.os.Binder, android.os.IBinder, android.os.IInterface, ApplicationErrorReport, Notification, Stub, IForegroundServiceObserver, ContentProviderProxy (+3 more)
 
 ### Community 13 - "UsageLockService"
-Cohesion: 0.11
-Nodes (14): android, DeviceAdmin, Context, SharedPreferences, hasUsagePermission(), IBinder, Intent, Notification (+6 more)
+Cohesion: 0.20
+Nodes (8): IBinder, Intent, Notification, NotificationManager, Service, UsageLockService, Timer, UsageStatsManager
 
 ### Community 14 - "android.content.ComponentName"
-Cohesion: 0.07
+Cohesion: 0.06
 Nodes (6): android.content.ComponentName, android.content.IntentFilter, PendingIntent, ActivityInfo, InstrumentationInfo, ServiceInfo
 
 ### Community 15 - "WindowConfiguration"
-Cohesion: 0.08
+Cohesion: 0.07
 Nodes (4): Creator, Override, WindowConfig, WindowConfiguration
 
 ### Community 16 - "TaskInfo"
-Cohesion: 0.09
-Nodes (8): android.content.pm.ActivityInfo, android.content.res.Configuration, android.graphics.Point, Override, PictureInPictureParams, TaskInfo, WindowConfiguration.ActivityType, WindowConfiguration.WindowingMode
+Cohesion: 0.08
+Nodes (9): android.content.LocusId, android.content.pm.ActivityInfo, android.graphics.Point, android.os.Parcel, Override, PictureInPictureParams, TaskInfo, WindowConfiguration.ActivityType (+1 more)
 
 ### Community 17 - "ActivityTaskManager"
 Cohesion: 0.08
@@ -199,10 +204,6 @@ Nodes (3): ApplicationExitInfo, ApplicationStartInfo, ParceledListSlice
 Cohesion: 0.10
 Nodes (3): androidx.annotation.RequiresPermission, IUidFrozenStateChangedCallback, IUidObserver
 
-### Community 21 - "android.graphics.Rect"
-Cohesion: 0.11
-Nodes (3): android.graphics.Rect, androidx.annotation.NonNull, RootTaskInfo
-
 ### Community 23 - "PasswordOverlayActivity"
 Cohesion: 0.15
 Nodes (5): BiometricPrompt, Bundle, Configuration, FragmentActivity, PasswordOverlayActivity
@@ -212,12 +213,12 @@ Cohesion: 0.18
 Nodes (6): IBinder, Intent, Notification, NotificationManager, Service, ShizukuAppLockService
 
 ### Community 25 - "IActivityManager.java"
-Cohesion: 0.11
-Nodes (5): android.content.LocusId, android.content.pm.ApplicationInfo, android.net.Uri, android.os.Debug, android.os.ParcelFileDescriptor
+Cohesion: 0.20
+Nodes (3): android.content.pm.ApplicationInfo, android.os.Debug, android.os.ParcelFileDescriptor
 
-### Community 26 - "Dp"
-Cohesion: 0.05
-Nodes (27): AppIntroManager, Context, AppIntroScreen(), AppUsageMethod, ACCESSIBILITY, SHIZUKU, USAGE_STATS, ImageVector (+19 more)
+### Community 26 - "AppIntroScreen.kt"
+Cohesion: 0.13
+Nodes (21): hasUsagePermission(), AppIntroScreen(), AppUsageMethod, ACCESSIBILITY, SHIZUKU, USAGE_STATS, ImageVector, NavController (+13 more)
 
 ### Community 27 - "AnkiRepository"
 Cohesion: 0.16
@@ -232,12 +233,16 @@ Cohesion: 0.17
 Nodes (7): DeviceUnlockReceiver, BroadcastReceiver, Context, Intent, filterVisible(), getTasksWrapper(), ShizukuActivityManager
 
 ### Community 30 - "AppNavigator.kt"
-Cohesion: 0.20
-Nodes (14): AppNavHost(), createBiometricPromptInfo(), finishPasswordSetup(), handleAuthenticationSuccess(), handleBiometricAuthentication(), BiometricPrompt, BiometricPrompt, FragmentActivity (+6 more)
+Cohesion: 0.33
+Nodes (9): AppNavHost(), createBiometricPromptInfo(), handleAuthenticationSuccess(), handleBiometricAuthentication(), BiometricPrompt, BiometricPrompt, FragmentActivity, navigateToMain() (+1 more)
 
 ### Community 31 - "LockScreenOverlayManager.kt"
-Cohesion: 0.20
-Nodes (12): LockScreenOverlayManager, AppLockTheme(), ComposeView, WindowManagerImpl, Lifecycle, LifecycleOwner, OnBackPressedDispatcherOwner, SavedStateRegistry (+4 more)
+Cohesion: 0.29
+Nodes (10): LockScreenOverlayManager, AppLockTheme(), ComposeView, Lifecycle, LifecycleOwner, OnBackPressedDispatcherOwner, SavedStateRegistry, SavedStateRegistryOwner (+2 more)
+
+### Community 32 - "AppLockManager"
+Cohesion: 0.13
+Nodes (6): AppLockConstants, AppLockManager, isDeviceLocked(), isServiceRunning(), Context, dev
 
 ### Community 33 - "RunningAppProcessInfo"
 Cohesion: 0.13
@@ -247,17 +252,17 @@ Nodes (5): Importance, Bundle, Context, Intent, RunningAppProcessInfo
 Cohesion: 0.13
 Nodes (3): IProcessObserver, Binder, Stub
 
-### Community 35 - "android.os.Binder"
-Cohesion: 0.13
-Nodes (11): android.annotation.TargetApi, android.os.Binder, android.os.IInterface, android.window.TaskSnapshot, IActivityTaskManager, Stub, IBinder, Stub (+3 more)
+### Community 35 - "IActivityTaskManager"
+Cohesion: 0.38
+Nodes (3): android.annotation.TargetApi, IActivityTaskManager, Stub
 
 ### Community 36 - "LogUtils"
 Cohesion: 0.26
 Nodes (4): Context, CoroutineScope, Uri, LogUtils
 
 ### Community 37 - "AdminDisableActivity.kt"
-Cohesion: 0.33
-Nodes (11): appLockRepository(), AdminDisableActivity, OnBackPressedCallback, AdminDisablePasswordScreen(), AdminDisablePatternScreen(), AdminDisableScreen(), Bundle, ComponentName (+3 more)
+Cohesion: 0.13
+Nodes (16): android, DeviceAdmin, Context, SharedPreferences, ByteArray, SecurityUtils, AdminDisableActivity, OnBackPressedCallback (+8 more)
 
 ### Community 38 - "PasswordOverlayScreen.kt"
 Cohesion: 0.30
@@ -272,27 +277,27 @@ Cohesion: 0.16
 Nodes (5): ConnectionInfo, ComponentName, PendingIntent, WorkSource, RunningServiceInfo
 
 ### Community 41 - "WindowConfiguration.java"
-Cohesion: 0.19
-Nodes (8): android.os.Parcelable, android.util.proto.ProtoOutputStream, androidx.annotation.IntDef, SelfMovable, ActivityType, AlwaysOnTop, WindowingMode, java.lang.annotation.Retention
+Cohesion: 0.15
+Nodes (9): android.os.Parcelable, android.util.proto.ProtoOutputStream, androidx.annotation.IntDef, androidx.annotation.Nullable, SelfMovable, ActivityType, AlwaysOnTop, WindowingMode (+1 more)
 
 ### Community 43 - "NavigationManager"
-Cohesion: 0.24
+Cohesion: 0.23
 Nodes (5): NavigationManager, androidx, Bundle, FragmentActivity, MainActivity
 
 ### Community 44 - "IActivityTaskManage"
 Cohesion: 0.23
 Nodes (5): IActivityTaskManage, Binder, IBinder, IInterface, Stub
 
-### Community 46 - "IContentProvider"
-Cohesion: 0.16
-Nodes (9): android.content.res.AssetFileDescriptor, android.database.Cursor, androidx.annotation.RequiresApi, AttributionSource, ContentProviderNative, Override, IContentProvider, ICancellationSignal (+1 more)
+### Community 46 - "android.net.Uri"
+Cohesion: 0.10
+Nodes (11): android.content.res.AssetFileDescriptor, android.database.Cursor, android.net.Uri, androidx.annotation.RequiresApi, AttributionSource, ContentProviderHolder, ContentProviderNative, Override (+3 more)
 
 ### Community 47 - "IPackageManager.java"
 Cohesion: 0.20
 Nodes (4): android.content.IntentSender, android.content.pm.PackageManager.ComponentEnabledSetting, android.graphics.Bitmap, android.os.UserHandle
 
 ### Community 48 - "AlphanumericPasswordOverlayScreen"
-Cohesion: 0.43
+Cohesion: 0.53
 Nodes (5): AlphanumericPasswordOverlayScreen(), dev, Modifier, performVerification(), password
 
 ### Community 50 - "TransparentBiometricActivity.kt"
@@ -300,8 +305,8 @@ Cohesion: 0.31
 Nodes (5): BiometricPrompt, Bundle, FragmentActivity, TransparentBiometricActivity, BiometricPrompt
 
 ### Community 52 - "Screen"
-Cohesion: 0.17
-Nodes (11): AntiUninstall, AppIntro, ChangePassword, Main, PasswordOverlay, Screen, SetPassword, SetPasswordAlphanumeric (+3 more)
+Cohesion: 0.12
+Nodes (17): finishPasswordSetup(), AntiUninstall, AppIntro, ChangePassword, Main, PasswordOverlay, Screen, SetPassword (+9 more)
 
 ### Community 53 - "AppLockApplication"
 Cohesion: 0.36
@@ -315,6 +320,10 @@ Nodes (5): BootReceiver, BroadcastReceiver, Context, dev, Intent
 Cohesion: 0.22
 Nodes (3): AppTask, RecentTaskInfo, WindowingLayer
 
+### Community 58 - "vibrate"
+Cohesion: 0.51
+Nodes (9): createBatteryOptimizationIntent(), getVibrator(), Context, Intent, launchBatterySettings(), launchGeneralBatterySettings(), showBatteryOptimizationToast(), vibrate() (+1 more)
+
 ### Community 60 - "OnUidImportanceListener"
 Cohesion: 0.25
 Nodes (3): Debug, OnUidImportanceListener, IntArray
@@ -324,12 +333,16 @@ Cohesion: 0.29
 Nodes (6): Download, Features, License, Overview, Support Development, Use Cases
 
 ### Community 63 - "AppLockServiceStarter.kt"
-Cohesion: 0.21
-Nodes (7): AppLockServiceStarter, Context, dev, AppLockConstants, isDeviceLocked(), isServiceRunning(), Context
+Cohesion: 0.53
+Nodes (3): AppLockServiceStarter, Context, dev
 
 ### Community 64 - "AppIconCache.kt"
 Cohesion: 0.43
 Nodes (4): AppIconCache, ApplicationInfo, Context, ImageBitmap
+
+### Community 65 - "PageIndicator.kt"
+Cohesion: 0.90
+Nodes (4): Color, Modifier, PageIndicator(), PageIndicators()
 
 ### Community 68 - "TaskSnapshot"
 Cohesion: 0.47
@@ -342,17 +355,17 @@ Nodes (3): gradlew script, die(), warn()
 ## Knowledge Gaps
 - **54 isolated node(s):** `AppIntro`, `SetPassword`, `SetPasswordPattern`, `SetPasswordAlphanumeric`, `ChangePassword` (+49 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **39 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **42 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ActivityManager` connect `ActivityManager` to `ITaskStackListener`, `TaskInfo`, `Dp`, `TaskDescription`, `ShizukuActivityManager.kt`, `RunningAppProcessInfo`, `ComponentName`, `IPackageDataObserver`, `AppTask`, `OnUidImportanceListener`, `AppLockServiceStarter.kt`, `ApplicationStartInfo`, `MemoryInfo`, `UserHandle`, `HomeVisibilityListener`, `.getHistoricalProcessExitReasons`, `.setDeviceLocales`, `.setProcessStateSummary`, `ProcessErrorStateInfo`?**
-  _High betweenness centrality (0.219) - this node is a cross-community bridge._
-- **Why does `IActivityManager` connect `IActivityManager` to `ITaskStackListener`, `android.content.Intent`, `android.os.IBinder`, `UsageLockService`, `android.content.ComponentName`, `ParceledListSlice`, `IUidObserver`, `android.graphics.Rect`, `IActivityManager.java`, `RunningAppProcessInfo`, `IProcessObserver`, `ComponentName`, `IIntentSender`, `androidx.annotation.Nullable`, `IPackageDataObserver`, `IActivityController`, `IProgressListener`, `MemoryInfo`, `IApplicationStartInfoCompleteListener`, `ProcessErrorStateInfo`?**
-  _High betweenness centrality (0.203) - this node is a cross-community bridge._
-- **Why does `AppLockRepository` connect `AppLockRepository` to `SettingsScreen.kt`, `AdminDisableActivity.kt`, `Dot`, `MainViewModel`, `PasswordOverlayScreen.kt`, `AppLockAccessibilityService`, `PreferencesRepository`, `UsageLockService`, `.getBackendImplementation`, `AppLockApplication`, `LockedAppsRepository`, `PasswordOverlayActivity`, `ShizukuAppLockService`, `ShizukuActivityManager.kt`?**
-  _High betweenness centrality (0.191) - this node is a cross-community bridge._
+- **Why does `IActivityManager` connect `IActivityManager` to `ITaskStackListener`, `android.content.Intent`, `android.os.IBinder`, `android.content.ComponentName`, `TaskInfo`, `ParceledListSlice`, `IUidObserver`, `android.graphics.Rect`, `IActivityManager.java`, `RunningAppProcessInfo`, `IProcessObserver`, `ComponentName`, `WindowConfiguration.java`, `IIntentSender`, `android.net.Uri`, `RunningTaskInfo`, `IPackageDataObserver`, `IActivityController`, `IProgressListener`, `MemoryInfo`, `IApplicationStartInfoCompleteListener`, `ProcessErrorStateInfo`?**
+  _High betweenness centrality (0.220) - this node is a cross-community bridge._
+- **Why does `ActivityManager` connect `ActivityManager` to `TaskInfo`, `AppIntroScreen.kt`, `TaskDescription`, `ShizukuActivityManager.kt`, `AppLockManager`, `RunningAppProcessInfo`, `ComponentName`, `RunningTaskInfo`, `IPackageDataObserver`, `AppTask`, `OnUidImportanceListener`, `ApplicationStartInfo`, `MemoryInfo`, `UserHandle`, `HomeVisibilityListener`, `.getHistoricalProcessExitReasons`, `.setDeviceLocales`, `.setProcessStateSummary`, `ProcessErrorStateInfo`?**
+  _High betweenness centrality (0.207) - this node is a cross-community bridge._
+- **Why does `AppLockRepository` connect `AppLockRepository` to `SettingsScreen.kt`, `AdminDisableActivity.kt`, `PasswordOverlayScreen.kt`, `MainViewModel`, `AppLockAccessibilityService`, `PreferencesRepository`, `UsageLockService`, `.getBackendImplementation`, `AppLockApplication`, `LockedAppsRepository`, `PasswordOverlayActivity`, `ShizukuAppLockService`, `vibrate`, `ShizukuActivityManager.kt`?**
+  _High betweenness centrality (0.201) - this node is a cross-community bridge._
 - **Are the 2 inferred relationships involving `AppLockRepository` (e.g. with `LockedAppsRepository` and `PreferencesRepository`) actually correct?**
   _`AppLockRepository` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `AppIntro`, `SetPassword`, `SetPasswordPattern` to the rest of the system?**
