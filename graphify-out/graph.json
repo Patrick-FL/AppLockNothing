@@ -7064,18 +7064,6 @@
       "norm_label": ".currentuimodesupportserrordialogs()"
     },
     {
-      "label": ".getDisplayIdsForStartingVisibleBackgroundUsers()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
-      "source_location": "L952",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_getdisplayidsforstartingvisiblebackgroundusers",
-      "community": 16,
-      "community_name": "TaskInfo",
-      "norm_label": ".getdisplayidsforstartingvisiblebackgroundusers()"
-    },
-    {
       "label": ".addLaunchCookie()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/TaskInfo.java",
@@ -7278,18 +7266,6 @@
       "community": 16,
       "community_name": "TaskInfo",
       "norm_label": ".areconfigurationsequalfordisplay()"
-    },
-    {
-      "label": ".getAppBounds()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
-      "source_location": "L299",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_getappbounds",
-      "community": 16,
-      "community_name": "TaskInfo",
-      "norm_label": ".getappbounds()"
     },
     {
       "label": ".ActivityTaskManager()",
@@ -12056,6 +12032,18 @@
       "norm_label": ".getservices()"
     },
     {
+      "label": ".getDisplayIdsForStartingVisibleBackgroundUsers()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
+      "source_location": "L952",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_getdisplayidsforstartingvisiblebackgroundusers",
+      "community": 41,
+      "community_name": "WindowConfiguration.java",
+      "norm_label": ".getdisplayidsforstartingvisiblebackgroundusers()"
+    },
+    {
       "label": ".dumpDebug()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
@@ -12078,6 +12066,18 @@
       "community": 41,
       "community_name": "WindowConfiguration.java",
       "norm_label": ".getactivitytype()"
+    },
+    {
+      "label": ".getAppBounds()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
+      "source_location": "L299",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_getappbounds",
+      "community": 41,
+      "community_name": "WindowConfiguration.java",
+      "norm_label": ".getappbounds()"
     },
     {
       "label": ".getWindowingMode()",
@@ -16989,17 +16989,6 @@
       "norm_label": "android.graphics.point"
     },
     {
-      "label": "androidx.annotation.Nullable",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "androidx_annotation_nullable",
-      "community": 16,
-      "community_name": "TaskInfo",
-      "norm_label": "androidx.annotation.nullable"
-    },
-    {
       "label": "TaskInfo.java",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/TaskInfo.java",
@@ -18727,6 +18716,17 @@
       "norm_label": "androidx.annotation.intdef"
     },
     {
+      "label": "androidx.annotation.Nullable",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "androidx_annotation_nullable",
+      "community": 41,
+      "community_name": "WindowConfiguration.java",
+      "norm_label": "androidx.annotation.nullable"
+    },
+    {
       "label": "WindowConfiguration.java",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
@@ -19896,7 +19896,7 @@
       "label": "\ud83c\udf1f Credits & Acknowledgements",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L42",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "readme_credits_acknowledgements",
       "community": 62,
@@ -19907,7 +19907,7 @@
       "label": "Download",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L80",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "readme_download",
       "community": 62,
@@ -19918,7 +19918,7 @@
       "label": "Features",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L61",
+      "source_location": "L42",
       "_origin": "ast",
       "id": "readme_features",
       "community": 62,
@@ -19929,7 +19929,7 @@
       "label": "License",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L95",
+      "source_location": "L76",
       "_origin": "ast",
       "id": "readme_license",
       "community": 62,
@@ -19940,7 +19940,7 @@
       "label": "\u2728 New Features & Changes (in App Lock Nothing)",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L50",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "readme_new_features_changes_in_app_lock_nothing",
       "community": 62,
@@ -19951,7 +19951,7 @@
       "label": "Overview",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L34",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "readme_overview",
       "community": 62,
@@ -19962,7 +19962,7 @@
       "label": "Use Cases",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L86",
+      "source_location": "L67",
       "_origin": "ast",
       "id": "readme_use_cases",
       "community": 62,
@@ -43784,7 +43784,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L34",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "readme",
@@ -43795,7 +43795,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L42",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "readme",
@@ -43806,7 +43806,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L50",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "readme",
@@ -43817,7 +43817,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L61",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
       "source": "readme",
@@ -43828,7 +43828,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L80",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast",
       "source": "readme",
@@ -43839,7 +43839,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L86",
+      "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast",
       "source": "readme",
@@ -43850,7 +43850,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L95",
+      "source_location": "L76",
       "weight": 1.0,
       "_origin": "ast",
       "source": "readme",
@@ -56898,5 +56898,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "134a1f6ad47cfbe8fe497f141d8495e1e31227ba"
+  "built_at_commit": "19b638d7e0276d63245a3269a2fbbcd32719d382"
 }

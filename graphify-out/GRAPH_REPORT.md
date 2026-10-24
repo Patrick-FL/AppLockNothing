@@ -1,7 +1,7 @@
 # Graph Report - AppLock  (2026-10-24)
 
 ## Corpus Check
-- 118 files · ~111,645 words
+- 118 files · ~111,591 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `134a1f6a`
+- Built from commit: `19b638d7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -183,8 +183,8 @@ Cohesion: 0.07
 Nodes (5): androidx.annotation.NonNull, Creator, Override, WindowConfig, WindowConfiguration
 
 ### Community 16 - "TaskInfo"
-Cohesion: 0.08
-Nodes (9): android.content.pm.ActivityInfo, android.content.res.Configuration, android.graphics.Point, androidx.annotation.Nullable, Override, PictureInPictureParams, TaskInfo, WindowConfiguration.ActivityType (+1 more)
+Cohesion: 0.09
+Nodes (8): android.content.pm.ActivityInfo, android.content.res.Configuration, android.graphics.Point, Override, PictureInPictureParams, TaskInfo, WindowConfiguration.ActivityType, WindowConfiguration.WindowingMode
 
 ### Community 17 - "ActivityTaskManager"
 Cohesion: 0.08
@@ -263,8 +263,8 @@ Cohesion: 0.16
 Nodes (5): ConnectionInfo, ComponentName, PendingIntent, WorkSource, RunningServiceInfo
 
 ### Community 41 - "WindowConfiguration.java"
-Cohesion: 0.19
-Nodes (8): android.os.Parcelable, android.util.proto.ProtoOutputStream, androidx.annotation.IntDef, SelfMovable, ActivityType, AlwaysOnTop, WindowingMode, java.lang.annotation.Retention
+Cohesion: 0.15
+Nodes (9): android.os.Parcelable, android.util.proto.ProtoOutputStream, androidx.annotation.IntDef, androidx.annotation.Nullable, SelfMovable, ActivityType, AlwaysOnTop, WindowingMode (+1 more)
 
 ### Community 43 - "LockScreenOverlayManager.kt"
 Cohesion: 0.07
@@ -334,7 +334,7 @@ Nodes (5): BackendServiceManager, BackendImplementation, ACCESSIBILITY, SHIZUKU,
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `IActivityManager` connect `IActivityManager` to `ITaskStackListener`, `android.content.Intent`, `android.os.IBinder`, `android.content.ComponentName`, `TaskInfo`, `ParceledListSlice`, `androidx.annotation.RequiresPermission`, `android.graphics.Rect`, `IActivityManager.java`, `IUidObserver`, `RunningAppProcessInfo`, `IProcessObserver`, `ComponentName`, `IIntentSender`, `android.net.Uri`, `RunningTaskInfo`, `IPackageDataObserver`, `IActivityController`, `IProgressListener`, `MemoryInfo`, `IApplicationStartInfoCompleteListener`, `ProcessErrorStateInfo`?**
+- **Why does `IActivityManager` connect `IActivityManager` to `ITaskStackListener`, `android.content.Intent`, `android.os.IBinder`, `android.content.ComponentName`, `ParceledListSlice`, `androidx.annotation.RequiresPermission`, `android.graphics.Rect`, `IActivityManager.java`, `IUidObserver`, `RunningAppProcessInfo`, `IProcessObserver`, `ComponentName`, `WindowConfiguration.java`, `IIntentSender`, `android.net.Uri`, `RunningTaskInfo`, `IPackageDataObserver`, `IActivityController`, `IProgressListener`, `MemoryInfo`, `IApplicationStartInfoCompleteListener`, `ProcessErrorStateInfo`?**
   _High betweenness centrality (0.221) - this node is a cross-community bridge._
 - **Why does `ActivityManager` connect `ActivityManager` to `SettingsScreen.kt`, `TaskInfo`, `Dp`, `ShizukuActivityManager.kt`, `AppLockManager`, `RunningAppProcessInfo`, `ComponentName`, `RunningTaskInfo`, `IPackageDataObserver`, `AppTask`, `OnUidImportanceListener`, `ApplicationStartInfo`, `MemoryInfo`, `UserHandle`, `HomeVisibilityListener`, `.getHistoricalProcessExitReasons`, `.setDeviceLocales`, `.setProcessStateSummary`, `ProcessErrorStateInfo`?**
   _High betweenness centrality (0.207) - this node is a cross-community bridge._

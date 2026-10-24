@@ -69,19 +69,6 @@
       "norm_label": "windowmanagerhidden"
     },
     {
-      "label": "Stub",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
-      "source_location": "L1046",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iactivitymanager_stub",
-      "community": 11,
-      "community_name": "android.os.IBinder",
-      "norm_label": "stub"
-    },
-    {
       "label": "IForegroundServiceObserver",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/IForegroundServiceObserver.java",
@@ -108,43 +95,30 @@
       "norm_label": "contentproviderproxy"
     },
     {
-      "label": "Stub",
+      "label": "BackendServiceManager",
       "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/content/pm/IPackageManager.java",
-      "source_location": "L708",
+      "source_file": "app/src/main/java/dev/pranav/applock/data/manager/BackendServiceManager.kt",
+      "source_location": "L13",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager_stub",
-      "community": 11,
-      "community_name": "android.os.IBinder",
-      "norm_label": "stub"
+      "id": "app_src_main_java_dev_pranav_applock_data_manager_backendservicemanager_backendservicemanager",
+      "community": 111,
+      "community_name": "BackendImplementation",
+      "norm_label": "backendservicemanager"
     },
     {
-      "label": "IWindowManager",
+      "label": "BackendImplementation",
       "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/view/IWindowManager.java",
-      "source_location": "L7",
+      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt",
+      "source_location": "L143",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_view_iwindowmanager_iwindowmanager",
-      "community": 11,
-      "community_name": "android.os.IBinder",
-      "norm_label": "iwindowmanager"
-    },
-    {
-      "label": "Stub",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/view/IWindowManager.java",
-      "source_location": "L9",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_view_iwindowmanager_stub",
-      "community": 11,
-      "community_name": "android.os.IBinder",
-      "norm_label": "stub"
+      "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository_backendimplementation",
+      "community": 111,
+      "community_name": "BackendImplementation",
+      "norm_label": "backendimplementation"
     },
     {
       "label": "PreferencesRepository",
@@ -158,6 +132,19 @@
       "community": 12,
       "community_name": "PreferencesRepository",
       "norm_label": "preferencesrepository"
+    },
+    {
+      "label": "DeviceAdmin",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/broadcast/DeviceAdmin.kt",
+      "source_location": "L9",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin_deviceadmin",
+      "community": 13,
+      "community_name": "UsageLockService",
+      "norm_label": "deviceadmin"
     },
     {
       "label": "UsageLockService",
@@ -429,21 +416,8 @@
       "_origin": "ast",
       "id": "hidden_api_src_main_java_android_app_iuidfrozenstatechangedcallback_iuidfrozenstatechangedcallback",
       "community": 20,
-      "community_name": "IUidObserver",
+      "community_name": "androidx.annotation.RequiresPermission",
       "norm_label": "iuidfrozenstatechangedcallback"
-    },
-    {
-      "label": "IUidObserver",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
-      "source_location": "L22",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iuidobserver_iuidobserver",
-      "community": 20,
-      "community_name": "IUidObserver",
-      "norm_label": "iuidobserver"
     },
     {
       "label": "RootTaskInfo",
@@ -498,6 +472,45 @@
       "norm_label": "shizukuapplockservice"
     },
     {
+      "label": "Stub",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
+      "source_location": "L1046",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_iactivitymanager_stub",
+      "community": 25,
+      "community_name": "IActivityManager.java",
+      "norm_label": "stub"
+    },
+    {
+      "label": "IWindowManager",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/view/IWindowManager.java",
+      "source_location": "L7",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_view_iwindowmanager_iwindowmanager",
+      "community": 25,
+      "community_name": "IActivityManager.java",
+      "norm_label": "iwindowmanager"
+    },
+    {
+      "label": "Stub",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/view/IWindowManager.java",
+      "source_location": "L9",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_view_iwindowmanager_stub",
+      "community": 25,
+      "community_name": "IActivityManager.java",
+      "norm_label": "stub"
+    },
+    {
       "label": "AppUsageMethod",
       "file_type": "code",
       "source_file": "app/src/main/java/dev/pranav/applock/features/appintro/ui/AppIntroScreen.kt",
@@ -507,7 +520,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_features_appintro_ui_appintroscreen_appusagemethod",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "appusagemethod"
     },
     {
@@ -520,7 +533,7 @@
       "_origin": "ast",
       "id": "appintro_src_main_java_dev_pranav_appintro_intropage_intropage",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "intropage"
     },
     {
@@ -628,30 +641,17 @@
       "norm_label": "ready"
     },
     {
-      "label": "Builder",
+      "label": "IUidObserver",
       "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L961",
+      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
+      "source_location": "L22",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_builder",
+      "id": "hidden_api_src_main_java_android_app_iuidobserver_iuidobserver",
       "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": "builder"
-    },
-    {
-      "label": "TaskDescription",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L821",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_taskdescription",
-      "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": "taskdescription"
+      "community_name": "IUidObserver",
+      "norm_label": "iuidobserver"
     },
     {
       "label": "DeviceUnlockReceiver",
@@ -678,32 +678,6 @@
       "community": 29,
       "community_name": "ShizukuActivityManager.kt",
       "norm_label": "shizukuactivitymanager"
-    },
-    {
-      "label": "BackendServiceManager",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/data/manager/BackendServiceManager.kt",
-      "source_location": "L13",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_data_manager_backendservicemanager_backendservicemanager",
-      "community": 3,
-      "community_name": "SettingsScreen.kt",
-      "norm_label": "backendservicemanager"
-    },
-    {
-      "label": "BackendImplementation",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt",
-      "source_location": "L143",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository_backendimplementation",
-      "community": 3,
-      "community_name": "SettingsScreen.kt",
-      "norm_label": "backendimplementation"
     },
     {
       "label": "MissingPermission",
@@ -797,6 +771,32 @@
       "norm_label": "togglesettingitem"
     },
     {
+      "label": "Builder",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L961",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_builder",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": "builder"
+    },
+    {
+      "label": "TaskDescription",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L821",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_taskdescription",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": "taskdescription"
+    },
+    {
       "label": "BiometricPrompt",
       "file_type": "code",
       "source_file": "app/src/main/java/dev/pranav/applock/core/navigation/AppNavigator.kt",
@@ -808,19 +808,6 @@
       "community": 30,
       "community_name": "AppNavigator.kt",
       "norm_label": "biometricprompt"
-    },
-    {
-      "label": "LockScreenOverlayManager",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/LockScreenOverlayManager.kt",
-      "source_location": "L35",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_lockscreenoverlaymanager_lockscreenoverlaymanager",
-      "community": 31,
-      "community_name": "LockScreenOverlayManager.kt",
-      "norm_label": "lockscreenoverlaymanager"
     },
     {
       "label": "AppLockConstants",
@@ -938,32 +925,6 @@
       "community": 36,
       "community_name": "LogUtils",
       "norm_label": "logutils"
-    },
-    {
-      "label": "DeviceAdmin",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/broadcast/DeviceAdmin.kt",
-      "source_location": "L9",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin_deviceadmin",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": "deviceadmin"
-    },
-    {
-      "label": "SecurityUtils",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt",
-      "source_location": "L8",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils_securityutils",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": "securityutils"
     },
     {
       "label": "AdminDisableActivity",
@@ -1131,8 +1092,34 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_navigation_navigationmanager_navigationmanager",
       "community": 43,
-      "community_name": "NavigationManager",
+      "community_name": "LockScreenOverlayManager.kt",
       "norm_label": "navigationmanager"
+    },
+    {
+      "label": "AppIntroManager",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/appintro/domain/AppIntroManager.kt",
+      "source_location": "L6",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_appintro_domain_appintromanager_appintromanager",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "appintromanager"
+    },
+    {
+      "label": "LockScreenOverlayManager",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/LockScreenOverlayManager.kt",
+      "source_location": "L35",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_lockscreenoverlaymanager_lockscreenoverlaymanager",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "lockscreenoverlaymanager"
     },
     {
       "label": "androidx",
@@ -1144,8 +1131,34 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_passwordoverlayscreen_passwordoverlayactivity_oncreate_object_androidx_l92",
       "community": 43,
-      "community_name": "NavigationManager",
+      "community_name": "LockScreenOverlayManager.kt",
       "norm_label": "androidx"
+    },
+    {
+      "label": "TransparentBiometricActivity",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt",
+      "source_location": "L18",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_transparentbiometricactivity",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "transparentbiometricactivity"
+    },
+    {
+      "label": "BiometricPrompt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt",
+      "source_location": "L40",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_transparentbiometricactivity_oncreate_object_biometricprompt_l40",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "biometricprompt"
     },
     {
       "label": "MainActivity",
@@ -1157,8 +1170,21 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_mainactivity_mainactivity",
       "community": 43,
-      "community_name": "NavigationManager",
+      "community_name": "LockScreenOverlayManager.kt",
       "norm_label": "mainactivity"
+    },
+    {
+      "label": "WindowManagerImpl",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/view/WindowManagerImpl.java",
+      "source_location": "L5",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_view_windowmanagerimpl_windowmanagerimpl",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "windowmanagerimpl"
     },
     {
       "label": "IActivityTaskManage",
@@ -1185,6 +1211,19 @@
       "community": 44,
       "community_name": "IActivityTaskManage",
       "norm_label": "stub"
+    },
+    {
+      "label": "SecurityUtils",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt",
+      "source_location": "L8",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils_securityutils",
+      "community": 45,
+      "community_name": "SecurityUtils",
+      "norm_label": "securityutils"
     },
     {
       "label": "ContentProviderHolder",
@@ -1302,32 +1341,6 @@
       "community": 5,
       "community_name": "AntiUninstallScreen.kt",
       "norm_label": "triggerexclusionsviewmodel"
-    },
-    {
-      "label": "TransparentBiometricActivity",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt",
-      "source_location": "L18",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_transparentbiometricactivity",
-      "community": 50,
-      "community_name": "TransparentBiometricActivity.kt",
-      "norm_label": "transparentbiometricactivity"
-    },
-    {
-      "label": "BiometricPrompt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt",
-      "source_location": "L40",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_transparentbiometricactivity_oncreate_object_biometricprompt_l40",
-      "community": 50,
-      "community_name": "TransparentBiometricActivity.kt",
-      "norm_label": "biometricprompt"
     },
     {
       "label": "AntiUninstall",
@@ -1564,17 +1577,17 @@
       "norm_label": "iactivitycontroller"
     },
     {
-      "label": "AppIntroManager",
+      "label": "Stub",
       "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/appintro/domain/AppIntroManager.kt",
-      "source_location": "L6",
+      "source_file": "hidden-api/src/main/java/android/content/pm/IPackageManager.java",
+      "source_location": "L708",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_appintro_domain_appintromanager_appintromanager",
-      "community": 59,
-      "community_name": "AppIntroManager",
-      "norm_label": "appintromanager"
+      "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager_stub",
+      "community": 58,
+      "community_name": "Stub",
+      "norm_label": "stub"
     },
     {
       "label": "LockCallback",
@@ -1705,19 +1718,6 @@
       "community": 64,
       "community_name": "AppIconCache.kt",
       "norm_label": "appiconcache"
-    },
-    {
-      "label": "WindowManagerImpl",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/view/WindowManagerImpl.java",
-      "source_location": "L5",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_view_windowmanagerimpl_windowmanagerimpl",
-      "community": 66,
-      "community_name": "WindowManagerImpl",
-      "norm_label": "windowmanagerimpl"
     },
     {
       "label": "TaskSnapshot",
@@ -5540,18 +5540,6 @@
       "norm_label": ".unstableproviderdied()"
     },
     {
-      "label": ".asInterface()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
-      "source_location": "L1048",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iactivitymanager_stub_asinterface",
-      "community": 11,
-      "community_name": "android.os.IBinder",
-      "norm_label": ".asinterface()"
-    },
-    {
       "label": ".onForegroundStateChanged()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/IForegroundServiceObserver.java",
@@ -5612,28 +5600,40 @@
       "norm_label": ".holdlock()"
     },
     {
-      "label": ".asInterface()",
+      "label": ".getBackendForService()",
       "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/content/pm/IPackageManager.java",
-      "source_location": "L709",
+      "source_file": "app/src/main/java/dev/pranav/applock/data/manager/BackendServiceManager.kt",
+      "source_location": "L44",
       "_callable": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager_stub_asinterface",
-      "community": 11,
-      "community_name": "android.os.IBinder",
-      "norm_label": ".asinterface()"
+      "id": "app_src_main_java_dev_pranav_applock_data_manager_backendservicemanager_backendservicemanager_getbackendforservice",
+      "community": 111,
+      "community_name": "BackendImplementation",
+      "norm_label": ".getbackendforservice()"
     },
     {
-      "label": ".asInterface()",
+      "label": ".setActiveBackend()",
       "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/view/IWindowManager.java",
-      "source_location": "L11",
+      "source_file": "app/src/main/java/dev/pranav/applock/data/manager/BackendServiceManager.kt",
+      "source_location": "L17",
       "_callable": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_view_iwindowmanager_stub_asinterface",
-      "community": 11,
-      "community_name": "android.os.IBinder",
-      "norm_label": ".asinterface()"
+      "id": "app_src_main_java_dev_pranav_applock_data_manager_backendservicemanager_backendservicemanager_setactivebackend",
+      "community": 111,
+      "community_name": "BackendImplementation",
+      "norm_label": ".setactivebackend()"
+    },
+    {
+      "label": ".shouldStartService()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/data/manager/BackendServiceManager.kt",
+      "source_location": "L22",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_data_manager_backendservicemanager_backendservicemanager_shouldstartservice",
+      "community": 111,
+      "community_name": "BackendImplementation",
+      "norm_label": ".shouldstartservice()"
     },
     {
       "label": ".getBackendImplementation()",
@@ -5644,8 +5644,32 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository_applockrepository_getbackendimplementation",
       "community": 111,
-      "community_name": ".getBackendImplementation",
+      "community_name": "BackendImplementation",
       "norm_label": ".getbackendimplementation()"
+    },
+    {
+      "label": ".setActiveBackend()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt",
+      "source_location": "L128",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository_applockrepository_setactivebackend",
+      "community": 111,
+      "community_name": "BackendImplementation",
+      "norm_label": ".setactivebackend()"
+    },
+    {
+      "label": ".setBackendImplementation()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt",
+      "source_location": "L111",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository_applockrepository_setbackendimplementation",
+      "community": 111,
+      "community_name": "BackendImplementation",
+      "norm_label": ".setbackendimplementation()"
     },
     {
       "label": ".shouldStartService()",
@@ -5656,8 +5680,32 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository_applockrepository_shouldstartservice",
       "community": 111,
-      "community_name": ".getBackendImplementation",
+      "community_name": "BackendImplementation",
       "norm_label": ".shouldstartservice()"
+    },
+    {
+      "label": ".getBackendImplementation()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/PreferencesRepository.kt",
+      "source_location": "L253",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_data_repository_preferencesrepository_preferencesrepository_getbackendimplementation",
+      "community": 111,
+      "community_name": "BackendImplementation",
+      "norm_label": ".getbackendimplementation()"
+    },
+    {
+      "label": ".setBackendImplementation()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/PreferencesRepository.kt",
+      "source_location": "L249",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_data_repository_preferencesrepository_preferencesrepository_setbackendimplementation",
+      "community": 111,
+      "community_name": "BackendImplementation",
+      "norm_label": ".setbackendimplementation()"
     },
     {
       "label": ".getAnkiCardsPerLock()",
@@ -6066,6 +6114,54 @@
       "community": 12,
       "community_name": "PreferencesRepository",
       "norm_label": ".shouldusemaxbrightness()"
+    },
+    {
+      "label": ".getSharedPreferences()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/broadcast/DeviceAdmin.kt",
+      "source_location": "L37",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin_deviceadmin_getsharedpreferences",
+      "community": 13,
+      "community_name": "UsageLockService",
+      "norm_label": ".getsharedpreferences()"
+    },
+    {
+      "label": ".onDisabled()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/broadcast/DeviceAdmin.kt",
+      "source_location": "L26",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin_deviceadmin_ondisabled",
+      "community": 13,
+      "community_name": "UsageLockService",
+      "norm_label": ".ondisabled()"
+    },
+    {
+      "label": ".onEnabled()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/broadcast/DeviceAdmin.kt",
+      "source_location": "L15",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin_deviceadmin_onenabled",
+      "community": 13,
+      "community_name": "UsageLockService",
+      "norm_label": ".onenabled()"
+    },
+    {
+      "label": ".setPasswordVerified()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/broadcast/DeviceAdmin.kt",
+      "source_location": "L33",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin_deviceadmin_setpasswordverified",
+      "community": 13,
+      "community_name": "UsageLockService",
+      "norm_label": ".setpasswordverified()"
     },
     {
       "label": ".checkAndLockApp()",
@@ -6572,6 +6668,30 @@
       "norm_label": ".setlastchosenactivity()"
     },
     {
+      "label": ".activityTypeToString()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
+      "source_location": "L239",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_activitytypetostring",
+      "community": 15,
+      "community_name": "WindowConfiguration",
+      "norm_label": ".activitytypetostring()"
+    },
+    {
+      "label": ".alwaysOnTopToString()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
+      "source_location": "L247",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_alwaysontoptostring",
+      "community": 15,
+      "community_name": "WindowConfiguration",
+      "norm_label": ".alwaysontoptostring()"
+    },
+    {
       "label": ".canReceiveKeys()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
@@ -6632,6 +6752,18 @@
       "norm_label": ".diff()"
     },
     {
+      "label": ".diffToString()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
+      "source_location": "L255",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_difftostring",
+      "community": 15,
+      "community_name": "WindowConfiguration",
+      "norm_label": ".difftostring()"
+    },
+    {
       "label": ".equals()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
@@ -6644,6 +6776,18 @@
       "norm_label": ".equals()"
     },
     {
+      "label": ".getBounds()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
+      "source_location": "L318",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_getbounds",
+      "community": 15,
+      "community_name": "WindowConfiguration",
+      "norm_label": ".getbounds()"
+    },
+    {
       "label": ".getDisplayRotation()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
@@ -6654,6 +6798,18 @@
       "community": 15,
       "community_name": "WindowConfiguration",
       "norm_label": ".getdisplayrotation()"
+    },
+    {
+      "label": ".getMaxBounds()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
+      "source_location": "L336",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_getmaxbounds",
+      "community": 15,
+      "community_name": "WindowConfiguration",
+      "norm_label": ".getmaxbounds()"
     },
     {
       "label": ".getRotation()",
@@ -6740,18 +6896,6 @@
       "norm_label": ".isfloating()"
     },
     {
-      "label": ".readFromParcel()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
-      "source_location": "L265",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_readfromparcel",
-      "community": 15,
-      "community_name": "WindowConfiguration",
-      "norm_label": ".readfromparcel()"
-    },
-    {
       "label": ".scale()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
@@ -6810,18 +6954,6 @@
       "community": 15,
       "community_name": "WindowConfiguration",
       "norm_label": ".setrotation()"
-    },
-    {
-      "label": ".setTo()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
-      "source_location": "L392",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_setto",
-      "community": 15,
-      "community_name": "WindowConfiguration",
-      "norm_label": ".setto()"
     },
     {
       "label": ".setToDefaults()",
@@ -6884,18 +7016,6 @@
       "norm_label": ".tostring()"
     },
     {
-      "label": ".unset()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
-      "source_location": "L399",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_unset",
-      "community": 15,
-      "community_name": "WindowConfiguration",
-      "norm_label": ".unset()"
-    },
-    {
       "label": ".unsetAlwaysOnTop()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
@@ -6920,28 +7040,40 @@
       "norm_label": ".updatefrom()"
     },
     {
-      "label": ".WindowConfiguration()",
+      "label": ".windowingModeToString()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
+      "source_location": "L231",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_windowingmodetostring",
+      "community": 15,
+      "community_name": "WindowConfiguration",
+      "norm_label": ".windowingmodetostring()"
+    },
+    {
+      "label": ".currentUiModeSupportsErrorDialogs()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityTaskManager.java",
       "source_location": "L179",
       "_callable": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_windowconfiguration",
-      "community": 15,
-      "community_name": "WindowConfiguration",
-      "norm_label": ".windowconfiguration()"
-    },
-    {
-      "label": ".setActivityLocusContext()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
-      "source_location": "L795",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_setactivitylocuscontext",
+      "id": "hidden_api_src_main_java_android_app_activitytaskmanager_activitytaskmanager_currentuimodesupportserrordialogs",
       "community": 16,
       "community_name": "TaskInfo",
-      "norm_label": ".setactivitylocuscontext()"
+      "norm_label": ".currentuimodesupportserrordialogs()"
+    },
+    {
+      "label": ".getDisplayIdsForStartingVisibleBackgroundUsers()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
+      "source_location": "L952",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_getdisplayidsforstartingvisiblebackgroundusers",
+      "community": 16,
+      "community_name": "TaskInfo",
+      "norm_label": ".getdisplayidsforstartingvisiblebackgroundusers()"
     },
     {
       "label": ".addLaunchCookie()",
@@ -7002,6 +7134,18 @@
       "community": 16,
       "community_name": "TaskInfo",
       "norm_label": ".getactivitytype()"
+    },
+    {
+      "label": ".getConfiguration()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/TaskInfo.java",
+      "source_location": "L311",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_taskinfo_taskinfo_getconfiguration",
+      "community": 16,
+      "community_name": "TaskInfo",
+      "norm_label": ".getconfiguration()"
     },
     {
       "label": ".getDisplayId()",
@@ -7100,18 +7244,6 @@
       "norm_label": ".isvisible()"
     },
     {
-      "label": ".readTaskFromParcel()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/TaskInfo.java",
-      "source_location": "L386",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_taskinfo_taskinfo_readtaskfromparcel",
-      "community": 16,
-      "community_name": "TaskInfo",
-      "norm_label": ".readtaskfromparcel()"
-    },
-    {
       "label": ".shouldDockBigOverlays()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/TaskInfo.java",
@@ -7122,18 +7254,6 @@
       "community": 16,
       "community_name": "TaskInfo",
       "norm_label": ".shoulddockbigoverlays()"
-    },
-    {
-      "label": ".TaskInfo()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/TaskInfo.java",
-      "source_location": "L289",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_taskinfo_taskinfo_taskinfo",
-      "community": 16,
-      "community_name": "TaskInfo",
-      "norm_label": ".taskinfo()"
     },
     {
       "label": ".toString()",
@@ -7148,28 +7268,28 @@
       "norm_label": ".tostring()"
     },
     {
-      "label": ".writeTaskToParcel()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/TaskInfo.java",
-      "source_location": "L393",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_taskinfo_taskinfo_writetasktoparcel",
-      "community": 16,
-      "community_name": "TaskInfo",
-      "norm_label": ".writetasktoparcel()"
-    },
-    {
-      "label": ".writeToParcel()",
+      "label": ".areConfigurationsEqualForDisplay()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
-      "source_location": "L260",
+      "source_location": "L223",
       "_callable": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_writetoparcel",
+      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_areconfigurationsequalfordisplay",
       "community": 16,
       "community_name": "TaskInfo",
-      "norm_label": ".writetoparcel()"
+      "norm_label": ".areconfigurationsequalfordisplay()"
+    },
+    {
+      "label": ".getAppBounds()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
+      "source_location": "L299",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_getappbounds",
+      "community": 16,
+      "community_name": "TaskInfo",
+      "norm_label": ".getappbounds()"
     },
     {
       "label": ".ActivityTaskManager()",
@@ -7446,6 +7566,18 @@
       "community": 17,
       "community_name": "ActivityTaskManager",
       "norm_label": ".updatelocktaskpackages()"
+    },
+    {
+      "label": ".addAppTask()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L127",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_activitymanager_addapptask",
+      "community": 18,
+      "community_name": "TaskInfo",
+      "norm_label": ".addapptask()"
     },
     {
       "label": ".dumpPackageState()",
@@ -8584,7 +8716,7 @@
       "_origin": "ast",
       "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_forcedelaybroadcastdelivery",
       "community": 20,
-      "community_name": "IUidObserver",
+      "community_name": "androidx.annotation.RequiresPermission",
       "norm_label": ".forcedelaybroadcastdelivery()"
     },
     {
@@ -8596,7 +8728,7 @@
       "_origin": "ast",
       "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_getuidfrozenstate",
       "community": 20,
-      "community_name": "IUidObserver",
+      "community_name": "androidx.annotation.RequiresPermission",
       "norm_label": ".getuidfrozenstate()"
     },
     {
@@ -8608,7 +8740,7 @@
       "_origin": "ast",
       "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_getuidprocesscapabilities",
       "community": 20,
-      "community_name": "IUidObserver",
+      "community_name": "androidx.annotation.RequiresPermission",
       "norm_label": ".getuidprocesscapabilities()"
     },
     {
@@ -8620,7 +8752,7 @@
       "_origin": "ast",
       "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_getuidprocessstate",
       "community": 20,
-      "community_name": "IUidObserver",
+      "community_name": "androidx.annotation.RequiresPermission",
       "norm_label": ".getuidprocessstate()"
     },
     {
@@ -8632,7 +8764,7 @@
       "_origin": "ast",
       "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_isprocessfrozen",
       "community": 20,
-      "community_name": "IUidObserver",
+      "community_name": "androidx.annotation.RequiresPermission",
       "norm_label": ".isprocessfrozen()"
     },
     {
@@ -8644,20 +8776,8 @@
       "_origin": "ast",
       "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_registeruidfrozenstatechangedcallback",
       "community": 20,
-      "community_name": "IUidObserver",
+      "community_name": "androidx.annotation.RequiresPermission",
       "norm_label": ".registeruidfrozenstatechangedcallback()"
-    },
-    {
-      "label": ".registerUidObserver()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
-      "source_location": "L38",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_registeruidobserver",
-      "community": 20,
-      "community_name": "IUidObserver",
-      "norm_label": ".registeruidobserver()"
     },
     {
       "label": ".registerUidObserverForUids()",
@@ -8668,7 +8788,7 @@
       "_origin": "ast",
       "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_registeruidobserverforuids",
       "community": 20,
-      "community_name": "IUidObserver",
+      "community_name": "androidx.annotation.RequiresPermission",
       "norm_label": ".registeruidobserverforuids()"
     },
     {
@@ -8680,92 +8800,8 @@
       "_origin": "ast",
       "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_unregisteruidfrozenstatechangedcallback",
       "community": 20,
-      "community_name": "IUidObserver",
+      "community_name": "androidx.annotation.RequiresPermission",
       "norm_label": ".unregisteruidfrozenstatechangedcallback()"
-    },
-    {
-      "label": ".unregisterUidObserver()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
-      "source_location": "L41",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_unregisteruidobserver",
-      "community": 20,
-      "community_name": "IUidObserver",
-      "norm_label": ".unregisteruidobserver()"
-    },
-    {
-      "label": ".onUidActive()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
-      "source_location": "L40",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iuidobserver_iuidobserver_onuidactive",
-      "community": 20,
-      "community_name": "IUidObserver",
-      "norm_label": ".onuidactive()"
-    },
-    {
-      "label": ".onUidCachedChanged()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
-      "source_location": "L77",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iuidobserver_iuidobserver_onuidcachedchanged",
-      "community": 20,
-      "community_name": "IUidObserver",
-      "norm_label": ".onuidcachedchanged()"
-    },
-    {
-      "label": ".onUidGone()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
-      "source_location": "L35",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iuidobserver_iuidobserver_onuidgone",
-      "community": 20,
-      "community_name": "IUidObserver",
-      "norm_label": ".onuidgone()"
-    },
-    {
-      "label": ".onUidIdle()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
-      "source_location": "L46",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iuidobserver_iuidobserver_onuididle",
-      "community": 20,
-      "community_name": "IUidObserver",
-      "norm_label": ".onuididle()"
-    },
-    {
-      "label": ".onUidProcAdjChanged()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
-      "source_location": "L65",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iuidobserver_iuidobserver_onuidprocadjchanged",
-      "community": 20,
-      "community_name": "IUidObserver",
-      "norm_label": ".onuidprocadjchanged()"
-    },
-    {
-      "label": ".onUidStateChanged()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
-      "source_location": "L57",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iuidobserver_iuidobserver_onuidstatechanged",
-      "community": 20,
-      "community_name": "IUidObserver",
-      "norm_label": ".onuidstatechanged()"
     },
     {
       "label": ".getTaskBounds()",
@@ -9476,6 +9512,18 @@
       "norm_label": ".opencontenturi()"
     },
     {
+      "label": ".setActivityLocusContext()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
+      "source_location": "L795",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_setactivitylocuscontext",
+      "community": 25,
+      "community_name": "IActivityManager.java",
+      "norm_label": ".setactivitylocuscontext()"
+    },
+    {
       "label": ".stopBinderTrackingAndDump()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
@@ -9500,6 +9548,18 @@
       "norm_label": ".unbindbackupagent()"
     },
     {
+      "label": ".asInterface()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
+      "source_location": "L1048",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_iactivitymanager_stub_asinterface",
+      "community": 25,
+      "community_name": "IActivityManager.java",
+      "norm_label": ".asinterface()"
+    },
+    {
       "label": ".getAppMetadataFd()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/content/pm/IPackageManager.java",
@@ -9512,6 +9572,18 @@
       "norm_label": ".getappmetadatafd()"
     },
     {
+      "label": ".asInterface()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/view/IWindowManager.java",
+      "source_location": "L11",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_view_iwindowmanager_stub_asinterface",
+      "community": 25,
+      "community_name": "IActivityManager.java",
+      "norm_label": ".asinterface()"
+    },
+    {
       "label": "hasUsagePermission()",
       "file_type": "code",
       "source_file": "app/src/main/java/dev/pranav/applock/core/utils/AppLockUtils.kt",
@@ -9520,7 +9592,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_utils_applockutils_hasusagepermission",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "hasusagepermission()"
     },
     {
@@ -9532,7 +9604,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_features_appintro_ui_appintroscreen_appintroscreen",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "appintroscreen()"
     },
     {
@@ -9544,8 +9616,80 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_features_appintro_ui_appintroscreen_methodselectioncard",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "methodselectioncard()"
+    },
+    {
+      "label": "AccessibilityServiceGuideDialog()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/AccessibilityServiceGuideDialog.kt",
+      "source_location": "L16",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_components_accessibilityserviceguidedialog_accessibilityserviceguidedialog",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "accessibilityserviceguidedialog()"
+    },
+    {
+      "label": "AdminPasswordVerificationDialog()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/AdminPasswordVerificationDialog.kt",
+      "source_location": "L34",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_components_adminpasswordverificationdialog_adminpasswordverificationdialog",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "adminpasswordverificationdialog()"
+    },
+    {
+      "label": "AntiUninstallAccessibilityPermissionDialog()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/AntiUninstallAccessibilityPermissionDialog.kt",
+      "source_location": "L22",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_components_antiuninstallaccessibilitypermissiondialog_antiuninstallaccessibilitypermissiondialog",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "antiuninstallaccessibilitypermissiondialog()"
+    },
+    {
+      "label": "DeviceAdminPermissionDialog()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/DeviceAdminPermissionDialog.kt",
+      "source_location": "L22",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_components_deviceadminpermissiondialog_deviceadminpermissiondialog",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "deviceadminpermissiondialog()"
+    },
+    {
+      "label": "ShizukuPermissionDialog()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/ShizukuPermissionDialog.kt",
+      "source_location": "L22",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_components_shizukupermissiondialog_shizukupermissiondialog",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "shizukupermissiondialog()"
+    },
+    {
+      "label": "UsageStatsPermission()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/UsageStatsPermission.kt",
+      "source_location": "L20",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_components_usagestatspermission_usagestatspermission",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "usagestatspermission()"
     },
     {
       "label": "AnimatedIntroPager()",
@@ -9556,7 +9700,7 @@
       "_origin": "ast",
       "id": "appintro_src_main_java_dev_pranav_appintro_animatedintropager_animatedintropager",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "animatedintropager()"
     },
     {
@@ -9568,7 +9712,7 @@
       "_origin": "ast",
       "id": "appintro_src_main_java_dev_pranav_appintro_appintro_appintro",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "appintro()"
     },
     {
@@ -9580,7 +9724,7 @@
       "_origin": "ast",
       "id": "appintro_src_main_java_dev_pranav_appintro_appintro_navigatetonextpage",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "navigatetonextpage()"
     },
     {
@@ -9592,7 +9736,7 @@
       "_origin": "ast",
       "id": "appintro_src_main_java_dev_pranav_appintro_appintro_navigatetopreviouspage",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "navigatetopreviouspage()"
     },
     {
@@ -9604,8 +9748,32 @@
       "_origin": "ast",
       "id": "appintro_src_main_java_dev_pranav_appintro_intropagecontent_intropagecontent",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "intropagecontent()"
+    },
+    {
+      "label": "PageIndicator()",
+      "file_type": "code",
+      "source_file": "appintro/src/main/java/dev/pranav/appintro/PageIndicator.kt",
+      "source_location": "L53",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "appintro_src_main_java_dev_pranav_appintro_pageindicator_pageindicator",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "pageindicator()"
+    },
+    {
+      "label": "PageIndicators()",
+      "file_type": "code",
+      "source_file": "appintro/src/main/java/dev/pranav/appintro/PageIndicator.kt",
+      "source_location": "L27",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "appintro_src_main_java_dev_pranav_appintro_pageindicator_pageindicators",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "pageindicators()"
     },
     {
       "label": ".answerCard()",
@@ -9740,172 +9908,100 @@
       "norm_label": "htmlcardview()"
     },
     {
-      "label": ".addAppTask()",
+      "label": ".registerUidObserver()",
       "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L127",
+      "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
+      "source_location": "L38",
       "_callable": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_activitymanager_addapptask",
+      "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_registeruidobserver",
       "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": ".addapptask()"
+      "community_name": "IUidObserver",
+      "norm_label": ".registeruidobserver()"
     },
     {
-      "label": ".build()",
+      "label": ".unregisterUidObserver()",
       "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L986",
+      "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
+      "source_location": "L41",
       "_callable": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_builder_build",
+      "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_unregisteruidobserver",
       "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": ".build()"
+      "community_name": "IUidObserver",
+      "norm_label": ".unregisteruidobserver()"
     },
     {
-      "label": ".setBackgroundColor()",
+      "label": ".onUidActive()",
       "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L974",
+      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
+      "source_location": "L40",
       "_callable": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_builder_setbackgroundcolor",
+      "id": "hidden_api_src_main_java_android_app_iuidobserver_iuidobserver_onuidactive",
       "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": ".setbackgroundcolor()"
+      "community_name": "IUidObserver",
+      "norm_label": ".onuidactive()"
     },
     {
-      "label": ".setIcon()",
+      "label": ".onUidCachedChanged()",
       "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L966",
+      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
+      "source_location": "L77",
       "_callable": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_builder_seticon",
+      "id": "hidden_api_src_main_java_android_app_iuidobserver_iuidobserver_onuidcachedchanged",
       "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": ".seticon()"
+      "community_name": "IUidObserver",
+      "norm_label": ".onuidcachedchanged()"
     },
     {
-      "label": ".setLabel()",
+      "label": ".onUidGone()",
       "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L962",
+      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
+      "source_location": "L35",
       "_callable": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_builder_setlabel",
+      "id": "hidden_api_src_main_java_android_app_iuidobserver_iuidobserver_onuidgone",
       "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": ".setlabel()"
+      "community_name": "IUidObserver",
+      "norm_label": ".onuidgone()"
     },
     {
-      "label": ".setNavigationBarColor()",
+      "label": ".onUidIdle()",
       "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L982",
+      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
+      "source_location": "L46",
       "_callable": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_builder_setnavigationbarcolor",
+      "id": "hidden_api_src_main_java_android_app_iuidobserver_iuidobserver_onuididle",
       "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": ".setnavigationbarcolor()"
+      "community_name": "IUidObserver",
+      "norm_label": ".onuididle()"
     },
     {
-      "label": ".setPrimaryColor()",
+      "label": ".onUidProcAdjChanged()",
       "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L970",
+      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
+      "source_location": "L65",
       "_callable": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_builder_setprimarycolor",
+      "id": "hidden_api_src_main_java_android_app_iuidobserver_iuidobserver_onuidprocadjchanged",
       "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": ".setprimarycolor()"
+      "community_name": "IUidObserver",
+      "norm_label": ".onuidprocadjchanged()"
     },
     {
-      "label": ".setStatusBarColor()",
+      "label": ".onUidStateChanged()",
       "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L978",
+      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
+      "source_location": "L57",
       "_callable": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_builder_setstatusbarcolor",
+      "id": "hidden_api_src_main_java_android_app_iuidobserver_iuidobserver_onuidstatechanged",
       "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": ".setstatusbarcolor()"
-    },
-    {
-      "label": ".copyFrom()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L850",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_taskdescription_copyfrom",
-      "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": ".copyfrom()"
-    },
-    {
-      "label": ".copyFromPreserveHiddenFields()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L853",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_taskdescription_copyfrompreservehiddenfields",
-      "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": ".copyfrompreservehiddenfields()"
-    },
-    {
-      "label": ".equals()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L957",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_taskdescription_equals",
-      "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": ".equals()"
-    },
-    {
-      "label": ".hashCode()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L953",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_taskdescription_hashcode",
-      "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": ".hashcode()"
-    },
-    {
-      "label": ".loadIcon()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L861",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_taskdescription_loadicon",
-      "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": ".loadicon()"
-    },
-    {
-      "label": ".setIcon()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L869",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_taskdescription_seticon",
-      "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": ".seticon()"
+      "community_name": "IUidObserver",
+      "norm_label": ".onuidstatechanged()"
     },
     {
       "label": ".onReceive()",
@@ -10074,90 +10170,6 @@
       "community": 3,
       "community_name": "SettingsScreen.kt",
       "norm_label": "openaccessibilitysettings()"
-    },
-    {
-      "label": ".getBackendForService()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/data/manager/BackendServiceManager.kt",
-      "source_location": "L44",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_data_manager_backendservicemanager_backendservicemanager_getbackendforservice",
-      "community": 3,
-      "community_name": "SettingsScreen.kt",
-      "norm_label": ".getbackendforservice()"
-    },
-    {
-      "label": ".setActiveBackend()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/data/manager/BackendServiceManager.kt",
-      "source_location": "L17",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_data_manager_backendservicemanager_backendservicemanager_setactivebackend",
-      "community": 3,
-      "community_name": "SettingsScreen.kt",
-      "norm_label": ".setactivebackend()"
-    },
-    {
-      "label": ".shouldStartService()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/data/manager/BackendServiceManager.kt",
-      "source_location": "L22",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_data_manager_backendservicemanager_backendservicemanager_shouldstartservice",
-      "community": 3,
-      "community_name": "SettingsScreen.kt",
-      "norm_label": ".shouldstartservice()"
-    },
-    {
-      "label": ".setActiveBackend()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt",
-      "source_location": "L128",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository_applockrepository_setactivebackend",
-      "community": 3,
-      "community_name": "SettingsScreen.kt",
-      "norm_label": ".setactivebackend()"
-    },
-    {
-      "label": ".setBackendImplementation()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt",
-      "source_location": "L111",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository_applockrepository_setbackendimplementation",
-      "community": 3,
-      "community_name": "SettingsScreen.kt",
-      "norm_label": ".setbackendimplementation()"
-    },
-    {
-      "label": ".getBackendImplementation()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/PreferencesRepository.kt",
-      "source_location": "L253",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_data_repository_preferencesrepository_preferencesrepository_getbackendimplementation",
-      "community": 3,
-      "community_name": "SettingsScreen.kt",
-      "norm_label": ".getbackendimplementation()"
-    },
-    {
-      "label": ".setBackendImplementation()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/PreferencesRepository.kt",
-      "source_location": "L249",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_data_repository_preferencesrepository_preferencesrepository_setbackendimplementation",
-      "community": 3,
-      "community_name": "SettingsScreen.kt",
-      "norm_label": ".setbackendimplementation()"
     },
     {
       "label": "AddProtectedAppsSheetContent()",
@@ -10556,6 +10568,162 @@
       "norm_label": "donatemodalbottomsheet()"
     },
     {
+      "label": ".build()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L986",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_builder_build",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": ".build()"
+    },
+    {
+      "label": ".setBackgroundColor()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L974",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_builder_setbackgroundcolor",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": ".setbackgroundcolor()"
+    },
+    {
+      "label": ".setIcon()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L966",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_builder_seticon",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": ".seticon()"
+    },
+    {
+      "label": ".setLabel()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L962",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_builder_setlabel",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": ".setlabel()"
+    },
+    {
+      "label": ".setNavigationBarColor()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L982",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_builder_setnavigationbarcolor",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": ".setnavigationbarcolor()"
+    },
+    {
+      "label": ".setPrimaryColor()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L970",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_builder_setprimarycolor",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": ".setprimarycolor()"
+    },
+    {
+      "label": ".setStatusBarColor()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L978",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_builder_setstatusbarcolor",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": ".setstatusbarcolor()"
+    },
+    {
+      "label": ".copyFrom()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L850",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_taskdescription_copyfrom",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": ".copyfrom()"
+    },
+    {
+      "label": ".copyFromPreserveHiddenFields()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L853",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_taskdescription_copyfrompreservehiddenfields",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": ".copyfrompreservehiddenfields()"
+    },
+    {
+      "label": ".equals()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L957",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_taskdescription_equals",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": ".equals()"
+    },
+    {
+      "label": ".hashCode()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L953",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_taskdescription_hashcode",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": ".hashcode()"
+    },
+    {
+      "label": ".loadIcon()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L861",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_taskdescription_loadicon",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": ".loadicon()"
+    },
+    {
+      "label": ".setIcon()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L869",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_taskdescription_seticon",
+      "community": 3,
+      "community_name": "SettingsScreen.kt",
+      "norm_label": ".seticon()"
+    },
+    {
       "label": "AppNavHost()",
       "file_type": "code",
       "source_file": "app/src/main/java/dev/pranav/applock/core/navigation/AppNavigator.kt",
@@ -10652,40 +10820,100 @@
       "norm_label": "navigatetomain()"
     },
     {
-      "label": ".removeOverlay()",
+      "label": ".readTaskFromParcel()",
       "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/LockScreenOverlayManager.kt",
-      "source_location": "L274",
+      "source_file": "hidden-api/src/main/java/android/app/TaskInfo.java",
+      "source_location": "L386",
       "_callable": true,
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_lockscreenoverlaymanager_lockscreenoverlaymanager_removeoverlay",
+      "id": "hidden_api_src_main_java_android_app_taskinfo_taskinfo_readtaskfromparcel",
       "community": 31,
-      "community_name": "LockScreenOverlayManager.kt",
-      "norm_label": ".removeoverlay()"
+      "community_name": "android.os.Parcel",
+      "norm_label": ".readtaskfromparcel()"
     },
     {
-      "label": ".showOverlay()",
+      "label": ".TaskInfo()",
       "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/LockScreenOverlayManager.kt",
-      "source_location": "L56",
+      "source_file": "hidden-api/src/main/java/android/app/TaskInfo.java",
+      "source_location": "L289",
       "_callable": true,
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_lockscreenoverlaymanager_lockscreenoverlaymanager_showoverlay",
+      "id": "hidden_api_src_main_java_android_app_taskinfo_taskinfo_taskinfo",
       "community": 31,
-      "community_name": "LockScreenOverlayManager.kt",
-      "norm_label": ".showoverlay()"
+      "community_name": "android.os.Parcel",
+      "norm_label": ".taskinfo()"
     },
     {
-      "label": "AppLockTheme()",
+      "label": ".writeTaskToParcel()",
       "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/theme/Theme.kt",
-      "source_location": "L18",
+      "source_file": "hidden-api/src/main/java/android/app/TaskInfo.java",
+      "source_location": "L393",
       "_callable": true,
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_theme_theme_applocktheme",
+      "id": "hidden_api_src_main_java_android_app_taskinfo_taskinfo_writetasktoparcel",
       "community": 31,
-      "community_name": "LockScreenOverlayManager.kt",
-      "norm_label": "applocktheme()"
+      "community_name": "android.os.Parcel",
+      "norm_label": ".writetasktoparcel()"
+    },
+    {
+      "label": ".readFromParcel()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
+      "source_location": "L265",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_readfromparcel",
+      "community": 31,
+      "community_name": "android.os.Parcel",
+      "norm_label": ".readfromparcel()"
+    },
+    {
+      "label": ".setTo()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
+      "source_location": "L392",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_setto",
+      "community": 31,
+      "community_name": "android.os.Parcel",
+      "norm_label": ".setto()"
+    },
+    {
+      "label": ".unset()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
+      "source_location": "L399",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_unset",
+      "community": 31,
+      "community_name": "android.os.Parcel",
+      "norm_label": ".unset()"
+    },
+    {
+      "label": ".WindowConfiguration()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
+      "source_location": "L179",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_windowconfiguration",
+      "community": 31,
+      "community_name": "android.os.Parcel",
+      "norm_label": ".windowconfiguration()"
+    },
+    {
+      "label": ".writeToParcel()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
+      "source_location": "L260",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_writetoparcel",
+      "community": 31,
+      "community_name": "android.os.Parcel",
+      "norm_label": ".writetoparcel()"
     },
     {
       "label": ".checkAndRestoreRecentlyLeftApp()",
@@ -10878,30 +11106,6 @@
       "community": 33,
       "community_name": "RunningAppProcessInfo",
       "norm_label": ".isactivitystartallowedondisplay()"
-    },
-    {
-      "label": ".moveTaskToFront()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L142",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_activitymanager_movetasktofront",
-      "community": 33,
-      "community_name": "RunningAppProcessInfo",
-      "norm_label": ".movetasktofront()"
-    },
-    {
-      "label": ".startActivity()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
-      "source_location": "L1013",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_apptask_startactivity",
-      "community": 33,
-      "community_name": "RunningAppProcessInfo",
-      "norm_label": ".startactivity()"
     },
     {
       "label": ".copyTo()",
@@ -11286,114 +11490,6 @@
       "community": 36,
       "community_name": "LogUtils",
       "norm_label": ".writeauditlogline()"
-    },
-    {
-      "label": ".getSharedPreferences()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/broadcast/DeviceAdmin.kt",
-      "source_location": "L37",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin_deviceadmin_getsharedpreferences",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": ".getsharedpreferences()"
-    },
-    {
-      "label": ".onDisabled()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/broadcast/DeviceAdmin.kt",
-      "source_location": "L26",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin_deviceadmin_ondisabled",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": ".ondisabled()"
-    },
-    {
-      "label": ".onEnabled()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/broadcast/DeviceAdmin.kt",
-      "source_location": "L15",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin_deviceadmin_onenabled",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": ".onenabled()"
-    },
-    {
-      "label": ".setPasswordVerified()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/broadcast/DeviceAdmin.kt",
-      "source_location": "L33",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin_deviceadmin_setpasswordverified",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": ".setpasswordverified()"
-    },
-    {
-      "label": ".generateSalt()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt",
-      "source_location": "L27",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils_securityutils_generatesalt",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": ".generatesalt()"
-    },
-    {
-      "label": ".hashPassword()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt",
-      "source_location": "L33",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils_securityutils_hashpassword",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": ".hashpassword()"
-    },
-    {
-      "label": ".isSaltedHash()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt",
-      "source_location": "L55",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils_securityutils_issaltedhash",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": ".issaltedhash()"
-    },
-    {
-      "label": ".sanitizePassword()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt",
-      "source_location": "L18",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils_securityutils_sanitizepassword",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": ".sanitizepassword()"
-    },
-    {
-      "label": ".verifyPassword()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt",
-      "source_location": "L71",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils_securityutils_verifypassword",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": ".verifypassword()"
     },
     {
       "label": ".onCreate()",
@@ -11960,18 +12056,6 @@
       "norm_label": ".getservices()"
     },
     {
-      "label": ".getDisplayIdsForStartingVisibleBackgroundUsers()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IActivityManager.java",
-      "source_location": "L952",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iactivitymanager_iactivitymanager_getdisplayidsforstartingvisiblebackgroundusers",
-      "community": 41,
-      "community_name": "WindowConfiguration.java",
-      "norm_label": ".getdisplayidsforstartingvisiblebackgroundusers()"
-    },
-    {
       "label": ".dumpDebug()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
@@ -11994,18 +12078,6 @@
       "community": 41,
       "community_name": "WindowConfiguration.java",
       "norm_label": ".getactivitytype()"
-    },
-    {
-      "label": ".getAppBounds()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
-      "source_location": "L299",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_getappbounds",
-      "community": 41,
-      "community_name": "WindowConfiguration.java",
-      "norm_label": ".getappbounds()"
     },
     {
       "label": ".getWindowingMode()",
@@ -12160,7 +12232,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_navigation_navigationmanager_navigationmanager_determinestartdestination",
       "community": 43,
-      "community_name": "NavigationManager",
+      "community_name": "LockScreenOverlayManager.kt",
       "norm_label": ".determinestartdestination()"
     },
     {
@@ -12172,7 +12244,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_navigation_navigationmanager_navigationmanager_isapplockselflockenabled",
       "community": 43,
-      "community_name": "NavigationManager",
+      "community_name": "LockScreenOverlayManager.kt",
       "norm_label": ".isapplockselflockenabled()"
     },
     {
@@ -12184,7 +12256,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_navigation_navigationmanager_navigationmanager_ispasswordset",
       "community": 43,
-      "community_name": "NavigationManager",
+      "community_name": "LockScreenOverlayManager.kt",
       "norm_label": ".ispasswordset()"
     },
     {
@@ -12196,7 +12268,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_navigation_navigationmanager_navigationmanager_shouldshowappintro",
       "community": 43,
-      "community_name": "NavigationManager",
+      "community_name": "LockScreenOverlayManager.kt",
       "norm_label": ".shouldshowappintro()"
     },
     {
@@ -12208,8 +12280,56 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_navigation_navigationmanager_navigationmanager_shouldskippasswordcheck",
       "community": 43,
-      "community_name": "NavigationManager",
+      "community_name": "LockScreenOverlayManager.kt",
       "norm_label": ".shouldskippasswordcheck()"
+    },
+    {
+      "label": ".markIntroAsCompleted()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/appintro/domain/AppIntroManager.kt",
+      "source_location": "L16",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_appintro_domain_appintromanager_appintromanager_markintroascompleted",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": ".markintroascompleted()"
+    },
+    {
+      "label": ".shouldShowIntro()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/appintro/domain/AppIntroManager.kt",
+      "source_location": "L11",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_appintro_domain_appintromanager_appintromanager_shouldshowintro",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": ".shouldshowintro()"
+    },
+    {
+      "label": ".removeOverlay()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/LockScreenOverlayManager.kt",
+      "source_location": "L274",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_lockscreenoverlaymanager_lockscreenoverlaymanager_removeoverlay",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": ".removeoverlay()"
+    },
+    {
+      "label": ".showOverlay()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/LockScreenOverlayManager.kt",
+      "source_location": "L56",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_lockscreenoverlaymanager_lockscreenoverlaymanager_showoverlay",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": ".showoverlay()"
     },
     {
       "label": ".handleOnBackPressed()",
@@ -12220,8 +12340,56 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_passwordoverlayscreen_passwordoverlayactivity_oncreate_object_androidx_l92_handleonbackpressed",
       "community": 43,
-      "community_name": "NavigationManager",
+      "community_name": "LockScreenOverlayManager.kt",
       "norm_label": ".handleonbackpressed()"
+    },
+    {
+      "label": ".onCreate()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt",
+      "source_location": "L22",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_transparentbiometricactivity_oncreate",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": ".oncreate()"
+    },
+    {
+      "label": ".onAuthenticationError()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt",
+      "source_location": "L41",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_transparentbiometricactivity_oncreate_object_biometricprompt_l40_onauthenticationerror",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": ".onauthenticationerror()"
+    },
+    {
+      "label": ".onAuthenticationSucceeded()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt",
+      "source_location": "L47",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_transparentbiometricactivity_oncreate_object_biometricprompt_l40_onauthenticationsucceeded",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": ".onauthenticationsucceeded()"
+    },
+    {
+      "label": ".onPause()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt",
+      "source_location": "L82",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_transparentbiometricactivity_onpause",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": ".onpause()"
     },
     {
       "label": ".handleOnResume()",
@@ -12232,7 +12400,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_mainactivity_mainactivity_handleonresume",
       "community": 43,
-      "community_name": "NavigationManager",
+      "community_name": "LockScreenOverlayManager.kt",
       "norm_label": ".handleonresume()"
     },
     {
@@ -12244,8 +12412,32 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_mainactivity_mainactivity_oncreate",
       "community": 43,
-      "community_name": "NavigationManager",
+      "community_name": "LockScreenOverlayManager.kt",
       "norm_label": ".oncreate()"
+    },
+    {
+      "label": "AppLockTheme()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/theme/Theme.kt",
+      "source_location": "L18",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_theme_theme_applocktheme",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "applocktheme()"
+    },
+    {
+      "label": ".setDefaultToken()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/view/WindowManagerImpl.java",
+      "source_location": "L13",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_view_windowmanagerimpl_windowmanagerimpl_setdefaulttoken",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": ".setdefaulttoken()"
     },
     {
       "label": ".getTasks()",
@@ -12320,76 +12512,64 @@
       "norm_label": ".gettasks()"
     },
     {
-      "label": "AccessibilityServiceGuideDialog()",
+      "label": ".generateSalt()",
       "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/AccessibilityServiceGuideDialog.kt",
-      "source_location": "L16",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt",
+      "source_location": "L27",
       "_callable": true,
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_components_accessibilityserviceguidedialog_accessibilityserviceguidedialog",
+      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils_securityutils_generatesalt",
       "community": 45,
-      "community_name": "Dp",
-      "norm_label": "accessibilityserviceguidedialog()"
+      "community_name": "SecurityUtils",
+      "norm_label": ".generatesalt()"
     },
     {
-      "label": "AdminPasswordVerificationDialog()",
+      "label": ".hashPassword()",
       "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/AdminPasswordVerificationDialog.kt",
-      "source_location": "L34",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt",
+      "source_location": "L33",
       "_callable": true,
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_components_adminpasswordverificationdialog_adminpasswordverificationdialog",
+      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils_securityutils_hashpassword",
       "community": 45,
-      "community_name": "Dp",
-      "norm_label": "adminpasswordverificationdialog()"
+      "community_name": "SecurityUtils",
+      "norm_label": ".hashpassword()"
     },
     {
-      "label": "AntiUninstallAccessibilityPermissionDialog()",
+      "label": ".isSaltedHash()",
       "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/AntiUninstallAccessibilityPermissionDialog.kt",
-      "source_location": "L22",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt",
+      "source_location": "L55",
       "_callable": true,
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_components_antiuninstallaccessibilitypermissiondialog_antiuninstallaccessibilitypermissiondialog",
+      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils_securityutils_issaltedhash",
       "community": 45,
-      "community_name": "Dp",
-      "norm_label": "antiuninstallaccessibilitypermissiondialog()"
+      "community_name": "SecurityUtils",
+      "norm_label": ".issaltedhash()"
     },
     {
-      "label": "DeviceAdminPermissionDialog()",
+      "label": ".sanitizePassword()",
       "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/DeviceAdminPermissionDialog.kt",
-      "source_location": "L22",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt",
+      "source_location": "L18",
       "_callable": true,
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_components_deviceadminpermissiondialog_deviceadminpermissiondialog",
+      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils_securityutils_sanitizepassword",
       "community": 45,
-      "community_name": "Dp",
-      "norm_label": "deviceadminpermissiondialog()"
+      "community_name": "SecurityUtils",
+      "norm_label": ".sanitizepassword()"
     },
     {
-      "label": "ShizukuPermissionDialog()",
+      "label": ".verifyPassword()",
       "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/ShizukuPermissionDialog.kt",
-      "source_location": "L22",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt",
+      "source_location": "L71",
       "_callable": true,
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_components_shizukupermissiondialog_shizukupermissiondialog",
+      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils_securityutils_verifypassword",
       "community": 45,
-      "community_name": "Dp",
-      "norm_label": "shizukupermissiondialog()"
-    },
-    {
-      "label": "UsageStatsPermission()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/UsageStatsPermission.kt",
-      "source_location": "L20",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_components_usagestatspermission_usagestatspermission",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "usagestatspermission()"
+      "community_name": "SecurityUtils",
+      "norm_label": ".verifypassword()"
     },
     {
       "label": ".checkContentUriPermissionFull()",
@@ -12572,18 +12752,6 @@
       "norm_label": ".query()"
     },
     {
-      "label": ".freeStorage()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/content/pm/IPackageManager.java",
-      "source_location": "L394",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager_ipackagemanager_freestorage",
-      "community": 47,
-      "community_name": "IPackageManager.java",
-      "norm_label": ".freestorage()"
-    },
-    {
       "label": ".getArchivedAppIcon()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/content/pm/IPackageManager.java",
@@ -12592,7 +12760,7 @@
       "_origin": "ast",
       "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager_ipackagemanager_getarchivedappicon",
       "community": 47,
-      "community_name": "IPackageManager.java",
+      "community_name": "android.graphics.Bitmap",
       "norm_label": ".getarchivedappicon()"
     },
     {
@@ -12604,20 +12772,8 @@
       "_origin": "ast",
       "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager_ipackagemanager_getinstantappicon",
       "community": 47,
-      "community_name": "IPackageManager.java",
+      "community_name": "android.graphics.Bitmap",
       "norm_label": ".getinstantappicon()"
-    },
-    {
-      "label": ".getLaunchIntentSenderForPackage()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/content/pm/IPackageManager.java",
-      "source_location": "L626",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager_ipackagemanager_getlaunchintentsenderforpackage",
-      "community": 47,
-      "community_name": "IPackageManager.java",
-      "norm_label": ".getlaunchintentsenderforpackage()"
     },
     {
       "label": ".isAppArchivable()",
@@ -12628,20 +12784,8 @@
       "_origin": "ast",
       "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager_ipackagemanager_isapparchivable",
       "community": 47,
-      "community_name": "IPackageManager.java",
+      "community_name": "android.graphics.Bitmap",
       "norm_label": ".isapparchivable()"
-    },
-    {
-      "label": ".setComponentEnabledSettings()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/content/pm/IPackageManager.java",
-      "source_location": "L318",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager_ipackagemanager_setcomponentenabledsettings",
-      "community": 47,
-      "community_name": "IPackageManager.java",
-      "norm_label": ".setcomponentenabledsettings()"
     },
     {
       "label": "AlphanumericPasswordOverlayScreen()",
@@ -13172,172 +13316,40 @@
       "norm_label": ".updatesearchquery()"
     },
     {
-      "label": ".onCreate()",
+      "label": ".freeStorage()",
       "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt",
-      "source_location": "L22",
+      "source_file": "hidden-api/src/main/java/android/content/pm/IPackageManager.java",
+      "source_location": "L394",
       "_callable": true,
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_transparentbiometricactivity_oncreate",
+      "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager_ipackagemanager_freestorage",
       "community": 50,
-      "community_name": "TransparentBiometricActivity.kt",
-      "norm_label": ".oncreate()"
+      "community_name": "android.content.IntentSender",
+      "norm_label": ".freestorage()"
     },
     {
-      "label": ".onAuthenticationError()",
+      "label": ".getLaunchIntentSenderForPackage()",
       "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt",
-      "source_location": "L41",
+      "source_file": "hidden-api/src/main/java/android/content/pm/IPackageManager.java",
+      "source_location": "L626",
       "_callable": true,
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_transparentbiometricactivity_oncreate_object_biometricprompt_l40_onauthenticationerror",
+      "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager_ipackagemanager_getlaunchintentsenderforpackage",
       "community": 50,
-      "community_name": "TransparentBiometricActivity.kt",
-      "norm_label": ".onauthenticationerror()"
+      "community_name": "android.content.IntentSender",
+      "norm_label": ".getlaunchintentsenderforpackage()"
     },
     {
-      "label": ".onAuthenticationSucceeded()",
+      "label": ".setComponentEnabledSettings()",
       "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt",
-      "source_location": "L47",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_transparentbiometricactivity_oncreate_object_biometricprompt_l40_onauthenticationsucceeded",
-      "community": 50,
-      "community_name": "TransparentBiometricActivity.kt",
-      "norm_label": ".onauthenticationsucceeded()"
-    },
-    {
-      "label": ".onPause()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt",
-      "source_location": "L82",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_transparentbiometricactivity_onpause",
-      "community": 50,
-      "community_name": "TransparentBiometricActivity.kt",
-      "norm_label": ".onpause()"
-    },
-    {
-      "label": ".currentUiModeSupportsErrorDialogs()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/ActivityTaskManager.java",
-      "source_location": "L179",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitytaskmanager_activitytaskmanager_currentuimodesupportserrordialogs",
-      "community": 51,
-      "community_name": "androidx.annotation.NonNull",
-      "norm_label": ".currentuimodesupportserrordialogs()"
-    },
-    {
-      "label": ".getConfiguration()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/TaskInfo.java",
-      "source_location": "L311",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_taskinfo_taskinfo_getconfiguration",
-      "community": 51,
-      "community_name": "androidx.annotation.NonNull",
-      "norm_label": ".getconfiguration()"
-    },
-    {
-      "label": ".activityTypeToString()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
-      "source_location": "L239",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_activitytypetostring",
-      "community": 51,
-      "community_name": "androidx.annotation.NonNull",
-      "norm_label": ".activitytypetostring()"
-    },
-    {
-      "label": ".alwaysOnTopToString()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
-      "source_location": "L247",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_alwaysontoptostring",
-      "community": 51,
-      "community_name": "androidx.annotation.NonNull",
-      "norm_label": ".alwaysontoptostring()"
-    },
-    {
-      "label": ".areConfigurationsEqualForDisplay()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
-      "source_location": "L223",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_areconfigurationsequalfordisplay",
-      "community": 51,
-      "community_name": "androidx.annotation.NonNull",
-      "norm_label": ".areconfigurationsequalfordisplay()"
-    },
-    {
-      "label": ".diffToString()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
-      "source_location": "L255",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_difftostring",
-      "community": 51,
-      "community_name": "androidx.annotation.NonNull",
-      "norm_label": ".difftostring()"
-    },
-    {
-      "label": ".getBounds()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
+      "source_file": "hidden-api/src/main/java/android/content/pm/IPackageManager.java",
       "source_location": "L318",
       "_callable": true,
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_getbounds",
+      "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager_ipackagemanager_setcomponentenabledsettings",
       "community": 51,
-      "community_name": "androidx.annotation.NonNull",
-      "norm_label": ".getbounds()"
-    },
-    {
-      "label": ".getMaxBounds()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
-      "source_location": "L336",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_getmaxbounds",
-      "community": 51,
-      "community_name": "androidx.annotation.NonNull",
-      "norm_label": ".getmaxbounds()"
-    },
-    {
-      "label": ".windowingModeToString()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
-      "source_location": "L231",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_windowconfiguration_windowconfiguration_windowingmodetostring",
-      "community": 51,
-      "community_name": "androidx.annotation.NonNull",
-      "norm_label": ".windowingmodetostring()"
-    },
-    {
-      "label": "finishPasswordSetup()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/navigation/AppNavigator.kt",
-      "source_location": "L165",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_navigation_appnavigator_finishpasswordsetup",
-      "community": 52,
-      "community_name": "Screen",
-      "norm_label": "finishpasswordsetup()"
+      "community_name": "android.content.pm.PackageManager.ComponentEnabledSetting",
+      "norm_label": ".setcomponentenabledsettings()"
     },
     {
       "label": "AlphanumericSetPasswordScreen()",
@@ -13350,18 +13362,6 @@
       "community": 52,
       "community_name": "Screen",
       "norm_label": "alphanumericsetpasswordscreen()"
-    },
-    {
-      "label": "PatternSetPasswordScreen()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/setpassword/ui/PatternSetPasswordScreen.kt",
-      "source_location": "L52",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_setpassword_ui_patternsetpasswordscreen_patternsetpasswordscreen",
-      "community": 52,
-      "community_name": "Screen",
-      "norm_label": "patternsetpasswordscreen()"
     },
     {
       "label": ".attachBaseContext()",
@@ -13556,6 +13556,18 @@
       "norm_label": ".getrecenttasks()"
     },
     {
+      "label": ".moveTaskToFront()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L142",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_activitymanager_movetasktofront",
+      "community": 56,
+      "community_name": "AppTask",
+      "norm_label": ".movetasktofront()"
+    },
+    {
       "label": ".finishAndRemoveTask()",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
@@ -13590,6 +13602,18 @@
       "community": 56,
       "community_name": "AppTask",
       "norm_label": ".setexcludefromrecents()"
+    },
+    {
+      "label": ".startActivity()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/app/ActivityManager.kt",
+      "source_location": "L1013",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_apptask_startactivity",
+      "community": 56,
+      "community_name": "AppTask",
+      "norm_label": ".startactivity()"
     },
     {
       "label": ".dump()",
@@ -13700,6 +13724,30 @@
       "norm_label": ".setactivitycontroller()"
     },
     {
+      "label": ".asInterface()",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/content/pm/IPackageManager.java",
+      "source_location": "L709",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager_stub_asinterface",
+      "community": 58,
+      "community_name": "Stub",
+      "norm_label": ".asinterface()"
+    },
+    {
+      "label": "finishPasswordSetup()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/navigation/AppNavigator.kt",
+      "source_location": "L165",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_core_navigation_appnavigator_finishpasswordsetup",
+      "community": 6,
+      "community_name": "Dot",
+      "norm_label": "finishpasswordsetup()"
+    },
+    {
       "label": "createBatteryOptimizationIntent()",
       "file_type": "code",
       "source_file": "app/src/main/java/dev/pranav/applock/core/utils/AppLockUtils.kt",
@@ -13707,8 +13755,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_utils_applockutils_createbatteryoptimizationintent",
-      "community": 58,
-      "community_name": "vibrate",
+      "community": 6,
+      "community_name": "Dot",
       "norm_label": "createbatteryoptimizationintent()"
     },
     {
@@ -13719,8 +13767,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_utils_applockutils_getvibrator",
-      "community": 58,
-      "community_name": "vibrate",
+      "community": 6,
+      "community_name": "Dot",
       "norm_label": "getvibrator()"
     },
     {
@@ -13731,8 +13779,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_utils_applockutils_launchbatterysettings",
-      "community": 58,
-      "community_name": "vibrate",
+      "community": 6,
+      "community_name": "Dot",
       "norm_label": "launchbatterysettings()"
     },
     {
@@ -13743,8 +13791,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_utils_applockutils_launchgeneralbatterysettings",
-      "community": 58,
-      "community_name": "vibrate",
+      "community": 6,
+      "community_name": "Dot",
       "norm_label": "launchgeneralbatterysettings()"
     },
     {
@@ -13755,8 +13803,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_utils_applockutils_showbatteryoptimizationtoast",
-      "community": 58,
-      "community_name": "vibrate",
+      "community": 6,
+      "community_name": "Dot",
       "norm_label": "showbatteryoptimizationtoast()"
     },
     {
@@ -13767,33 +13815,9 @@
       "_callable": true,
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_utils_applockutils_vibrate",
-      "community": 58,
-      "community_name": "vibrate",
+      "community": 6,
+      "community_name": "Dot",
       "norm_label": "vibrate()"
-    },
-    {
-      "label": ".markIntroAsCompleted()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/appintro/domain/AppIntroManager.kt",
-      "source_location": "L16",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_appintro_domain_appintromanager_appintromanager_markintroascompleted",
-      "community": 59,
-      "community_name": "AppIntroManager",
-      "norm_label": ".markintroascompleted()"
-    },
-    {
-      "label": ".shouldShowIntro()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/appintro/domain/AppIntroManager.kt",
-      "source_location": "L11",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_appintro_domain_appintromanager_appintromanager_shouldshowintro",
-      "community": 59,
-      "community_name": "AppIntroManager",
-      "norm_label": ".shouldshowintro()"
     },
     {
       "label": "PatternLockScreen()",
@@ -13842,6 +13866,18 @@
       "community": 6,
       "community_name": "Dot",
       "norm_label": ".onstart()"
+    },
+    {
+      "label": "PatternSetPasswordScreen()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/setpassword/ui/PatternSetPasswordScreen.kt",
+      "source_location": "L52",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_setpassword_ui_patternsetpasswordscreen_patternsetpasswordscreen",
+      "community": 6,
+      "community_name": "Dot",
+      "norm_label": "patternsetpasswordscreen()"
     },
     {
       "label": ".onDotConnected()",
@@ -14226,42 +14262,6 @@
       "community": 64,
       "community_name": "AppIconCache.kt",
       "norm_label": ".getlabel()"
-    },
-    {
-      "label": "PageIndicator()",
-      "file_type": "code",
-      "source_file": "appintro/src/main/java/dev/pranav/appintro/PageIndicator.kt",
-      "source_location": "L53",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "appintro_src_main_java_dev_pranav_appintro_pageindicator_pageindicator",
-      "community": 65,
-      "community_name": "PageIndicator.kt",
-      "norm_label": "pageindicator()"
-    },
-    {
-      "label": "PageIndicators()",
-      "file_type": "code",
-      "source_file": "appintro/src/main/java/dev/pranav/appintro/PageIndicator.kt",
-      "source_location": "L27",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "appintro_src_main_java_dev_pranav_appintro_pageindicator_pageindicators",
-      "community": 65,
-      "community_name": "PageIndicator.kt",
-      "norm_label": "pageindicators()"
-    },
-    {
-      "label": ".setDefaultToken()",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/view/WindowManagerImpl.java",
-      "source_location": "L13",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_view_windowmanagerimpl_windowmanagerimpl_setdefaulttoken",
-      "community": 66,
-      "community_name": "WindowManagerImpl",
-      "norm_label": ".setdefaulttoken()"
     },
     {
       "label": ".findPersistentPreferredActivity()",
@@ -16604,17 +16604,6 @@
       "norm_label": "taskinfo"
     },
     {
-      "label": "android.os.Binder",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "android_os_binder",
-      "community": 11,
-      "community_name": "android.os.IBinder",
-      "norm_label": "android.os.binder"
-    },
-    {
       "label": "android.os.IBinder",
       "file_type": "code",
       "source_file": "",
@@ -16624,17 +16613,6 @@
       "community": 11,
       "community_name": "android.os.IBinder",
       "norm_label": "android.os.ibinder"
-    },
-    {
-      "label": "android.os.IInterface",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "android_os_iinterface",
-      "community": 11,
-      "community_name": "android.os.IBinder",
-      "norm_label": "android.os.iinterface"
     },
     {
       "label": "ApplicationErrorReport",
@@ -16681,15 +16659,103 @@
       "norm_label": "contentprovidernative.java"
     },
     {
-      "label": "IWindowManager.java",
+      "label": "BackendServiceManager.kt",
       "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/view/IWindowManager.java",
+      "source_file": "app/src/main/java/dev/pranav/applock/data/manager/BackendServiceManager.kt",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_view_iwindowmanager",
-      "community": 11,
-      "community_name": "android.os.IBinder",
-      "norm_label": "iwindowmanager.java"
+      "id": "app_src_main_java_dev_pranav_applock_data_manager_backendservicemanager",
+      "community": 111,
+      "community_name": "BackendImplementation",
+      "norm_label": "backendservicemanager.kt"
+    },
+    {
+      "label": "AppLockRepository.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository",
+      "community": 111,
+      "community_name": "BackendImplementation",
+      "norm_label": "applockrepository.kt"
+    },
+    {
+      "label": "ACCESSIBILITY",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt",
+      "source_location": "L144",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository_backendimplementation_accessibility",
+      "community": 111,
+      "community_name": "BackendImplementation",
+      "norm_label": "accessibility"
+    },
+    {
+      "label": "SHIZUKU",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt",
+      "source_location": "L146",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository_backendimplementation_shizuku",
+      "community": 111,
+      "community_name": "BackendImplementation",
+      "norm_label": "shizuku"
+    },
+    {
+      "label": "USAGE_STATS",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt",
+      "source_location": "L145",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository_backendimplementation_usage_stats",
+      "community": 111,
+      "community_name": "BackendImplementation",
+      "norm_label": "usage_stats"
+    },
+    {
+      "label": "android",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "android",
+      "community": 13,
+      "community_name": "UsageLockService",
+      "norm_label": "android"
+    },
+    {
+      "label": "DeviceAdmin.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/broadcast/DeviceAdmin.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin",
+      "community": 13,
+      "community_name": "UsageLockService",
+      "norm_label": "deviceadmin.kt"
+    },
+    {
+      "label": "Context",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin_kt_context",
+      "community": 13,
+      "community_name": "UsageLockService",
+      "norm_label": "context"
+    },
+    {
+      "label": "SharedPreferences",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin_kt_sharedpreferences",
+      "community": 13,
+      "community_name": "UsageLockService",
+      "norm_label": "sharedpreferences"
     },
     {
       "label": "UsageLockService.kt",
@@ -16756,6 +16822,17 @@
       "community": 13,
       "community_name": "UsageLockService",
       "norm_label": "service"
+    },
+    {
+      "label": "DeviceAdminReceiver",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "deviceadminreceiver",
+      "community": 13,
+      "community_name": "UsageLockService",
+      "norm_label": "deviceadminreceiver"
     },
     {
       "label": "Timer",
@@ -16846,6 +16923,17 @@
       "norm_label": "serviceinfo"
     },
     {
+      "label": "androidx.annotation.NonNull",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "androidx_annotation_nonnull",
+      "community": 15,
+      "community_name": "WindowConfiguration",
+      "norm_label": "androidx.annotation.nonnull"
+    },
+    {
       "label": "Creator",
       "file_type": "code",
       "source_file": "",
@@ -16868,17 +16956,6 @@
       "norm_label": "override"
     },
     {
-      "label": "android.content.LocusId",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "android_content_locusid",
-      "community": 16,
-      "community_name": "TaskInfo",
-      "norm_label": "android.content.locusid"
-    },
-    {
       "label": "android.content.pm.ActivityInfo",
       "file_type": "code",
       "source_file": "",
@@ -16888,6 +16965,17 @@
       "community": 16,
       "community_name": "TaskInfo",
       "norm_label": "android.content.pm.activityinfo"
+    },
+    {
+      "label": "android.content.res.Configuration",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "android_content_res_configuration",
+      "community": 16,
+      "community_name": "TaskInfo",
+      "norm_label": "android.content.res.configuration"
     },
     {
       "label": "android.graphics.Point",
@@ -16901,15 +16989,15 @@
       "norm_label": "android.graphics.point"
     },
     {
-      "label": "android.os.Parcel",
+      "label": "androidx.annotation.Nullable",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "android_os_parcel",
+      "id": "androidx_annotation_nullable",
       "community": 16,
       "community_name": "TaskInfo",
-      "norm_label": "android.os.parcel"
+      "norm_label": "androidx.annotation.nullable"
     },
     {
       "label": "TaskInfo.java",
@@ -17000,6 +17088,17 @@
       "norm_label": "splashscreenviewparcelable.java"
     },
     {
+      "label": "Activity",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "activity",
+      "community": 18,
+      "community_name": "TaskInfo",
+      "norm_label": "activity"
+    },
+    {
       "label": "ConfigurationInfo",
       "file_type": "code",
       "source_file": "",
@@ -17044,6 +17143,17 @@
       "norm_label": "activityinfo"
     },
     {
+      "label": "Bitmap",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_kt_bitmap",
+      "community": 18,
+      "community_name": "TaskInfo",
+      "norm_label": "bitmap"
+    },
+    {
       "label": "Configuration",
       "file_type": "code",
       "source_file": "",
@@ -17064,6 +17174,17 @@
       "community": 18,
       "community_name": "TaskInfo",
       "norm_label": "ibinder"
+    },
+    {
+      "label": "Intent",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_kt_intent",
+      "community": 18,
+      "community_name": "TaskInfo",
+      "norm_label": "intent"
     },
     {
       "label": "LocusId",
@@ -17150,7 +17271,7 @@
       "_origin": "ast",
       "id": "androidx_annotation_requirespermission",
       "community": 20,
-      "community_name": "IUidObserver",
+      "community_name": "androidx.annotation.RequiresPermission",
       "norm_label": "androidx.annotation.requirespermission"
     },
     {
@@ -17161,19 +17282,8 @@
       "_origin": "ast",
       "id": "hidden_api_src_main_java_android_app_iuidfrozenstatechangedcallback",
       "community": 20,
-      "community_name": "IUidObserver",
+      "community_name": "androidx.annotation.RequiresPermission",
       "norm_label": "iuidfrozenstatechangedcallback.java"
-    },
-    {
-      "label": "IUidObserver.java",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_iuidobserver",
-      "community": 20,
-      "community_name": "IUidObserver",
-      "norm_label": "iuidobserver.java"
     },
     {
       "label": "android.graphics.Rect",
@@ -17319,6 +17429,17 @@
       "norm_label": "service"
     },
     {
+      "label": "android.content.LocusId",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "android_content_locusid",
+      "community": 25,
+      "community_name": "IActivityManager.java",
+      "norm_label": "android.content.locusid"
+    },
+    {
       "label": "android.content.pm.ApplicationInfo",
       "file_type": "code",
       "source_file": "",
@@ -17330,6 +17451,17 @@
       "norm_label": "android.content.pm.applicationinfo"
     },
     {
+      "label": "android.os.Binder",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "android_os_binder",
+      "community": 25,
+      "community_name": "IActivityManager.java",
+      "norm_label": "android.os.binder"
+    },
+    {
       "label": "android.os.Debug",
       "file_type": "code",
       "source_file": "",
@@ -17339,6 +17471,17 @@
       "community": 25,
       "community_name": "IActivityManager.java",
       "norm_label": "android.os.debug"
+    },
+    {
+      "label": "android.os.IInterface",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "android_os_iinterface",
+      "community": 25,
+      "community_name": "IActivityManager.java",
+      "norm_label": "android.os.iinterface"
     },
     {
       "label": "android.os.ParcelFileDescriptor",
@@ -17363,6 +17506,28 @@
       "norm_label": "iactivitymanager.java"
     },
     {
+      "label": "IPackageManager.java",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/content/pm/IPackageManager.java",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager",
+      "community": 25,
+      "community_name": "IActivityManager.java",
+      "norm_label": "ipackagemanager.java"
+    },
+    {
+      "label": "IWindowManager.java",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/view/IWindowManager.java",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_view_iwindowmanager",
+      "community": 25,
+      "community_name": "IActivityManager.java",
+      "norm_label": "iwindowmanager.java"
+    },
+    {
       "label": "AppIntroScreen.kt",
       "file_type": "code",
       "source_file": "app/src/main/java/dev/pranav/applock/features/appintro/ui/AppIntroScreen.kt",
@@ -17370,7 +17535,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_features_appintro_ui_appintroscreen",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "appintroscreen.kt"
     },
     {
@@ -17381,7 +17546,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_features_appintro_ui_appintroscreen_appusagemethod_accessibility",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "accessibility"
     },
     {
@@ -17392,7 +17557,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_features_appintro_ui_appintroscreen_appusagemethod_shizuku",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "shizuku"
     },
     {
@@ -17403,7 +17568,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_features_appintro_ui_appintroscreen_appusagemethod_usage_stats",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "usage_stats"
     },
     {
@@ -17414,7 +17579,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_features_appintro_ui_appintroscreen_kt_imagevector",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "imagevector"
     },
     {
@@ -17425,8 +17590,173 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_features_appintro_ui_appintroscreen_kt_navcontroller",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "navcontroller"
+    },
+    {
+      "label": "AccessibilityServiceGuideDialog.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/AccessibilityServiceGuideDialog.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_components_accessibilityserviceguidedialog",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "accessibilityserviceguidedialog.kt"
+    },
+    {
+      "label": "AdminPasswordVerificationDialog.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/AdminPasswordVerificationDialog.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_components_adminpasswordverificationdialog",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "adminpasswordverificationdialog.kt"
+    },
+    {
+      "label": "AntiUninstallAccessibilityPermissionDialog.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/AntiUninstallAccessibilityPermissionDialog.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_components_antiuninstallaccessibilitypermissiondialog",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "antiuninstallaccessibilitypermissiondialog.kt"
+    },
+    {
+      "label": "DeviceAdminPermissionDialog.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/DeviceAdminPermissionDialog.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_components_deviceadminpermissiondialog",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "deviceadminpermissiondialog.kt"
+    },
+    {
+      "label": "ShizukuPermissionDialog.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/ShizukuPermissionDialog.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_components_shizukupermissiondialog",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "shizukupermissiondialog.kt"
+    },
+    {
+      "label": "UsageStatsPermission.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/UsageStatsPermission.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_components_usagestatspermission",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "usagestatspermission.kt"
+    },
+    {
+      "label": "Accessibility.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/Accessibility.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_icons_accessibility",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "accessibility.kt"
+    },
+    {
+      "label": "BackspaceIcon.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/BackspaceIcon.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_icons_backspaceicon",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "backspaceicon.kt"
+    },
+    {
+      "label": "BatterySaver.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/BatterySaver.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_icons_batterysaver",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "batterysaver.kt"
+    },
+    {
+      "label": "BrightnessHigh.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/BrightnessHigh.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_icons_brightnesshigh",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "brightnesshigh.kt"
+    },
+    {
+      "label": "Discord.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/Discord.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_icons_discord",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "discord.kt"
+    },
+    {
+      "label": "FingerprintOff.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/FingerprintOff.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_icons_fingerprintoff",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "fingerprintoff.kt"
+    },
+    {
+      "label": "Github.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/Github.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_icons_github",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "github.kt"
+    },
+    {
+      "label": "Timer.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/Timer.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_icons_timer",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "timer.kt"
+    },
+    {
+      "label": "Theme.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/theme/Theme.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_theme_theme",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "theme.kt"
     },
     {
       "label": "AnimatedIntroPager.kt",
@@ -17436,7 +17766,7 @@
       "_origin": "ast",
       "id": "appintro_src_main_java_dev_pranav_appintro_animatedintropager",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "animatedintropager.kt"
     },
     {
@@ -17447,7 +17777,7 @@
       "_origin": "ast",
       "id": "appintro_src_main_java_dev_pranav_appintro_animatedintropager_kt_modifier",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "modifier"
     },
     {
@@ -17458,7 +17788,7 @@
       "_origin": "ast",
       "id": "appintro_src_main_java_dev_pranav_appintro_animatedintropager_kt_pagerstate",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "pagerstate"
     },
     {
@@ -17469,7 +17799,7 @@
       "_origin": "ast",
       "id": "appintro_src_main_java_dev_pranav_appintro_appintro",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "appintro.kt"
     },
     {
@@ -17480,7 +17810,7 @@
       "_origin": "ast",
       "id": "appintro_src_main_java_dev_pranav_appintro_appintro_kt_pagerstate",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "pagerstate"
     },
     {
@@ -17491,7 +17821,7 @@
       "_origin": "ast",
       "id": "appintro_src_main_java_dev_pranav_appintro_intropage",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "intropage.kt"
     },
     {
@@ -17502,7 +17832,7 @@
       "_origin": "ast",
       "id": "appintro_src_main_java_dev_pranav_appintro_intropagecontent",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "intropagecontent.kt"
     },
     {
@@ -17513,8 +17843,52 @@
       "_origin": "ast",
       "id": "appintro_src_main_java_dev_pranav_appintro_intropagecontent_kt_modifier",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "modifier"
+    },
+    {
+      "label": "PageIndicator.kt",
+      "file_type": "code",
+      "source_file": "appintro/src/main/java/dev/pranav/appintro/PageIndicator.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "appintro_src_main_java_dev_pranav_appintro_pageindicator",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "pageindicator.kt"
+    },
+    {
+      "label": "Color",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "appintro_src_main_java_dev_pranav_appintro_pageindicator_kt_color",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "color"
+    },
+    {
+      "label": "Modifier",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "appintro_src_main_java_dev_pranav_appintro_pageindicator_kt_modifier",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "modifier"
+    },
+    {
+      "label": "Dp",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "dp",
+      "community": 26,
+      "community_name": "Dp",
+      "norm_label": "dp"
     },
     {
       "label": "kotlinx",
@@ -17524,7 +17898,7 @@
       "_origin": "ast",
       "id": "kotlinx",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "kotlinx"
     },
     {
@@ -17535,7 +17909,7 @@
       "_origin": "ast",
       "id": "size",
       "community": 26,
-      "community_name": "AppIntroScreen.kt",
+      "community_name": "Dp",
       "norm_label": "size"
     },
     {
@@ -17583,26 +17957,15 @@
       "norm_label": "modifier"
     },
     {
-      "label": "Activity",
+      "label": "IUidObserver.java",
       "file_type": "code",
-      "source_file": "",
-      "source_location": "",
+      "source_file": "hidden-api/src/main/java/android/app/IUidObserver.java",
+      "source_location": "L1",
       "_origin": "ast",
-      "id": "activity",
+      "id": "hidden_api_src_main_java_android_app_iuidobserver",
       "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": "activity"
-    },
-    {
-      "label": "Bitmap",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_kt_bitmap",
-      "community": 28,
-      "community_name": "TaskDescription",
-      "norm_label": "bitmap"
+      "community_name": "IUidObserver",
+      "norm_label": "iuidobserver.java"
     },
     {
       "label": "DeviceUnlockReciever.kt",
@@ -17702,61 +18065,6 @@
       "community": 3,
       "community_name": "SettingsScreen.kt",
       "norm_label": "context"
-    },
-    {
-      "label": "BackendServiceManager.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/data/manager/BackendServiceManager.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_data_manager_backendservicemanager",
-      "community": 3,
-      "community_name": "SettingsScreen.kt",
-      "norm_label": "backendservicemanager.kt"
-    },
-    {
-      "label": "AppLockRepository.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository",
-      "community": 3,
-      "community_name": "SettingsScreen.kt",
-      "norm_label": "applockrepository.kt"
-    },
-    {
-      "label": "ACCESSIBILITY",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt",
-      "source_location": "L144",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository_backendimplementation_accessibility",
-      "community": 3,
-      "community_name": "SettingsScreen.kt",
-      "norm_label": "accessibility"
-    },
-    {
-      "label": "SHIZUKU",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt",
-      "source_location": "L146",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository_backendimplementation_shizuku",
-      "community": 3,
-      "community_name": "SettingsScreen.kt",
-      "norm_label": "shizuku"
-    },
-    {
-      "label": "USAGE_STATS",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/data/repository/AppLockRepository.kt",
-      "source_location": "L145",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_data_repository_applockrepository_backendimplementation_usage_stats",
-      "community": 3,
-      "community_name": "SettingsScreen.kt",
-      "norm_label": "usage_stats"
     },
     {
       "label": "MainScreen.kt",
@@ -17979,103 +18287,15 @@
       "norm_label": "navhostcontroller"
     },
     {
-      "label": "LockScreenOverlayManager.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/LockScreenOverlayManager.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_lockscreenoverlaymanager",
-      "community": 31,
-      "community_name": "LockScreenOverlayManager.kt",
-      "norm_label": "lockscreenoverlaymanager.kt"
-    },
-    {
-      "label": "ComposeView",
+      "label": "android.os.Parcel",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "composeview",
+      "id": "android_os_parcel",
       "community": 31,
-      "community_name": "LockScreenOverlayManager.kt",
-      "norm_label": "composeview"
-    },
-    {
-      "label": "Lifecycle",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "lifecycle",
-      "community": 31,
-      "community_name": "LockScreenOverlayManager.kt",
-      "norm_label": "lifecycle"
-    },
-    {
-      "label": "LifecycleOwner",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "lifecycleowner",
-      "community": 31,
-      "community_name": "LockScreenOverlayManager.kt",
-      "norm_label": "lifecycleowner"
-    },
-    {
-      "label": "OnBackPressedDispatcherOwner",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "onbackpresseddispatcherowner",
-      "community": 31,
-      "community_name": "LockScreenOverlayManager.kt",
-      "norm_label": "onbackpresseddispatcherowner"
-    },
-    {
-      "label": "SavedStateRegistry",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "savedstateregistry",
-      "community": 31,
-      "community_name": "LockScreenOverlayManager.kt",
-      "norm_label": "savedstateregistry"
-    },
-    {
-      "label": "SavedStateRegistryOwner",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "savedstateregistryowner",
-      "community": 31,
-      "community_name": "LockScreenOverlayManager.kt",
-      "norm_label": "savedstateregistryowner"
-    },
-    {
-      "label": "ViewModelStore",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "viewmodelstore",
-      "community": 31,
-      "community_name": "LockScreenOverlayManager.kt",
-      "norm_label": "viewmodelstore"
-    },
-    {
-      "label": "ViewModelStoreOwner",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "viewmodelstoreowner",
-      "community": 31,
-      "community_name": "LockScreenOverlayManager.kt",
-      "norm_label": "viewmodelstoreowner"
+      "community_name": "android.os.Parcel",
+      "norm_label": "android.os.parcel"
     },
     {
       "label": "AppLockManager.kt",
@@ -18111,17 +18331,6 @@
       "norm_label": "dev"
     },
     {
-      "label": "Bundle",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_kt_bundle",
-      "community": 33,
-      "community_name": "RunningAppProcessInfo",
-      "norm_label": "bundle"
-    },
-    {
       "label": "Context",
       "file_type": "code",
       "source_file": "",
@@ -18131,17 +18340,6 @@
       "community": 33,
       "community_name": "RunningAppProcessInfo",
       "norm_label": "context"
-    },
-    {
-      "label": "Intent",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_app_activitymanager_kt_intent",
-      "community": 33,
-      "community_name": "RunningAppProcessInfo",
-      "norm_label": "intent"
     },
     {
       "label": "IProcessObserver.kt",
@@ -18232,72 +18430,6 @@
       "norm_label": "uri"
     },
     {
-      "label": "android",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "android",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": "android"
-    },
-    {
-      "label": "DeviceAdmin.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/broadcast/DeviceAdmin.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": "deviceadmin.kt"
-    },
-    {
-      "label": "Context",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin_kt_context",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": "context"
-    },
-    {
-      "label": "SharedPreferences",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_broadcast_deviceadmin_kt_sharedpreferences",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": "sharedpreferences"
-    },
-    {
-      "label": "SecurityUtils.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": "securityutils.kt"
-    },
-    {
-      "label": "ByteArray",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils_kt_bytearray",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": "bytearray"
-    },
-    {
       "label": "AdminDisableActivity.kt",
       "file_type": "code",
       "source_file": "app/src/main/java/dev/pranav/applock/features/admin/AdminDisableActivity.kt",
@@ -18340,17 +18472,6 @@
       "community": 37,
       "community_name": "AdminDisableActivity.kt",
       "norm_label": "modifier"
-    },
-    {
-      "label": "DeviceAdminReceiver",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "deviceadminreceiver",
-      "community": 37,
-      "community_name": "AdminDisableActivity.kt",
-      "norm_label": "deviceadminreceiver"
     },
     {
       "label": "DevicePolicyManager",
@@ -18606,17 +18727,6 @@
       "norm_label": "androidx.annotation.intdef"
     },
     {
-      "label": "androidx.annotation.Nullable",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "androidx_annotation_nullable",
-      "community": 41,
-      "community_name": "WindowConfiguration.java",
-      "norm_label": "androidx.annotation.nullable"
-    },
-    {
       "label": "WindowConfiguration.java",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/WindowConfiguration.java",
@@ -18672,6 +18782,94 @@
       "norm_label": "iintentsender.java"
     },
     {
+      "label": "NavigationManager.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/navigation/NavigationManager.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_core_navigation_navigationmanager",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "navigationmanager.kt"
+    },
+    {
+      "label": "AppIntroManager.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/appintro/domain/AppIntroManager.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_appintro_domain_appintromanager",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "appintromanager.kt"
+    },
+    {
+      "label": "Context",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_appintro_domain_appintromanager_kt_context",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "context"
+    },
+    {
+      "label": "LockScreenOverlayManager.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/LockScreenOverlayManager.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_lockscreenoverlaymanager",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "lockscreenoverlaymanager.kt"
+    },
+    {
+      "label": "TransparentBiometricActivity.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "transparentbiometricactivity.kt"
+    },
+    {
+      "label": "BiometricPrompt",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_kt_biometricprompt",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "biometricprompt"
+    },
+    {
+      "label": "Bundle",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_kt_bundle",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "bundle"
+    },
+    {
+      "label": "FragmentActivity",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_kt_fragmentactivity",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "fragmentactivity"
+    },
+    {
       "label": "MainActivity.kt",
       "file_type": "code",
       "source_file": "app/src/main/java/dev/pranav/applock/MainActivity.kt",
@@ -18679,7 +18877,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_mainactivity",
       "community": 43,
-      "community_name": "NavigationManager",
+      "community_name": "LockScreenOverlayManager.kt",
       "norm_label": "mainactivity.kt"
     },
     {
@@ -18690,7 +18888,7 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_mainactivity_kt_bundle",
       "community": 43,
-      "community_name": "NavigationManager",
+      "community_name": "LockScreenOverlayManager.kt",
       "norm_label": "bundle"
     },
     {
@@ -18701,8 +18899,118 @@
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_mainactivity_kt_fragmentactivity",
       "community": 43,
-      "community_name": "NavigationManager",
+      "community_name": "LockScreenOverlayManager.kt",
       "norm_label": "fragmentactivity"
+    },
+    {
+      "label": "ComposeView",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "composeview",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "composeview"
+    },
+    {
+      "label": "WindowManagerImpl.java",
+      "file_type": "code",
+      "source_file": "hidden-api/src/main/java/android/view/WindowManagerImpl.java",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_view_windowmanagerimpl",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "windowmanagerimpl.java"
+    },
+    {
+      "label": "Lifecycle",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "lifecycle",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "lifecycle"
+    },
+    {
+      "label": "LifecycleOwner",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "lifecycleowner",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "lifecycleowner"
+    },
+    {
+      "label": "OnBackPressedDispatcherOwner",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "onbackpresseddispatcherowner",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "onbackpresseddispatcherowner"
+    },
+    {
+      "label": "SavedStateRegistry",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "savedstateregistry",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "savedstateregistry"
+    },
+    {
+      "label": "SavedStateRegistryOwner",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "savedstateregistryowner",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "savedstateregistryowner"
+    },
+    {
+      "label": "ViewModelStore",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "viewmodelstore",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "viewmodelstore"
+    },
+    {
+      "label": "ViewModelStoreOwner",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "viewmodelstoreowner",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "viewmodelstoreowner"
+    },
+    {
+      "label": "WindowManager",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "windowmanager",
+      "community": 43,
+      "community_name": "LockScreenOverlayManager.kt",
+      "norm_label": "windowmanager"
     },
     {
       "label": "Binder",
@@ -18749,180 +19057,26 @@
       "norm_label": "iinterface"
     },
     {
-      "label": "AccessibilityServiceGuideDialog.kt",
+      "label": "SecurityUtils.kt",
       "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/AccessibilityServiceGuideDialog.kt",
+      "source_file": "app/src/main/java/dev/pranav/applock/core/utils/SecurityUtils.kt",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_components_accessibilityserviceguidedialog",
+      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils",
       "community": 45,
-      "community_name": "Dp",
-      "norm_label": "accessibilityserviceguidedialog.kt"
+      "community_name": "SecurityUtils",
+      "norm_label": "securityutils.kt"
     },
     {
-      "label": "AdminPasswordVerificationDialog.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/AdminPasswordVerificationDialog.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_components_adminpasswordverificationdialog",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "adminpasswordverificationdialog.kt"
-    },
-    {
-      "label": "AntiUninstallAccessibilityPermissionDialog.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/AntiUninstallAccessibilityPermissionDialog.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_components_antiuninstallaccessibilitypermissiondialog",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "antiuninstallaccessibilitypermissiondialog.kt"
-    },
-    {
-      "label": "DeviceAdminPermissionDialog.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/DeviceAdminPermissionDialog.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_components_deviceadminpermissiondialog",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "deviceadminpermissiondialog.kt"
-    },
-    {
-      "label": "ShizukuPermissionDialog.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/ShizukuPermissionDialog.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_components_shizukupermissiondialog",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "shizukupermissiondialog.kt"
-    },
-    {
-      "label": "UsageStatsPermission.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/components/UsageStatsPermission.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_components_usagestatspermission",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "usagestatspermission.kt"
-    },
-    {
-      "label": "Accessibility.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/Accessibility.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_icons_accessibility",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "accessibility.kt"
-    },
-    {
-      "label": "BackspaceIcon.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/BackspaceIcon.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_icons_backspaceicon",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "backspaceicon.kt"
-    },
-    {
-      "label": "BatterySaver.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/BatterySaver.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_icons_batterysaver",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "batterysaver.kt"
-    },
-    {
-      "label": "BrightnessHigh.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/BrightnessHigh.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_icons_brightnesshigh",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "brightnesshigh.kt"
-    },
-    {
-      "label": "Discord.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/Discord.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_icons_discord",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "discord.kt"
-    },
-    {
-      "label": "FingerprintOff.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/FingerprintOff.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_icons_fingerprintoff",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "fingerprintoff.kt"
-    },
-    {
-      "label": "Github.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/Github.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_icons_github",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "github.kt"
-    },
-    {
-      "label": "Timer.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/Timer.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_icons_timer",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "timer.kt"
-    },
-    {
-      "label": "Theme.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/theme/Theme.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_theme_theme",
-      "community": 45,
-      "community_name": "Dp",
-      "norm_label": "theme.kt"
-    },
-    {
-      "label": "Dp",
+      "label": "ByteArray",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "dp",
+      "id": "app_src_main_java_dev_pranav_applock_core_utils_securityutils_kt_bytearray",
       "community": 45,
-      "community_name": "Dp",
-      "norm_label": "dp"
+      "community_name": "SecurityUtils",
+      "norm_label": "bytearray"
     },
     {
       "label": "android.content.res.AssetFileDescriptor",
@@ -19046,28 +19200,6 @@
       "norm_label": "suppresswarnings"
     },
     {
-      "label": "android.content.IntentSender",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "android_content_intentsender",
-      "community": 47,
-      "community_name": "IPackageManager.java",
-      "norm_label": "android.content.intentsender"
-    },
-    {
-      "label": "android.content.pm.PackageManager.ComponentEnabledSetting",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "android_content_pm_packagemanager_componentenabledsetting",
-      "community": 47,
-      "community_name": "IPackageManager.java",
-      "norm_label": "android.content.pm.packagemanager.componentenabledsetting"
-    },
-    {
       "label": "android.graphics.Bitmap",
       "file_type": "code",
       "source_file": "",
@@ -19075,7 +19207,7 @@
       "_origin": "ast",
       "id": "android_graphics_bitmap",
       "community": 47,
-      "community_name": "IPackageManager.java",
+      "community_name": "android.graphics.Bitmap",
       "norm_label": "android.graphics.bitmap"
     },
     {
@@ -19086,19 +19218,8 @@
       "_origin": "ast",
       "id": "android_os_userhandle",
       "community": 47,
-      "community_name": "IPackageManager.java",
+      "community_name": "android.graphics.Bitmap",
       "norm_label": "android.os.userhandle"
-    },
-    {
-      "label": "IPackageManager.java",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/content/pm/IPackageManager.java",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_content_pm_ipackagemanager",
-      "community": 47,
-      "community_name": "IPackageManager.java",
-      "norm_label": "ipackagemanager.java"
     },
     {
       "label": "AlphanumericPasswordOverlayScreen.kt",
@@ -19132,6 +19253,17 @@
       "community": 48,
       "community_name": "AlphanumericPasswordOverlayScreen",
       "norm_label": "modifier"
+    },
+    {
+      "label": "Fingerprint.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/Fingerprint.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_ui_icons_fingerprint",
+      "community": 48,
+      "community_name": "AlphanumericPasswordOverlayScreen",
+      "norm_label": "fingerprint.kt"
     },
     {
       "label": "password",
@@ -19354,70 +19486,26 @@
       "norm_label": "viewmodel"
     },
     {
-      "label": "TransparentBiometricActivity.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/lockscreen/ui/TransparentBiometricActivity.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity",
-      "community": 50,
-      "community_name": "TransparentBiometricActivity.kt",
-      "norm_label": "transparentbiometricactivity.kt"
-    },
-    {
-      "label": "BiometricPrompt",
+      "label": "android.content.IntentSender",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_kt_biometricprompt",
+      "id": "android_content_intentsender",
       "community": 50,
-      "community_name": "TransparentBiometricActivity.kt",
-      "norm_label": "biometricprompt"
+      "community_name": "android.content.IntentSender",
+      "norm_label": "android.content.intentsender"
     },
     {
-      "label": "Bundle",
+      "label": "android.content.pm.PackageManager.ComponentEnabledSetting",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_kt_bundle",
-      "community": 50,
-      "community_name": "TransparentBiometricActivity.kt",
-      "norm_label": "bundle"
-    },
-    {
-      "label": "FragmentActivity",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_lockscreen_ui_transparentbiometricactivity_kt_fragmentactivity",
-      "community": 50,
-      "community_name": "TransparentBiometricActivity.kt",
-      "norm_label": "fragmentactivity"
-    },
-    {
-      "label": "android.content.res.Configuration",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "android_content_res_configuration",
+      "id": "android_content_pm_packagemanager_componentenabledsetting",
       "community": 51,
-      "community_name": "androidx.annotation.NonNull",
-      "norm_label": "android.content.res.configuration"
-    },
-    {
-      "label": "androidx.annotation.NonNull",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "androidx_annotation_nonnull",
-      "community": 51,
-      "community_name": "androidx.annotation.NonNull",
-      "norm_label": "androidx.annotation.nonnull"
+      "community_name": "android.content.pm.PackageManager.ComponentEnabledSetting",
+      "norm_label": "android.content.pm.packagemanager.componentenabledsetting"
     },
     {
       "label": "Screen.kt",
@@ -19448,28 +19536,6 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_features_setpassword_ui_alphanumericsetpasswordscreen_kt_navcontroller",
-      "community": 52,
-      "community_name": "Screen",
-      "norm_label": "navcontroller"
-    },
-    {
-      "label": "PatternSetPasswordScreen.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/setpassword/ui/PatternSetPasswordScreen.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_setpassword_ui_patternsetpasswordscreen",
-      "community": 52,
-      "community_name": "Screen",
-      "norm_label": "patternsetpasswordscreen.kt"
-    },
-    {
-      "label": "NavController",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_setpassword_ui_patternsetpasswordscreen_kt_navcontroller",
       "community": 52,
       "community_name": "Screen",
       "norm_label": "navcontroller"
@@ -19585,6 +19651,17 @@
       "norm_label": "ipackagedataobserver.java"
     },
     {
+      "label": "Bundle",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "hidden_api_src_main_java_android_app_activitymanager_kt_bundle",
+      "community": 56,
+      "community_name": "AppTask",
+      "norm_label": "bundle"
+    },
+    {
       "label": "IActivityController.java",
       "file_type": "code",
       "source_file": "hidden-api/src/main/java/android/app/IActivityController.java",
@@ -19602,8 +19679,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_utils_applockutils",
-      "community": 58,
-      "community_name": "vibrate",
+      "community": 6,
+      "community_name": "Dot",
       "norm_label": "applockutils.kt"
     },
     {
@@ -19613,8 +19690,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_utils_applockutils_kt_context",
-      "community": 58,
-      "community_name": "vibrate",
+      "community": 6,
+      "community_name": "Dot",
       "norm_label": "context"
     },
     {
@@ -19624,53 +19701,9 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_src_main_java_dev_pranav_applock_core_utils_applockutils_kt_intent",
-      "community": 58,
-      "community_name": "vibrate",
+      "community": 6,
+      "community_name": "Dot",
       "norm_label": "intent"
-    },
-    {
-      "label": "Vibrator",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "vibrator",
-      "community": 58,
-      "community_name": "vibrate",
-      "norm_label": "vibrator"
-    },
-    {
-      "label": "NavigationManager.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/core/navigation/NavigationManager.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_core_navigation_navigationmanager",
-      "community": 59,
-      "community_name": "AppIntroManager",
-      "norm_label": "navigationmanager.kt"
-    },
-    {
-      "label": "AppIntroManager.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/features/appintro/domain/AppIntroManager.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_appintro_domain_appintromanager",
-      "community": 59,
-      "community_name": "AppIntroManager",
-      "norm_label": "appintromanager.kt"
-    },
-    {
-      "label": "Context",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_features_appintro_domain_appintromanager_kt_context",
-      "community": 59,
-      "community_name": "AppIntroManager",
-      "norm_label": "context"
     },
     {
       "label": "PatternLockScreen.kt",
@@ -19706,6 +19739,17 @@
       "norm_label": "modifier"
     },
     {
+      "label": "PatternSetPasswordScreen.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/dev/pranav/applock/features/setpassword/ui/PatternSetPasswordScreen.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_src_main_java_dev_pranav_applock_features_setpassword_ui_patternsetpasswordscreen",
+      "community": 6,
+      "community_name": "Dot",
+      "norm_label": "patternsetpasswordscreen.kt"
+    },
+    {
       "label": "LockCallback",
       "file_type": "code",
       "source_file": "",
@@ -19717,15 +19761,15 @@
       "norm_label": "lockcallback"
     },
     {
-      "label": "Fingerprint.kt",
+      "label": "NavController",
       "file_type": "code",
-      "source_file": "app/src/main/java/dev/pranav/applock/ui/icons/Fingerprint.kt",
-      "source_location": "L1",
+      "source_file": "",
+      "source_location": "",
       "_origin": "ast",
-      "id": "app_src_main_java_dev_pranav_applock_ui_icons_fingerprint",
+      "id": "app_src_main_java_dev_pranav_applock_features_setpassword_ui_patternsetpasswordscreen_kt_navcontroller",
       "community": 6,
       "community_name": "Dot",
-      "norm_label": "fingerprint.kt"
+      "norm_label": "navcontroller"
     },
     {
       "label": "pattern",
@@ -19794,6 +19838,17 @@
       "norm_label": "modifier"
     },
     {
+      "label": "Vibrator",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "vibrator",
+      "community": 6,
+      "community_name": "Dot",
+      "norm_label": "vibrator"
+    },
+    {
       "label": "Debug",
       "file_type": "code",
       "source_file": "",
@@ -19838,6 +19893,17 @@
       "norm_label": "readme.md"
     },
     {
+      "label": "\ud83c\udf1f Credits & Acknowledgements",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "readme_credits_acknowledgements",
+      "community": 62,
+      "community_name": "README.md",
+      "norm_label": "\ud83c\udf1f credits & acknowledgements"
+    },
+    {
       "label": "Download",
       "file_type": "document",
       "source_file": "README.md",
@@ -19852,7 +19918,7 @@
       "label": "Features",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L63",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "readme_features",
       "community": 62,
@@ -19863,7 +19929,7 @@
       "label": "License",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L132",
+      "source_location": "L95",
       "_origin": "ast",
       "id": "readme_license",
       "community": 62,
@@ -19871,10 +19937,21 @@
       "norm_label": "license"
     },
     {
+      "label": "\u2728 New Features & Changes (in App Lock Nothing)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "readme_new_features_changes_in_app_lock_nothing",
+      "community": 62,
+      "community_name": "README.md",
+      "norm_label": "\u2728 new features & changes (in app lock nothing)"
+    },
+    {
       "label": "Overview",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L37",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "readme_overview",
       "community": 62,
@@ -19882,21 +19959,10 @@
       "norm_label": "overview"
     },
     {
-      "label": "Support Development",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L106",
-      "_origin": "ast",
-      "id": "readme_support_development",
-      "community": 62,
-      "community_name": "README.md",
-      "norm_label": "support development"
-    },
-    {
       "label": "Use Cases",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L97",
+      "source_location": "L86",
       "_origin": "ast",
       "id": "readme_use_cases",
       "community": 62,
@@ -19979,61 +20045,6 @@
       "community": 64,
       "community_name": "AppIconCache.kt",
       "norm_label": "imagebitmap"
-    },
-    {
-      "label": "PageIndicator.kt",
-      "file_type": "code",
-      "source_file": "appintro/src/main/java/dev/pranav/appintro/PageIndicator.kt",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "appintro_src_main_java_dev_pranav_appintro_pageindicator",
-      "community": 65,
-      "community_name": "PageIndicator.kt",
-      "norm_label": "pageindicator.kt"
-    },
-    {
-      "label": "Color",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "appintro_src_main_java_dev_pranav_appintro_pageindicator_kt_color",
-      "community": 65,
-      "community_name": "PageIndicator.kt",
-      "norm_label": "color"
-    },
-    {
-      "label": "Modifier",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "appintro_src_main_java_dev_pranav_appintro_pageindicator_kt_modifier",
-      "community": 65,
-      "community_name": "PageIndicator.kt",
-      "norm_label": "modifier"
-    },
-    {
-      "label": "WindowManagerImpl.java",
-      "file_type": "code",
-      "source_file": "hidden-api/src/main/java/android/view/WindowManagerImpl.java",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "hidden_api_src_main_java_android_view_windowmanagerimpl",
-      "community": 66,
-      "community_name": "WindowManagerImpl",
-      "norm_label": "windowmanagerimpl.java"
-    },
-    {
-      "label": "WindowManager",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "windowmanager",
-      "community": 66,
-      "community_name": "WindowManagerImpl",
-      "norm_label": "windowmanager"
     },
     {
       "label": "ResolveInfo",
@@ -43773,29 +43784,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L106",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "readme",
-      "target": "readme_support_development",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L132",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "readme",
-      "target": "readme_license",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L37",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
       "source": "readme",
@@ -43806,7 +43795,29 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L63",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme",
+      "target": "readme_credits_acknowledgements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme",
+      "target": "readme_new_features_changes_in_app_lock_nothing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast",
       "source": "readme",
@@ -43828,11 +43839,22 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L97",
+      "source_location": "L86",
       "weight": 1.0,
       "_origin": "ast",
       "source": "readme",
       "target": "readme_use_cases",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme",
+      "target": "readme_license",
       "confidence_score": 1.0
     },
     {
@@ -56876,5 +56898,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "52e028af66d135ebf6ca98aa87d8684c8feffdbe"
+  "built_at_commit": "134a1f6ad47cfbe8fe497f141d8495e1e31227ba"
 }
