@@ -261,6 +261,7 @@ fun AntiUninstallScreen(
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
+        containerColor = dev.pranav.applock.ui.theme.NothingBlack,
         topBar = {
             SearchTopBar(
                 title = "Anti-Uninstall Protection",

@@ -48,6 +48,7 @@ fun TriggerExclusionsScreen(
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
+        containerColor = dev.pranav.applock.ui.theme.NothingBlack,
         topBar = {
             SearchTopBar(
                 title = "Trigger Exclusions",

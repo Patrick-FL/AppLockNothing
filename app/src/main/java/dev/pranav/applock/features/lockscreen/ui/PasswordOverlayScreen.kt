@@ -18,6 +18,7 @@ import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.*
@@ -383,7 +384,7 @@ fun PinPasswordOverlayScreen(
 
     Surface(
         modifier = modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.surfaceContainer
+        color = dev.pranav.applock.ui.theme.NothingBlack
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
             if (showCloseButton) {
@@ -397,7 +398,7 @@ fun PinPasswordOverlayScreen(
                     Icon(
                         imageVector = Icons.Default.Close,
                         contentDescription = "Close",
-                        tint = MaterialTheme.colorScheme.onSurface
+                        tint = dev.pranav.applock.ui.theme.NothingTextPrimary
                     )
                 }
             }
@@ -970,9 +971,9 @@ fun KeypadRow(
             val isPressed by interactionSource.collectIsPressedAsState()
 
             val targetColor = if (isPressed) {
-                MaterialTheme.colorScheme.primaryContainer
+                dev.pranav.applock.ui.theme.NothingRed
             } else {
-                if (icons.isNotEmpty() && index < icons.size && icons[index] != null) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.surfaceBright
+                dev.pranav.applock.ui.theme.NothingSurface
             }
 
             val animatedContainerColor by animateColorAsState(
@@ -981,48 +982,43 @@ fun KeypadRow(
                 label = "ButtonContainerColorAnimation"
             )
 
-            val normalTextSize = MaterialTheme.typography.headlineLargeEmphasized.fontSize
-
-            val targetFontSize = if (isPressed) normalTextSize * 1.2f else normalTextSize
-
-            val animatedFontSize by animateFloatAsState(
-                targetValue = targetFontSize.value,
-                animationSpec = tween(durationMillis = 100),
-                label = "ButtonTextSizeAnimation"
-            )
-
-            FilledTonalButton(
+            Surface(
                 onClick = {
                     if (!disableHaptics) vibrate(context, 100)
                     onKeyClick(key)
                 },
-                modifier = Modifier.size(buttonSize),
-                interactionSource = interactionSource,
-                shapes = ButtonShapes(
-                    shape = CircleShape,
-                    pressedShape = RoundedCornerShape(25),
-                ),
-                colors = ButtonDefaults.filledTonalButtonColors(
-                    containerColor = animatedContainerColor,
-                ),
-                elevation = ButtonDefaults.filledTonalButtonElevation()
+                modifier = Modifier
+                    .size(buttonSize)
+                    .border(
+                        1.dp,
+                        dev.pranav.applock.ui.theme.NothingBorder,
+                        CircleShape
+                    ),
+                shape = CircleShape,
+                color = animatedContainerColor,
+                interactionSource = interactionSource
             ) {
-                val contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                Box(contentAlignment = Alignment.Center) {
+                    val contentColor = dev.pranav.applock.ui.theme.NothingTextPrimary
 
-                if (icons.isNotEmpty() && index < icons.size && icons[index] != null) {
-                    Icon(
-                        imageVector = icons[index]!!,
-                        contentDescription = key,
-                        modifier = Modifier.size(buttonSize * 0.45f),
-                        tint = contentColor
-                    )
-                } else {
-                    Text(
-                        text = key,
-                        style = MaterialTheme.typography.headlineLargeEmphasized.copy(
-                            fontSize = animatedFontSize.sp
-                        ),
-                    )
+                    if (icons.isNotEmpty() && index < icons.size && icons[index] != null) {
+                        Icon(
+                            imageVector = icons[index]!!,
+                            contentDescription = key,
+                            modifier = Modifier.size(buttonSize * 0.42f),
+                            tint = if (key == "proceed") dev.pranav.applock.ui.theme.NothingRed else contentColor
+                        )
+                    } else {
+                        Text(
+                            text = key,
+                            style = androidx.compose.ui.text.TextStyle(
+                                fontFamily = dev.pranav.applock.ui.theme.DotMatrixFontFamily,
+                                fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                                fontSize = (buttonSize.value * 0.38f).sp,
+                                color = contentColor
+                            )
+                        )
+                    }
                 }
             }
         }

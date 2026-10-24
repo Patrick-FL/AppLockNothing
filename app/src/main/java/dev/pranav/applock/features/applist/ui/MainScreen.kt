@@ -10,33 +10,71 @@ import android.content.pm.PackageManager
 import android.provider.Settings
 import android.widget.Toast
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Block
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.outlined.Lock
 import androidx.compose.material.icons.outlined.LockOpen
 import androidx.compose.material.icons.outlined.Shield
 import androidx.compose.material.icons.rounded.Forum
 import androidx.compose.material.icons.rounded.Groups
 import androidx.compose.material.icons.rounded.Warning
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
+import androidx.compose.material3.Checkbox
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.material3.rememberModalBottomSheetState
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.DialogProperties
 import androidx.core.net.toUri
 import androidx.lifecycle.Lifecycle
@@ -52,30 +90,39 @@ import dev.pranav.applock.core.utils.hasUsagePermission
 import dev.pranav.applock.core.utils.isAccessibilityServiceEnabled
 import dev.pranav.applock.core.utils.openAccessibilitySettings
 import dev.pranav.applock.data.repository.BackendImplementation
+import dev.pranav.applock.ui.components.BentoCard
+import dev.pranav.applock.ui.components.BentoTextField
+import dev.pranav.applock.ui.components.BentoToggle
+import dev.pranav.applock.ui.components.CircleButton
 import dev.pranav.applock.ui.components.DonateModalBottomSheet
+import dev.pranav.applock.ui.components.DotMatrixText
+import dev.pranav.applock.ui.components.PillButton
+import dev.pranav.applock.ui.theme.NothingBlack
+import dev.pranav.applock.ui.theme.NothingBorder
+import dev.pranav.applock.ui.theme.NothingDarkGray
+import dev.pranav.applock.ui.theme.NothingRed
+import dev.pranav.applock.ui.theme.NothingSage
+import dev.pranav.applock.ui.theme.NothingSurface
+import dev.pranav.applock.ui.theme.NothingTextPrimary
+import dev.pranav.applock.ui.theme.NothingTextSecondary
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import rikka.shizuku.Shizuku
 
 @SuppressLint("LocalContextGetResourceValueCall")
-@OptIn(
-    ExperimentalMaterial3ExpressiveApi::class,
-    ExperimentalMaterial3Api::class
-)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(
     navController: NavController,
     mainViewModel: MainViewModel = viewModel()
 ) {
     val context = LocalContext.current
-    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
     val isLoading by mainViewModel.isLoading.collectAsState()
     val lockedApps by mainViewModel.lockedAppsFlow.collectAsState()
     val unlockedApps by mainViewModel.unlockedAppsFlow.collectAsState()
 
     var showAddAppsSheet by remember { mutableStateOf(false) }
-
     var applockEnabled by remember { mutableStateOf(true) }
 
     val lifecycleOwner = LocalLifecycleOwner.current
@@ -117,7 +164,6 @@ fun MainScreen(
     }
 
     val appLockRepository = context.appLockRepository()
-
     var showCommunityLink by remember { mutableStateOf(appLockRepository.isShowCommunityLink()) }
 
     if (showCommunityLink) {
@@ -147,104 +193,20 @@ fun MainScreen(
     }
 
     Scaffold(
-        modifier = Modifier
-            .fillMaxSize()
-            .nestedScroll(scrollBehavior.nestedScrollConnection),
-        containerColor = MaterialTheme.colorScheme.surfaceContainer,
-        topBar = {
-            MediumFlexibleTopAppBar(
-                title = {
-                    Text(
-                        stringResource(R.string.app_name),
-                        style = MaterialTheme.typography.headlineMedium,
-                        fontWeight = FontWeight.Medium,
-                        fontFamily = FontFamily.SansSerif
-                    )
-                },
-                actions = {
-                    Surface(
-                        onClick = {
-                            appLockRepository.setProtectEnabled(!applockEnabled)
-                            applockEnabled = !applockEnabled
-                        },
-                        shape = RoundedCornerShape(16.dp),
-                        color = if (applockEnabled) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant,
-                        modifier = Modifier.padding(end = 8.dp)
-                    ) {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
-                        ) {
-                            Icon(
-                                imageVector = if (applockEnabled) Icons.Default.Shield else Icons.Outlined.Shield,
-                                contentDescription = stringResource(R.string.main_screen_app_protection_cd),
-                                modifier = Modifier.size(18.dp),
-                                tint = if (applockEnabled) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                            Spacer(Modifier.width(6.dp))
-                            Text(
-                                text = if (applockEnabled) "ON" else "OFF",
-                                style = MaterialTheme.typography.labelLarge,
-                                color = if (applockEnabled) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                    }
-                    IconButton(
-                        onClick = {
-                            navController.navigate(Screen.Settings.route) {
-                                launchSingleTop = true
-                            }
-                        }
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Settings,
-                            contentDescription = stringResource(R.string.main_screen_settings_cd),
-                            tint = MaterialTheme.colorScheme.onSurface
-                        )
-                    }
-                    IconButton(
-                        onClick = {
-                            navController.navigate(Screen.TriggerExclusions.route) {
-                                launchSingleTop = true
-                            }
-                        }
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Block,
-                            contentDescription = "Trigger exclusions",
-                            tint = MaterialTheme.colorScheme.onSurface
-                        )
-                    }
-                    IconButton(
-                        onClick = {
-                            navController.navigate(Screen.AntiUninstall.route) {
-                                launchSingleTop = true
-                            }
-                        }
-                    ) {
-                        Icon(
-                            imageVector = Icons.Outlined.Lock,
-                            contentDescription = "Anti-Uninstall",
-                            tint = MaterialTheme.colorScheme.onSurface
-                        )
-                    }
-                },
-                scrollBehavior = scrollBehavior,
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceContainer
-                )
-            )
-        },
+        modifier = Modifier.fillMaxSize(),
+        containerColor = NothingBlack,
         floatingActionButton = {
             if (!isLoading) {
                 FloatingActionButton(
                     onClick = { showAddAppsSheet = true },
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                    containerColor = NothingTextPrimary,
+                    contentColor = NothingBlack,
+                    shape = CircleShape
                 ) {
                     Icon(
                         imageVector = Icons.Default.Add,
-                        contentDescription = stringResource(R.string.main_screen_search_cd) // Update ideally
+                        contentDescription = stringResource(R.string.main_screen_search_cd),
+                        modifier = Modifier.size(28.dp)
                     )
                 }
             }
@@ -254,7 +216,88 @@ fun MainScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
+                .padding(horizontal = 16.dp)
         ) {
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // Header Section - Nothing OS Bento Title & Quick Action Buttons
+            BentoCard(
+                modifier = Modifier.fillMaxWidth(),
+                backgroundColor = NothingSurface
+            ) {
+                Column(modifier = Modifier.padding(20.dp)) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Column {
+                            DotMatrixText(
+                                text = "SYSTEM STATUS",
+                                color = NothingTextSecondary,
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Spacer(modifier = Modifier.height(2.dp))
+                            DotMatrixText(
+                                text = if (applockEnabled) "PROTECTED" else "UNPROTECTED",
+                                color = if (applockEnabled) NothingSage else NothingRed,
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+
+                        BentoToggle(
+                            checked = applockEnabled,
+                            onCheckedChange = { enabled ->
+                                appLockRepository.setProtectEnabled(enabled)
+                                applockEnabled = enabled
+                            }
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    // Quick Action Circle Buttons
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        CircleButton(
+                            onClick = {
+                                navController.navigate(Screen.Settings.route) {
+                                    launchSingleTop = true
+                                }
+                            },
+                            icon = Icons.Default.Settings,
+                            size = 48.dp
+                        )
+                        CircleButton(
+                            onClick = {
+                                navController.navigate(Screen.TriggerExclusions.route) {
+                                    launchSingleTop = true
+                                }
+                            },
+                            icon = Icons.Default.Block,
+                            size = 48.dp
+                        )
+                        CircleButton(
+                            onClick = {
+                                navController.navigate(Screen.AntiUninstall.route) {
+                                    launchSingleTop = true
+                                }
+                            },
+                            icon = Icons.Outlined.Lock,
+                            size = 48.dp
+                        )
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            // Missing Permission Warning Banner
             firstMissingPermission?.let { missingPerm ->
                 PermissionWarningBanner(
                     missingPermission = missingPerm,
@@ -309,7 +352,9 @@ fun MainScreen(
                         }
                     }
                 )
+                Spacer(modifier = Modifier.height(12.dp))
             }
+
             if (isLoading) {
                 LoadingContent(
                     modifier = Modifier
@@ -340,7 +385,9 @@ fun MainScreen(
                 bottomSheetSearchQuery = ""
                 showAddAppsSheet = false
             },
-            sheetState = sheetState
+            sheetState = sheetState,
+            containerColor = NothingDarkGray,
+            scrimColor = NothingBlack.copy(alpha = 0.8f)
         ) {
             AddProtectedAppsSheetContent(
                 unlockedApps = unlockedApps,
@@ -356,10 +403,6 @@ fun MainScreen(
                 },
                 onSave = {
                     mainViewModel.lockApps(selectedPackages)
-                    bottomSheetSearchQuery = ""
-                    showAddAppsSheet = false
-                },
-                onCancel = {
                     bottomSheetSearchQuery = ""
                     showAddAppsSheet = false
                 }
@@ -379,15 +422,15 @@ private fun LoadingContent(modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.Center
         ) {
             CircularProgressIndicator(
-                modifier = Modifier.size(48.dp),
-                color = MaterialTheme.colorScheme.primary,
-                strokeWidth = 4.dp
+                modifier = Modifier.size(44.dp),
+                color = NothingRed,
+                strokeWidth = 3.dp
             )
-            Spacer(modifier = Modifier.height(24.dp))
-            Text(
+            Spacer(modifier = Modifier.height(20.dp))
+            DotMatrixText(
                 text = stringResource(R.string.main_screen_loading_applications_text),
-                style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                color = NothingTextSecondary,
+                fontSize = 12.sp
             )
         }
     }
@@ -404,9 +447,32 @@ private fun ProtectedAppsDashboard(
     } else {
         LazyColumn(
             modifier = modifier,
-            contentPadding = PaddingValues(bottom = 88.dp, top = 8.dp), // Extra padding for FAB
-            verticalArrangement = Arrangement.spacedBy(4.dp)
+            contentPadding = PaddingValues(bottom = 88.dp, top = 4.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
+            item {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 4.dp, vertical = 6.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    DotMatrixText(
+                        text = "LOCKED APPS",
+                        color = NothingTextSecondary,
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                    DotMatrixText(
+                        text = "${lockedApps.size}",
+                        color = NothingRed,
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
+
             items(lockedApps, key = { it.packageName }) { appInfo ->
                 ProtectedAppItem(
                     appInfo = appInfo,
@@ -419,35 +485,48 @@ private fun ProtectedAppsDashboard(
 
 @Composable
 private fun EmptyDashboardState(modifier: Modifier = Modifier) {
-    Column(
+    Box(
         modifier = modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        contentAlignment = Alignment.Center
     ) {
-        Icon(
-            imageVector = Icons.Outlined.Shield,
-            contentDescription = null,
-            modifier = Modifier.size(80.dp),
-            tint = MaterialTheme.colorScheme.primary.copy(alpha = 0.5f)
-        )
-        Spacer(modifier = Modifier.height(24.dp))
-        Text(
-            text = "No Protected Apps",
-            style = MaterialTheme.typography.headlineSmall,
-            color = MaterialTheme.colorScheme.onSurface
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            text = "Tap the + button to selectively secure your apps.",
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            textAlign = androidx.compose.ui.text.style.TextAlign.Center,
-            modifier = Modifier.padding(horizontal = 32.dp)
-        )
+        BentoCard(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(24.dp),
+            backgroundColor = NothingSurface
+        ) {
+            Column(
+                modifier = Modifier.padding(32.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Icon(
+                    imageVector = Icons.Outlined.Shield,
+                    contentDescription = null,
+                    modifier = Modifier.size(64.dp),
+                    tint = NothingRed
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+                DotMatrixText(
+                    text = "NO PROTECTED APPS",
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Tap the + button to select apps for protection.",
+                    style = androidx.compose.ui.text.TextStyle(
+                        fontFamily = dev.pranav.applock.ui.theme.DotMatrixFontFamily,
+                        fontSize = 12.sp,
+                        color = NothingTextSecondary
+                    ),
+                    textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                )
+            }
+        }
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun AddProtectedAppsSheetContent(
     unlockedApps: List<ApplicationInfo>,
@@ -455,8 +534,7 @@ private fun AddProtectedAppsSheetContent(
     onSearchQueryChanged: (String) -> Unit,
     selectedPackages: List<String>,
     onToggleSelection: (String) -> Unit,
-    onSave: () -> Unit,
-    onCancel: () -> Unit
+    onSave: () -> Unit
 ) {
     val focusManager = LocalFocusManager.current
     val context = LocalContext.current
@@ -486,69 +564,55 @@ private fun AddProtectedAppsSheetContent(
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight(0.9f)
+            .padding(horizontal = 20.dp, vertical = 8.dp)
     ) {
         // Header
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 24.dp, vertical = 8.dp),
+                .padding(vertical = 12.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(
-                text = "Select Apps",
-                style = MaterialTheme.typography.titleLarge,
+            DotMatrixText(
+                text = "SELECT APPS",
+                fontSize = 18.sp,
                 fontWeight = FontWeight.Bold
             )
-            TextButton(
+            PillButton(
+                text = "PROTECT (${selectedPackages.size})",
                 onClick = onSave,
-                enabled = selectedPackages.isNotEmpty()
-            ) {
-                Text("Protect (${selectedPackages.size})")
-            }
+                enabled = selectedPackages.isNotEmpty(),
+                containerColor = NothingRed,
+                contentColor = NothingTextPrimary,
+                modifier = Modifier.height(40.dp)
+            )
         }
 
+        Spacer(modifier = Modifier.height(8.dp))
+
         // Search Bar
-        SearchBar(
-            inputField = {
-                SearchBarDefaults.InputField(
-                    query = searchQuery,
-                    onQueryChange = onSearchQueryChanged,
-                    onSearch = { focusManager.clearFocus() },
-                    expanded = false,
-                    onExpandedChange = {},
-                    placeholder = {
-                        Text(
-                            stringResource(R.string.main_screen_search_apps_placeholder),
-                            style = MaterialTheme.typography.bodyLarge
-                        )
-                    },
-                    leadingIcon = {
-                        Icon(
-                            imageVector = Icons.Default.Search,
-                            contentDescription = stringResource(R.string.main_screen_search_cd),
-                            tint = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    },
+        BentoTextField(
+            value = searchQuery,
+            onValueChange = onSearchQueryChanged,
+            placeholder = "SEARCH APPLICATIONS",
+            leadingIcon = {
+                Icon(
+                    imageVector = Icons.Default.Search,
+                    contentDescription = stringResource(R.string.main_screen_search_cd),
+                    tint = NothingTextSecondary,
+                    modifier = Modifier.size(20.dp)
                 )
-            },
-            expanded = false,
-            onExpandedChange = {},
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp)
-                .padding(bottom = 8.dp),
-            shape = RoundedCornerShape(28.dp),
-            colors = SearchBarDefaults.colors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant
-            ),
-            content = {},
+            }
         )
 
-        // List
+        Spacer(modifier = Modifier.height(12.dp))
+
+        // App List
         LazyColumn(
             modifier = Modifier.weight(1f),
-            contentPadding = PaddingValues(vertical = 8.dp)
+            contentPadding = PaddingValues(vertical = 4.dp),
+            verticalArrangement = Arrangement.spacedBy(6.dp)
         ) {
             items(filteredApps, key = { it.packageName }) { appInfo ->
                 val isSelected = selectedPackages.contains(appInfo.packageName)
@@ -579,64 +643,81 @@ private fun ProtectedAppItem(
         }
     }
 
-    ListItem(
-        headlineContent = {
-            if (appName != null) {
-                Text(
-                    text = appName!!,
-                    style = MaterialTheme.typography.bodyLarge,
-                    fontWeight = FontWeight.Medium,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
-            }
-        },
-        supportingContent = {
-            Text(
-                text = "Protected",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.primary,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
-            )
-        },
-        leadingContent = {
-            Surface(
-                modifier = Modifier.size(48.dp),
-                shape = RoundedCornerShape(12.dp),
-                color = MaterialTheme.colorScheme.surfaceContainerHigh
+    BentoCard(
+        modifier = Modifier.fillMaxWidth(),
+        backgroundColor = NothingSurface
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 14.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.weight(1f)
             ) {
                 Box(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .size(44.dp)
+                        .clip(CircleShape)
+                        .background(NothingDarkGray)
+                        .border(1.dp, NothingBorder, CircleShape),
                     contentAlignment = Alignment.Center
                 ) {
                     if (icon != null) {
                         Image(
                             bitmap = icon!!,
                             contentDescription = appName,
-                            modifier = Modifier.size(32.dp)
+                            modifier = Modifier.size(28.dp)
                         )
                     }
                 }
+
+                Spacer(modifier = Modifier.width(14.dp))
+
+                Column {
+                    appName?.let { name ->
+                        Text(
+                            text = name,
+                            style = androidx.compose.ui.text.TextStyle(
+                                fontFamily = androidx.compose.ui.text.font.FontFamily.Default,
+                                fontSize = 15.sp,
+                                fontWeight = FontWeight.SemiBold,
+                                color = NothingTextPrimary
+                            ),
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(2.dp))
+                    DotMatrixText(
+                        text = "LOCKED",
+                        color = NothingSage,
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
             }
-        },
-        trailingContent = {
-            IconButton(onClick = onUnlock) {
+
+            IconButton(
+                onClick = onUnlock,
+                modifier = Modifier
+                    .size(40.dp)
+                    .clip(CircleShape)
+                    .background(NothingDarkGray)
+                    .border(1.dp, NothingBorder, CircleShape)
+            ) {
                 Icon(
                     imageVector = Icons.Outlined.LockOpen,
                     contentDescription = "Unlock ${appName ?: "app"}",
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant
+                    tint = NothingTextSecondary,
+                    modifier = Modifier.size(20.dp)
                 )
             }
-        },
-        colors = ListItemDefaults.colors(
-            containerColor = MaterialTheme.colorScheme.surfaceContainer
-        ),
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 4.dp)
-            .clip(RoundedCornerShape(16.dp))
-    )
+        }
+    }
 }
 
 @Composable
@@ -657,64 +738,74 @@ private fun SelectableAppItem(
         }
     }
 
-    ListItem(
-        headlineContent = {
-            if (appName != null) {
-                Text(
-                    text = appName!!,
-                    style = MaterialTheme.typography.bodyLarge,
-                    fontWeight = FontWeight.Medium,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
-            }
-        },
-        supportingContent = {
-            Text(
-                text = appInfo.packageName,
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
-            )
-        },
-        leadingContent = {
-            Surface(
-                modifier = Modifier.size(42.dp),
-                shape = RoundedCornerShape(8.dp),
-                color = MaterialTheme.colorScheme.surfaceContainerHigh
+    BentoCard(
+        modifier = Modifier.fillMaxWidth(),
+        onClick = onClick,
+        backgroundColor = if (isSelected) NothingSurface else NothingDarkGray,
+        borderColor = if (isSelected) NothingRed else NothingBorder
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 12.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.weight(1f)
             ) {
                 Box(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .size(38.dp)
+                        .clip(CircleShape)
+                        .background(NothingBlack),
                     contentAlignment = Alignment.Center
                 ) {
                     if (icon != null) {
                         Image(
                             bitmap = icon!!,
                             contentDescription = appName,
-                            modifier = Modifier.size(28.dp)
-                        )
-                    } else {
-                        CircularProgressIndicator(
-                            modifier = Modifier.size(16.dp),
-                            strokeWidth = 2.dp
+                            modifier = Modifier.size(24.dp)
                         )
                     }
                 }
+
+                Spacer(modifier = Modifier.width(12.dp))
+
+                Column {
+                    appName?.let { name ->
+                        Text(
+                            text = name,
+                            style = androidx.compose.ui.text.TextStyle(
+                                fontFamily = androidx.compose.ui.text.font.FontFamily.Default,
+                                fontSize = 14.sp,
+                                fontWeight = FontWeight.Medium,
+                                color = NothingTextPrimary
+                            ),
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
+                        )
+                    }
+                    DotMatrixText(
+                        text = appInfo.packageName,
+                        color = NothingTextSecondary,
+                        fontSize = 9.sp
+                    )
+                }
             }
-        },
-        trailingContent = {
+
             Checkbox(
                 checked = isSelected,
-                onCheckedChange = null
+                onCheckedChange = null,
+                colors = androidx.compose.material3.CheckboxDefaults.colors(
+                    checkedColor = NothingRed,
+                    uncheckedColor = NothingBorder,
+                    checkmarkColor = NothingTextPrimary
+                )
             )
-        },
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 4.dp)
-            .clip(RoundedCornerShape(16.dp))
-            .clickable(onClick = onClick)
-    )
+        }
+    }
 }
 
 @Composable
@@ -725,42 +816,50 @@ private fun CommunityDialog(
     AlertDialog(
         onDismissRequest = onDismiss,
         properties = DialogProperties(usePlatformDefaultWidth = false),
+        containerColor = NothingSurface,
         icon = {
             Icon(
                 Icons.Rounded.Groups,
                 contentDescription = null,
                 modifier = Modifier.size(32.dp),
-                tint = MaterialTheme.colorScheme.primary
+                tint = NothingRed
             )
         },
         title = {
-            Text(
+            DotMatrixText(
                 text = stringResource(R.string.join_community),
-                style = MaterialTheme.typography.headlineSmall
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold
             )
         },
         text = {
-            Column(Modifier.fillMaxWidth(0.7f)) {
+            Column(Modifier.fillMaxWidth(0.85f)) {
                 Text(
                     text = stringResource(R.string.join_community_desc),
-                    style = MaterialTheme.typography.bodyMedium
+                    style = androidx.compose.ui.text.TextStyle(
+                        fontFamily = androidx.compose.ui.text.font.FontFamily.Default,
+                        fontSize = 13.sp,
+                        color = NothingTextSecondary
+                    )
                 )
             }
         },
         confirmButton = {
-            Button(onClick = onJoin) {
-                Icon(
-                    Icons.Rounded.Forum,
-                    contentDescription = null,
-                    modifier = Modifier.size(18.dp)
-                )
-                Spacer(Modifier.width(8.dp))
-                Text(stringResource(R.string.join_discord))
-            }
+            PillButton(
+                text = stringResource(R.string.join_discord),
+                onClick = onJoin,
+                containerColor = NothingRed,
+                contentColor = NothingTextPrimary,
+                modifier = Modifier.height(40.dp)
+            )
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text(stringResource(R.string.maybe_later))
+                DotMatrixText(
+                    text = stringResource(R.string.maybe_later),
+                    color = NothingTextSecondary,
+                    fontSize = 12.sp
+                )
             }
         }
     )
@@ -794,42 +893,43 @@ private fun PermissionWarningBanner(
     missingPermission: MissingPermission,
     onClick: () -> Unit
 ) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 8.dp)
-            .clickable(onClick = onClick),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
-        shape = RoundedCornerShape(16.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
+    BentoCard(
+        modifier = Modifier.fillMaxWidth(),
+        onClick = onClick,
+        backgroundColor = NothingSurface,
+        borderColor = NothingRed,
+        badge = "!"
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(20.dp),
+                .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
                 imageVector = Icons.Rounded.Warning,
                 contentDescription = "Warning",
-                tint = MaterialTheme.colorScheme.primary,
+                tint = NothingRed,
                 modifier = Modifier.size(28.dp)
             )
             Spacer(modifier = Modifier.width(16.dp))
             Column(
                 modifier = Modifier.weight(1f)
             ) {
-                Text(
+                DotMatrixText(
                     text = "${stringResource(missingPermission.titleResId)} ${stringResource(R.string.permission_warning_title_suffix)}",
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.onSecondaryContainer
+                    color = NothingTextPrimary,
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.Bold
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
                     text = stringResource(missingPermission.descriptionResId),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurface
+                    style = androidx.compose.ui.text.TextStyle(
+                        fontFamily = androidx.compose.ui.text.font.FontFamily.Default,
+                        fontSize = 12.sp,
+                        color = NothingTextSecondary
+                    )
                 )
             }
         }

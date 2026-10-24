@@ -189,22 +189,21 @@ fun AlphanumericSetPasswordScreen(
     }
 
     Scaffold(
-        containerColor = MaterialTheme.colorScheme.surfaceContainer,
+        containerColor = dev.pranav.applock.ui.theme.NothingBlack,
         topBar = {
             TopAppBar(
                 title = {
-                    Text(
+                    dev.pranav.applock.ui.components.DotMatrixText(
                         text = when {
                             isVerifyOldPasswordMode -> stringResource(R.string.enter_current_password_label)
                             isConfirmationMode -> stringResource(R.string.confirm_alphanumeric_password_label)
                             else -> stringResource(R.string.set_alphanumeric_password_title)
-                        },
-                        style = MaterialTheme.typography.titleMediumEmphasized,
+                        }
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceContainer,
-                    titleContentColor = MaterialTheme.colorScheme.onSurface
+                    containerColor = dev.pranav.applock.ui.theme.NothingBlack,
+                    titleContentColor = dev.pranav.applock.ui.theme.NothingTextPrimary
                 )
             )
         }

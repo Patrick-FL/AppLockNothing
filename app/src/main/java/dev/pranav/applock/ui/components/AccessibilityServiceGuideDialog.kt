@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.DialogProperties
 import dev.pranav.applock.R
 
@@ -19,17 +20,18 @@ fun AccessibilityServiceGuideDialog(
     onDismiss: () -> Unit
 ) {
     AlertDialog(
-        modifier = Modifier.fillMaxWidth(0.8f),
+        modifier = Modifier.fillMaxWidth(0.85f),
         onDismissRequest = onDismiss,
+        containerColor = dev.pranav.applock.ui.theme.NothingSurface,
         properties = DialogProperties(
             dismissOnBackPress = false,
             dismissOnClickOutside = false,
             usePlatformDefaultWidth = false
         ),
         title = {
-            Text(
+            dev.pranav.applock.ui.components.DotMatrixText(
                 text = stringResource(R.string.accessibility_guide_dialog_title),
-                style = MaterialTheme.typography.titleLarge
+                fontSize = 18.sp
             )
         },
         text = {

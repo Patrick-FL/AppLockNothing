@@ -48,7 +48,7 @@ fun PatternLockScreen(
 
     Surface(
         modifier = modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.surface
+        color = dev.pranav.applock.ui.theme.NothingBlack
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
             var showError by remember { mutableStateOf(false) }
@@ -155,9 +155,9 @@ fun PatternLockScreen(
                             .graphicsLayer(translationX = shakeAnimation),
                         dimension = 3,
                         sensitivity = 50f,
-                        dotsColor = MaterialTheme.colorScheme.primary,
+                        dotsColor = dev.pranav.applock.ui.theme.NothingTextPrimary,
                         dotsSize = 14f,
-                        linesColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.7f),
+                        linesColor = dev.pranav.applock.ui.theme.NothingRed,
                         linesStroke = 6f,
                         animationDuration = 120,
                         callback = lockCallback
@@ -231,9 +231,9 @@ fun PatternLockScreen(
                                 .graphicsLayer(translationX = shakeAnimation),
                             dimension = 3,
                             sensitivity = 50f,
-                            dotsColor = MaterialTheme.colorScheme.primary,
+                            dotsColor = dev.pranav.applock.ui.theme.NothingTextPrimary,
                             dotsSize = 16f,
-                            linesColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.7f),
+                            linesColor = dev.pranav.applock.ui.theme.NothingRed,
                             linesStroke = 7f,
                             animationDuration = 120,
                             callback = lockCallback

@@ -160,23 +160,23 @@ fun SetPasswordScreen(
     }
 
     Scaffold(
-        containerColor = MaterialTheme.colorScheme.surfaceContainer,
+        containerColor = dev.pranav.applock.ui.theme.NothingBlack,
         topBar = {
             if (isFirstTimeSetup && !isLandscape) {
                 TopAppBar(
                     title = {
-                        Text(
+                        dev.pranav.applock.ui.components.DotMatrixText(
                             text = when {
                                 isVerifyOldPasswordMode -> stringResource(R.string.enter_current_pin_title)
                                 isConfirmationMode -> stringResource(R.string.confirm_pin_title)
                                 else -> stringResource(R.string.set_new_pin_title)
                             },
-                            style = MaterialTheme.typography.titleMediumEmphasized,
+                            fontSize = androidx.compose.ui.unit.TextUnit.Unspecified
                         )
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainer,
-                        titleContentColor = MaterialTheme.colorScheme.onSurface
+                        containerColor = dev.pranav.applock.ui.theme.NothingBlack,
+                        titleContentColor = dev.pranav.applock.ui.theme.NothingTextPrimary
                     )
                 )
             }

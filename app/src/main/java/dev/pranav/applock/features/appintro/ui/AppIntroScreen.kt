@@ -88,18 +88,13 @@ fun MethodSelectionCard(
     isSelected: Boolean,
     onClick: () -> Unit,
 ) {
-    Card(
+    dev.pranav.applock.ui.components.BentoCard(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 12.dp, vertical = 4.dp)
-            .clickable { onClick() },
-        colors = CardDefaults.cardColors(
-            containerColor = if (isSelected) Color.White.copy(alpha = 0.2f) else Color.White.copy(
-                alpha = 0.1f
-            )
-        ),
-        border = if (isSelected) BorderStroke(2.dp, Color.White) else null,
-        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
+            .padding(horizontal = 12.dp, vertical = 4.dp),
+        onClick = onClick,
+        backgroundColor = if (isSelected) dev.pranav.applock.ui.theme.NothingSurface else dev.pranav.applock.ui.theme.NothingDarkGray,
+        borderColor = if (isSelected) dev.pranav.applock.ui.theme.NothingRed else dev.pranav.applock.ui.theme.NothingBorder
     ) {
         Row(
             modifier = Modifier.padding(16.dp),

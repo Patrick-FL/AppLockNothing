@@ -81,7 +81,7 @@ fun AlphanumericPasswordOverlayScreen(
 
     Surface(
         modifier = modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.surfaceContainer
+        color = dev.pranav.applock.ui.theme.NothingBlack
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
             if (showCloseButton) {
@@ -95,7 +95,7 @@ fun AlphanumericPasswordOverlayScreen(
                     Icon(
                         imageVector = Icons.Default.Close,
                         contentDescription = "Close",
-                        tint = MaterialTheme.colorScheme.onSurface
+                        tint = dev.pranav.applock.ui.theme.NothingTextPrimary
                     )
                 }
             }

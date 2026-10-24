@@ -36,6 +36,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.core.net.toUri
 import androidx.navigation.NavController
 import dev.pranav.applock.R
@@ -269,23 +270,29 @@ fun SettingsScreen(
             .nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             LargeTopAppBar(
-                title = { Text(stringResource(R.string.settings_screen_title)) },
+                title = {
+                    dev.pranav.applock.ui.components.DotMatrixText(
+                        text = stringResource(R.string.settings_screen_title),
+                        fontSize = 24.sp
+                    )
+                },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = stringResource(R.string.settings_screen_back_cd)
+                            contentDescription = stringResource(R.string.settings_screen_back_cd),
+                            tint = dev.pranav.applock.ui.theme.NothingTextPrimary
                         )
                     }
                 },
                 scrollBehavior = scrollBehavior,
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.surface,
-                    scrolledContainerColor = MaterialTheme.colorScheme.surface
+                    containerColor = dev.pranav.applock.ui.theme.NothingBlack,
+                    scrolledContainerColor = dev.pranav.applock.ui.theme.NothingBlack
                 )
             )
         },
-        containerColor = MaterialTheme.colorScheme.surface
+        containerColor = dev.pranav.applock.ui.theme.NothingBlack
     ) { innerPadding ->
         LazyColumn(
             modifier = Modifier.fillMaxSize(),

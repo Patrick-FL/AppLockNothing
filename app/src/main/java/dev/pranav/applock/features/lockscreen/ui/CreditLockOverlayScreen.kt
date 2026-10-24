@@ -85,7 +85,7 @@ fun CreditLockOverlayScreen(
 
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.background
+        color = dev.pranav.applock.ui.theme.NothingBlack
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
             Column(
