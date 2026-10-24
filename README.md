@@ -2,15 +2,15 @@
   <img src="fastlane/metadata/android/en-US/images/featureGraphic.png" alt="AppLock Android Privacy Security" width="600" />
 </div>
 
-<h1 align="center">App Lock</h1>
+<h1 align="center">App Lock Nothing</h1>
 <p align="center"><b>Open Source Android App Locker & Privacy Guard</b></p>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License">
   </a>
-  <a href="https://github.com/aload0/AppLock/releases">
-    <img src="https://img.shields.io/github/v/release/aload0/AppLock?label=Release" alt="Latest Release">
+  <a href="https://github.com/Patrick-FL/AppLockNothing/releases">
+    <img src="https://img.shields.io/github/v/release/Patrick-FL/AppLockNothing?label=Release" alt="Latest Release">
   </a>
   <a href="https://apt.izzysoft.de/packages/dev.pranav.applock">
     <img src="https://img.shields.io/badge/IzzyOnDroid-Available-brightgreen" alt="IzzyOnDroid">
@@ -36,14 +36,14 @@
 
 ## Overview
 
-AppLock is a modern, open-source Android app locker designed to protect your privacy and sensitive
+App Lock Nothing is a modern, open-source Android app locker designed to protect your privacy and sensitive
 data. Lock any app, prevent unauthorized access, and enjoy a seamless Material You experience. No
 root required.
 
 <br/>
 
 > [!CAUTION]
-> Google Play Protect is blocking some people from installing/updating App Lock because it uses Overlay Permission. It uses a false pretext of "this app may try to access sensitive information"
+> Google Play Protect is blocking some people from installing/updating App Lock Nothing because it uses Overlay Permission. It uses a false pretext of "this app may try to access sensitive information"
 > without any base or information. If this happens to you, consider disabling Play Protect temporarily as mentioned [here](https://www.airdroid.com/quick-guides/disable-google-play-protect).
 >
 > You may enable it back later after you install the app. We understand this introduces unnecessary friction but there's nothing we can do about it. Google does not like it
