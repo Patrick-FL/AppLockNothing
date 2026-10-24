@@ -62,6 +62,46 @@ object AppLockManager {
     private var recentlyLeftTime: Long = 0L
     private const val GRACE_PERIOD_MS = 300L
 
+    var activeAppPackage: String = ""
+    var lastCreditTickTime: Long = 0L
+
+    fun onForegroundAppChanged(newPackage: String, repository: dev.pranav.applock.data.repository.AppLockRepository) {
+        val now = System.currentTimeMillis()
+
+        if (activeAppPackage == newPackage) {
+            if (lastCreditTickTime > 0L) {
+                val deltaSeconds = ((now - lastCreditTickTime) / 1000.0f).coerceAtLeast(0.0f)
+                if (deltaSeconds >= 0.1f) {
+                    tickCredit(activeAppPackage, deltaSeconds, repository)
+                    lastCreditTickTime = now
+                }
+            } else {
+                lastCreditTickTime = now
+            }
+        } else {
+            if (activeAppPackage.isNotEmpty() && lastCreditTickTime > 0L) {
+                val deltaSeconds = ((now - lastCreditTickTime) / 1000.0f).coerceAtLeast(0.0f)
+                if (deltaSeconds >= 0.1f) {
+                    tickCredit(activeAppPackage, deltaSeconds, repository)
+                }
+            }
+            activeAppPackage = newPackage
+            lastCreditTickTime = now
+        }
+    }
+
+    private fun tickCredit(pkg: String, deltaSeconds: Float, repository: dev.pranav.applock.data.repository.AppLockRepository) {
+        if (repository.isEarnApp(pkg)) {
+            val ratio = repository.getCreditRatio()
+            val earnedSeconds = deltaSeconds * ratio
+            repository.addCreditSeconds(earnedSeconds)
+            LogUtils.d(TAG, "Earned ${earnedSeconds}s credit in $pkg (delta: ${deltaSeconds}s, ratio $ratio)")
+        } else if (repository.isAppLocked(pkg)) {
+            repository.consumeCreditSeconds(deltaSeconds)
+            LogUtils.d(TAG, "Consumed ${deltaSeconds}s credit in $pkg")
+        }
+    }
+
     fun setRecentlyLeftApp(packageName: String) {
         recentlyLeftApp = packageName
         recentlyLeftTime = System.currentTimeMillis()

@@ -8,6 +8,10 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.scaleIn
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
@@ -22,6 +26,8 @@ import dev.pranav.applock.features.antiuninstall.ui.AntiUninstallScreen
 import dev.pranav.applock.features.appintro.ui.AppIntroScreen
 import dev.pranav.applock.features.applist.ui.MainScreen
 import dev.pranav.applock.features.lockscreen.ui.AlphanumericPasswordOverlayScreen
+import dev.pranav.applock.features.lockscreen.ui.AnkiCardOverlayScreen
+import dev.pranav.applock.features.lockscreen.ui.CreditLockOverlayScreen
 import dev.pranav.applock.features.lockscreen.ui.PatternLockScreen
 import dev.pranav.applock.features.lockscreen.ui.PinPasswordOverlayScreen
 import dev.pranav.applock.features.setpassword.ui.AlphanumericSetPasswordScreen
@@ -85,6 +91,19 @@ fun AppNavHost(navController: NavHostController, startDestination: String) {
             val lockType = application.appLockRepository.getLockType()
 
             when (lockType) {
+                PreferencesRepository.LOCK_TYPE_ANKI -> {
+                    PinPasswordOverlayScreen(
+                        showBiometricButton = application.appLockRepository.isBiometricAuthEnabled(),
+                        fromMainActivity = true,
+                        onBiometricAuth = {
+                            handleBiometricAuthentication(context, navController)
+                        },
+                        onAuthSuccess = {
+                            handleAuthenticationSuccess(navController)
+                        }
+                    )
+                }
+
                 PreferencesRepository.LOCK_TYPE_PATTERN -> {
                     PatternLockScreen(
                         fromMainActivity = true,

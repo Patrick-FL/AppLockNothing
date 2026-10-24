@@ -26,6 +26,7 @@ import dev.pranav.applock.core.utils.hasUsagePermission
 import dev.pranav.applock.data.repository.AppLockRepository
 import dev.pranav.applock.data.repository.AppLockRepository.Companion.shouldStartService
 import dev.pranav.applock.data.repository.BackendImplementation
+import dev.pranav.applock.data.repository.PreferencesRepository
 import dev.pranav.applock.features.lockscreen.ui.PasswordOverlayActivity
 import java.util.Timer
 import kotlin.concurrent.timerTask
@@ -221,11 +222,22 @@ class UsageLockService: Service() {
 
             recentAppTime = event.timeStamp
             recentApp = Pair(event.packageName, event.className)
+            AppLockManager.onForegroundAppChanged(event.packageName, appLockRepository)
         }
         return recentApp
     }
 
     private fun checkAndLockApp(packageName: String, triggeringPackage: String, currentTime: Long) {
+        if (packageName == applicationContext.packageName) return
+        // Credit lock mode check
+        if (appLockRepository.getLockType() == PreferencesRepository.LOCK_TYPE_ANKI) {
+            val creditBalance = appLockRepository.getCreditBalanceSeconds()
+            if (creditBalance > 0f) {
+                AppLockManager.unlockApp(packageName)
+                return
+            }
+        }
+
         val lockedApps = appLockRepository.getLockedApps()
         if (packageName !in lockedApps) return
 

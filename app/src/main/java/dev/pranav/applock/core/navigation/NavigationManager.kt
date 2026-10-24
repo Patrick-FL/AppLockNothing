@@ -16,7 +16,8 @@ class NavigationManager(private val context: Context) {
         return when {
             shouldShowAppIntro() -> Screen.AppIntro.route
             !isPasswordSet() -> Screen.SetPassword.route
-            else -> Screen.PasswordOverlay.route
+            isAppLockSelfLockEnabled() -> Screen.PasswordOverlay.route
+            else -> Screen.Main.route
         }
     }
 
@@ -25,6 +26,11 @@ class NavigationManager(private val context: Context) {
      */
     fun shouldSkipPasswordCheck(currentRoute: String?): Boolean {
         return currentRoute in ROUTES_THAT_SKIP_PASSWORD_CHECK
+    }
+
+    fun isAppLockSelfLockEnabled(): Boolean {
+        val settingsPrefs = context.getSharedPreferences(SETTINGS_PREFS_NAME, Context.MODE_PRIVATE)
+        return settingsPrefs.getBoolean(APPLOCK_SELF_LOCK_KEY, false)
     }
 
     private fun shouldShowAppIntro(): Boolean {
@@ -42,11 +48,10 @@ class NavigationManager(private val context: Context) {
 
     companion object {
         private const val PREFS_NAME = "app_lock_prefs"
-
-        //private const val SETTINGS_PREFS_NAME = "app_lock_settings"
+        private const val SETTINGS_PREFS_NAME = "app_lock_settings"
         private const val PASSWORD_KEY = "password"
         private const val PATTERN_KEY = "pattern"
-        //private const val LOCK_TYPE_KEY = "lock_type"
+        private const val APPLOCK_SELF_LOCK_KEY = "applock_self_lock_enabled"
 
         private val ROUTES_THAT_SKIP_PASSWORD_CHECK = setOf(
             Screen.AppIntro.route,

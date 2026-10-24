@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.lifecycle.Lifecycle
@@ -115,6 +116,20 @@ class LockScreenOverlayManager(private val context: Context):
                             val lockType = appLockRepository.getLockType()
 
                             when (lockType) {
+                                PreferencesRepository.LOCK_TYPE_ANKI -> {
+                                    CreditLockOverlayScreen(
+                                        lockedAppName = appName,
+                                        onUnlock = {
+                                            onUnlock()
+                                            removeOverlay()
+                                        },
+                                        onClose = {
+                                            onExit()
+                                            removeOverlay()
+                                        }
+                                    )
+                                }
+
                                 PreferencesRepository.LOCK_TYPE_PATTERN -> {
                                     PatternLockScreen(
                                         fromMainActivity = false,

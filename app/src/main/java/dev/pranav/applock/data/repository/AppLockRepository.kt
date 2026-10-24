@@ -60,6 +60,30 @@ class AppLockRepository(private val context: Context) {
     fun setLockType(lockType: String) = preferencesRepository.setLockType(lockType)
     fun getLockType(): String = preferencesRepository.getLockType()
 
+    fun setAnkiCardsPerLock(count: Int) = preferencesRepository.setAnkiCardsPerLock(count)
+    fun getAnkiCardsPerLock(): Int = preferencesRepository.getAnkiCardsPerLock()
+
+    fun setAnkiDeck(deckId: Long, deckName: String) = preferencesRepository.setAnkiDeck(deckId, deckName)
+    fun getAnkiDeckId(): Long = preferencesRepository.getAnkiDeckId()
+    fun getAnkiDeckName(): String = preferencesRepository.getAnkiDeckName()
+
+    fun getEarnApps(): Set<String> = preferencesRepository.getEarnApps()
+    fun setEarnApps(apps: Set<String>) = preferencesRepository.setEarnApps(apps)
+    fun addEarnApp(packageName: String) = preferencesRepository.addEarnApp(packageName)
+    fun removeEarnApp(packageName: String) = preferencesRepository.removeEarnApp(packageName)
+    fun isEarnApp(packageName: String): Boolean = preferencesRepository.isEarnApp(packageName)
+
+    fun getCreditBalanceSeconds(): Float = preferencesRepository.getCreditBalanceSeconds()
+    fun setCreditBalanceSeconds(seconds: Float) = preferencesRepository.setCreditBalanceSeconds(seconds)
+    fun addCreditSeconds(seconds: Float) = preferencesRepository.addCreditSeconds(seconds)
+    fun consumeCreditSeconds(seconds: Float): Boolean = preferencesRepository.consumeCreditSeconds(seconds)
+
+    fun getCreditRatio(): Float = preferencesRepository.getCreditRatio()
+    fun setCreditRatio(ratio: Float) = preferencesRepository.setCreditRatio(ratio)
+
+    fun getCreditResetInterval(): String = preferencesRepository.getCreditResetInterval()
+    fun setCreditResetInterval(interval: String) = preferencesRepository.setCreditResetInterval(interval)
+
     fun setBiometricAuthEnabled(enabled: Boolean) =
         preferencesRepository.setBiometricAuthEnabled(enabled)
 
@@ -97,6 +121,9 @@ class AppLockRepository(private val context: Context) {
 
     fun isLoggingEnabled(): Boolean = preferencesRepository.isLoggingEnabled()
     fun setLoggingEnabled(enabled: Boolean) = preferencesRepository.setLoggingEnabled(enabled)
+
+    fun isAppLockSelfLockEnabled(): Boolean = preferencesRepository.isAppLockSelfLockEnabled()
+    fun setAppLockSelfLockEnabled(enabled: Boolean) = preferencesRepository.setAppLockSelfLockEnabled(enabled)
 
     fun setActiveBackend(backend: BackendImplementation) =
         backendServiceManager.setActiveBackend(backend)

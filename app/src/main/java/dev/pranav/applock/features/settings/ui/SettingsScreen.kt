@@ -16,6 +16,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowRight
@@ -38,6 +40,7 @@ import androidx.core.net.toUri
 import androidx.navigation.NavController
 import dev.pranav.applock.R
 import dev.pranav.applock.core.broadcast.DeviceAdmin
+import dev.pranav.applock.data.repository.PreferencesRepository
 import dev.pranav.applock.core.navigation.Screen
 import dev.pranav.applock.core.utils.LogUtils
 import dev.pranav.applock.core.utils.hasUsagePermission
@@ -71,25 +74,47 @@ fun SettingsScreen(
         if (isGranted) {
             Toast.makeText(
                 context,
-                context.getString(R.string.settings_screen_shizuku_permission_granted),
+                context.resources.getString(R.string.settings_screen_shizuku_permission_granted),
                 Toast.LENGTH_SHORT
             ).show()
         } else {
             Toast.makeText(
                 context,
-                context.getString(R.string.settings_screen_shizuku_permission_required_desc),
+                context.resources.getString(R.string.settings_screen_shizuku_permission_required_desc),
                 Toast.LENGTH_SHORT
             ).show()
+        }
+    }
+
+    val ankiPermissionLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (isGranted) {
+            Toast.makeText(context, "AnkiDroid-Berechtigung erteilt!", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(context, "Berechtigung abgelehnt!", Toast.LENGTH_SHORT).show()
         }
     }
 
     var autoUnlock by remember { mutableStateOf(appLockRepository.isAutoUnlockEnabled()) }
     var useMaxBrightness by remember { mutableStateOf(appLockRepository.shouldUseMaxBrightness()) }
     var useBiometricAuth by remember { mutableStateOf(appLockRepository.isBiometricAuthEnabled()) }
+    var appLockSelfLockEnabled by remember { mutableStateOf(appLockRepository.isAppLockSelfLockEnabled()) }
     var unlockTimeDuration by remember { mutableIntStateOf(appLockRepository.getUnlockTimeDuration()) }
     var antiUninstallEnabled by remember { mutableStateOf(appLockRepository.isAntiUninstallEnabled()) }
     var disableHapticFeedback by remember { mutableStateOf(appLockRepository.shouldDisableHaptics()) }
     var loggingEnabled by remember { mutableStateOf(appLockRepository.isLoggingEnabled()) }
+
+    var lockType by remember { mutableStateOf(appLockRepository.getLockType()) }
+    var showLockTypeDialog by remember { mutableStateOf(false) }
+
+    var creditRatio by remember { mutableFloatStateOf(appLockRepository.getCreditRatio()) }
+    var creditInterval by remember { mutableStateOf(appLockRepository.getCreditResetInterval()) }
+    var creditBalance by remember { mutableFloatStateOf(appLockRepository.getCreditBalanceSeconds()) }
+    var earnApps by remember { mutableStateOf(appLockRepository.getEarnApps()) }
+    var showCreditRatioDialog by remember { mutableStateOf(false) }
+    var showCreditIntervalDialog by remember { mutableStateOf(false) }
+    var showEarnAppsDialog by remember { mutableStateOf(false) }
 
     var showPermissionDialog by remember { mutableStateOf(false) }
     var showDeviceAdminDialog by remember { mutableStateOf(false) }
@@ -144,6 +169,54 @@ fun SettingsScreen(
         )
     }
 
+    if (showLockTypeDialog) {
+        LockTypeSelectionDialog(
+            currentLockType = lockType,
+            onDismiss = { showLockTypeDialog = false },
+            onConfirm = { newLockType ->
+                lockType = newLockType
+                appLockRepository.setLockType(newLockType)
+                showLockTypeDialog = false
+            }
+        )
+    }
+
+    if (showCreditRatioDialog) {
+        CreditRatioSelectionDialog(
+            currentRatio = creditRatio,
+            onDismiss = { showCreditRatioDialog = false },
+            onConfirm = { newRatio ->
+                creditRatio = newRatio
+                appLockRepository.setCreditRatio(newRatio)
+                showCreditRatioDialog = false
+            }
+        )
+    }
+
+    if (showCreditIntervalDialog) {
+        CreditResetIntervalDialog(
+            currentInterval = creditInterval,
+            onDismiss = { showCreditIntervalDialog = false },
+            onConfirm = { newInterval ->
+                creditInterval = newInterval
+                appLockRepository.setCreditResetInterval(newInterval)
+                showCreditIntervalDialog = false
+            }
+        )
+    }
+
+    if (showEarnAppsDialog) {
+        EarnAppsSelectionDialog(
+            currentEarnApps = earnApps,
+            onDismiss = { showEarnAppsDialog = false },
+            onConfirm = { selectedSet ->
+                earnApps = selectedSet
+                appLockRepository.setEarnApps(selectedSet)
+                showEarnAppsDialog = false
+            }
+        )
+    }
+
     if (showPermissionDialog) {
         PermissionRequiredDialog(
             onDismiss = { showPermissionDialog = false },
@@ -164,7 +237,7 @@ fun SettingsScreen(
                     putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, component)
                     putExtra(
                         DevicePolicyManager.EXTRA_ADD_EXPLANATION,
-                        context.getString(R.string.main_screen_device_admin_explanation)
+                        context.resources.getString(R.string.main_screen_device_admin_explanation)
                     )
                 }
                 context.startActivity(intent)
@@ -308,14 +381,92 @@ fun SettingsScreen(
             }
 
             item {
-                SettingsGroup(
-                    items = listOf(
+                val securityItems = buildList<Any> {
+                    val creditMins = (creditBalance / 60).toInt()
+                    val creditSecs = (creditBalance % 60).toInt()
+                    val ratioText = when (creditRatio) {
+                        0.2f -> "5:1 (5 Min. Lernen = 1 Min. Freizeit)"
+                        0.5f -> "2:1 (2 Min. Lernen = 1 Min. Freizeit)"
+                        2.0f -> "1:2 (1 Min. Lernen = 2 Min. Freizeit)"
+                        5.0f -> "1:5 (1 Min. Lernen = 5 Min. Freizeit)"
+                        else -> "1:1 (1 Min. Lernen = 1 Min. Freizeit)"
+                    }
+                    val intervalText = when (creditInterval) {
+                        "weekly" -> "Wöchentlich (Setzt sich jede Woche zurück)"
+                        "never" -> "Dauerhaft / Nie (Unbegrenzt ansparen)"
+                        else -> "Täglich (Setzt sich jeden Tag um 00:00 zurück)"
+                    }
+
+                    add(
+                        ActionSettingItem(
+                            icon = Icons.Default.Lock,
+                            title = "Aktuelles Guthaben",
+                            subtitle = "$creditMins Min. $creditSecs Sek. verfügbar",
+                            onClick = {
+                                creditBalance = appLockRepository.getCreditBalanceSeconds()
+                                Toast.makeText(context, "Guthaben aktualisiert!", Toast.LENGTH_SHORT).show()
+                            }
+                        )
+                    )
+                    add(
+                        ActionSettingItem(
+                            icon = Icons.Default.Lock,
+                            title = "Tauschverhältnis (Ratio)",
+                            subtitle = ratioText,
+                            onClick = { showCreditRatioDialog = true }
+                        )
+                    )
+                    add(
+                        ActionSettingItem(
+                            icon = Icons.Default.Lock,
+                            title = "Guthaben-Reset Intervall",
+                            subtitle = intervalText,
+                            onClick = { showCreditIntervalDialog = true }
+                        )
+                    )
+                    add(
+                        ActionSettingItem(
+                            icon = Icons.Default.Lock,
+                            title = "Lern-Apps verwalten",
+                            subtitle = if (earnApps.isEmpty()) "Keine App ausgewählt" else "${earnApps.size} Apps ausgewählt",
+                            onClick = { showEarnAppsDialog = true }
+                        )
+                    )
+                    add(
+                        ToggleSettingItem(
+                            icon = Icons.Outlined.Security,
+                            title = "AppLock mit PIN schützen",
+                            subtitle = "Fordert beim Öffnen von AppLock eine PIN-Eingabe",
+                            checked = appLockSelfLockEnabled,
+                            enabled = true,
+                            onCheckedChange = { isChecked ->
+                                appLockSelfLockEnabled = isChecked
+                                appLockRepository.setAppLockSelfLockEnabled(isChecked)
+                            }
+                        )
+                    )
+                    add(
+                        ActionSettingItem(
+                            icon = Icons.Default.Lock,
+                            title = "Sperrtyp für Ziel-Apps",
+                            subtitle = when (lockType) {
+                                PreferencesRepository.LOCK_TYPE_PATTERN -> "Muster"
+                                PreferencesRepository.LOCK_TYPE_PASSWORD -> "Passwort"
+                                PreferencesRepository.LOCK_TYPE_ANKI -> "Guthaben-Modus (Lern-Apps)"
+                                else -> "PIN"
+                            },
+                            onClick = { showLockTypeDialog = true }
+                        )
+                    )
+                    add(
                         ActionSettingItem(
                             icon = Icons.Default.Lock,
                             title = stringResource(R.string.settings_screen_change_pin_title),
                             subtitle = stringResource(R.string.settings_screen_change_pin_desc),
                             onClick = { navController.navigate(Screen.ChangePassword.route) }
-                        ),
+                        )
+                    )
+                    add(
                         ActionSettingItem(
                             icon = Timer,
                             title = stringResource(R.string.settings_screen_unlock_duration_title),
@@ -327,7 +478,9 @@ fun SettingsScreen(
                                 )
                             } else stringResource(R.string.settings_screen_unlock_duration_summary_immediate),
                             onClick = { showUnlockTimeDialog = true }
-                        ),
+                        )
+                    )
+                    add(
                         ToggleSettingItem(
                             icon = Icons.Default.Lock,
                             title = stringResource(R.string.settings_screen_anti_uninstall_title),
@@ -365,7 +518,8 @@ fun SettingsScreen(
                             }
                         )
                     )
-                )
+                }
+                SettingsGroup(items = securityItems)
             }
 
             item {
@@ -393,7 +547,7 @@ fun SettingsScreen(
                                 } else {
                                     Toast.makeText(
                                         context,
-                                        context.getString(R.string.settings_screen_export_logs_error),
+                                        context.resources.getString(R.string.settings_screen_export_logs_error),
                                         Toast.LENGTH_SHORT
                                     ).show()
                                 }
@@ -417,7 +571,7 @@ fun SettingsScreen(
                                 } else {
                                     Toast.makeText(
                                         context,
-                                        context.getString(R.string.settings_screen_export_logs_error),
+                                        context.resources.getString(R.string.settings_screen_export_logs_error),
                                         Toast.LENGTH_SHORT
                                     ).show()
                                 }
@@ -1105,5 +1259,241 @@ fun LinkItem(
         colors = ListItemDefaults.colors(
             containerColor = Color.Transparent
         )
+    )
+}
+
+@Composable
+fun LockTypeSelectionDialog(
+    currentLockType: String,
+    onDismiss: () -> Unit,
+    onConfirm: (String) -> Unit
+) {
+    val lockTypes = listOf(
+        PreferencesRepository.LOCK_TYPE_PIN to "PIN",
+        PreferencesRepository.LOCK_TYPE_PATTERN to "Muster",
+        PreferencesRepository.LOCK_TYPE_PASSWORD to "Passwort",
+        PreferencesRepository.LOCK_TYPE_ANKI to "Guthaben-Modus (Lern-Apps)"
+    )
+    var selectedType by remember { mutableStateOf(currentLockType) }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Sperrtyp auswählen") },
+        text = {
+            Column {
+                lockTypes.forEach { (type, label) ->
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { selectedType = type }
+                            .padding(vertical = 8.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = selectedType == type,
+                            onClick = { selectedType = type }
+                        )
+                        Text(
+                            text = label,
+                            modifier = Modifier.padding(start = 8.dp)
+                        )
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = { onConfirm(selectedType) }) {
+                Text(stringResource(R.string.confirm_button))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text(stringResource(R.string.cancel_button))
+            }
+        }
+    )
+}
+
+@Composable
+fun CreditRatioSelectionDialog(
+    currentRatio: Float,
+    onDismiss: () -> Unit,
+    onConfirm: (Float) -> Unit
+) {
+    val ratios = listOf(
+        1.0f to "1:1 (1 Min. Lernen = 1 Min. Freizeit)",
+        0.5f to "2:1 (2 Min. Lernen = 1 Min. Freizeit)",
+        0.2f to "5:1 (5 Min. Lernen = 1 Min. Freizeit)",
+        2.0f to "1:2 (1 Min. Lernen = 2 Min. Freizeit)",
+        5.0f to "1:5 (1 Min. Lernen = 5 Min. Freizeit)"
+    )
+    var selectedRatio by remember { mutableFloatStateOf(currentRatio) }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Tauschverhältnis (Ratio) wählen") },
+        text = {
+            Column {
+                ratios.forEach { (ratio, label) ->
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { selectedRatio = ratio }
+                            .padding(vertical = 8.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = selectedRatio == ratio,
+                            onClick = { selectedRatio = ratio }
+                        )
+                        Text(
+                            text = label,
+                            modifier = Modifier.padding(start = 8.dp)
+                        )
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = { onConfirm(selectedRatio) }) {
+                Text(stringResource(R.string.confirm_button))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text(stringResource(R.string.cancel_button))
+            }
+        }
+    )
+}
+
+@Composable
+fun CreditResetIntervalDialog(
+    currentInterval: String,
+    onDismiss: () -> Unit,
+    onConfirm: (String) -> Unit
+) {
+    val intervals = listOf(
+        "daily" to "Täglich (Jeden Tag um 00:00 Uhr)",
+        "weekly" to "Wöchentlich (Jede Woche)",
+        "never" to "Dauerhaft / Nie (Unbegrenzt ansparen)"
+    )
+    var selectedInterval by remember { mutableStateOf(currentInterval) }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Reset-Intervall wählen") },
+        text = {
+            Column {
+                intervals.forEach { (interval, label) ->
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { selectedInterval = interval }
+                            .padding(vertical = 8.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = selectedInterval == interval,
+                            onClick = { selectedInterval = interval }
+                        )
+                        Text(
+                            text = label,
+                            modifier = Modifier.padding(start = 8.dp)
+                        )
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = { onConfirm(selectedInterval) }) {
+                Text(stringResource(R.string.confirm_button))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text(stringResource(R.string.cancel_button))
+            }
+        }
+    )
+}
+
+@Composable
+fun EarnAppsSelectionDialog(
+    currentEarnApps: Set<String>,
+    onDismiss: () -> Unit,
+    onConfirm: (Set<String>) -> Unit
+) {
+    val context = LocalContext.current
+    val pm = context.packageManager
+
+    val installedApps = remember {
+        val intent = Intent(Intent.ACTION_MAIN, null).apply { addCategory(Intent.CATEGORY_LAUNCHER) }
+        val resolveInfos = pm.queryIntentActivities(intent, 0)
+        resolveInfos.mapNotNull { ri ->
+            val pkg = ri.activityInfo.packageName
+            val label = ri.loadLabel(pm).toString()
+            if (pkg != context.packageName) {
+                pkg to label
+            } else null
+        }.distinctBy { it.first }.sortedBy { it.second.lowercase() }
+    }
+
+    var selectedApps by remember { mutableStateOf(currentEarnApps.toSet()) }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Lern-Apps auswählen") },
+        text = {
+            Column(
+                modifier = Modifier
+                    .fillMaxHeight(0.6f)
+                    .verticalScroll(rememberScrollState())
+            ) {
+                Text("Wähle die Apps aus, die beim Nutzen Guthaben aufbauen sollen:")
+                Spacer(modifier = Modifier.height(8.dp))
+                installedApps.forEach { (pkg, label) ->
+                    val isChecked = selectedApps.contains(pkg)
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                selectedApps = if (isChecked) {
+                                    selectedApps - pkg
+                                } else {
+                                    selectedApps + pkg
+                                }
+                            }
+                            .padding(vertical = 6.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Checkbox(
+                            checked = isChecked,
+                            onCheckedChange = { checked ->
+                                selectedApps = if (checked) {
+                                    selectedApps + pkg
+                                } else {
+                                    selectedApps - pkg
+                                }
+                            }
+                        )
+                        Text(
+                            text = label,
+                            modifier = Modifier.padding(start = 8.dp)
+                        )
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = { onConfirm(selectedApps) }) {
+                Text(stringResource(R.string.confirm_button))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text(stringResource(R.string.cancel_button))
+            }
+        }
     )
 }

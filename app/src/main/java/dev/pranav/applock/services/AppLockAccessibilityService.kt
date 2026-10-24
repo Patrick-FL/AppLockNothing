@@ -22,6 +22,7 @@ import dev.pranav.applock.core.utils.appLockRepository
 import dev.pranav.applock.core.utils.enableAccessibilityServiceWithShizuku
 import dev.pranav.applock.data.repository.AppLockRepository
 import dev.pranav.applock.data.repository.BackendImplementation
+import dev.pranav.applock.data.repository.PreferencesRepository
 import dev.pranav.applock.features.lockscreen.ui.LockScreenOverlayManager
 import dev.pranav.applock.services.AppLockConstants.ACCESSIBILITY_SETTINGS_CLASSES
 import dev.pranav.applock.services.AppLockConstants.EXCLUDED_APPS
@@ -225,8 +226,9 @@ class AppLockAccessibilityService : AccessibilityService() {
             return false
         }
 
-        // Skip excluded packages
-        if (packageName == APP_PACKAGE_PREFIX ||
+        // Skip excluded packages & AppLock itself
+        if (packageName == applicationContext.packageName ||
+            packageName.startsWith(APP_PACKAGE_PREFIX) ||
             packageName in keyboardPackages ||
             packageName in EXCLUDED_APPS
         ) {
@@ -241,6 +243,8 @@ class AppLockAccessibilityService : AccessibilityService() {
         val currentForegroundPackage = packageName
         val triggeringPackage = lastForegroundPackage
         lastForegroundPackage = currentForegroundPackage
+
+        AppLockManager.onForegroundAppChanged(currentForegroundPackage, appLockRepository)
 
         // Skip if triggering package is excluded
         if (triggeringPackage in appLockRepository.getTriggerExcludedApps()) {
@@ -282,6 +286,15 @@ class AppLockAccessibilityService : AccessibilityService() {
         // Return if app is temporarily unlocked
         if (AppLockManager.isAppTemporarilyUnlocked(packageName)) {
             return
+        }
+
+        // Credit lock mode check
+        if (appLockRepository.getLockType() == PreferencesRepository.LOCK_TYPE_ANKI) {
+            val creditBalance = appLockRepository.getCreditBalanceSeconds()
+            if (creditBalance > 0f) {
+                AppLockManager.unlockApp(packageName)
+                return
+            }
         }
 
         AppLockManager.clearTemporarilyUnlockedApp()

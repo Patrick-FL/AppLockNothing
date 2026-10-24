@@ -196,6 +196,14 @@ class PasswordOverlayActivity: FragmentActivity() {
                 ) { innerPadding ->
                     val lockType = appLockRepository.getLockType()
                     when (lockType) {
+                        PreferencesRepository.LOCK_TYPE_ANKI -> {
+                            CreditLockOverlayScreen(
+                                lockedAppName = appName,
+                                onUnlock = { finish() },
+                                onClose = { finish() }
+                            )
+                        }
+
                         PreferencesRepository.LOCK_TYPE_PATTERN -> {
                             PatternLockScreen(
                                 modifier = Modifier.padding(innerPadding),

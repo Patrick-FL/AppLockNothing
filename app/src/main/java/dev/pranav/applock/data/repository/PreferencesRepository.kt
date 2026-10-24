@@ -66,6 +66,122 @@ class PreferencesRepository(context: Context) {
         return settingsPrefs.getString(KEY_LOCK_TYPE, LOCK_TYPE_PIN) ?: LOCK_TYPE_PIN
     }
 
+    fun setAnkiCardsPerLock(count: Int) {
+        settingsPrefs.edit { putInt(KEY_ANKI_CARDS_PER_LOCK, count.coerceAtLeast(1)) }
+    }
+
+    fun getAnkiCardsPerLock(): Int {
+        return settingsPrefs.getInt(KEY_ANKI_CARDS_PER_LOCK, DEFAULT_ANKI_CARDS_PER_LOCK)
+    }
+
+    fun setAnkiDeck(deckId: Long, deckName: String) {
+        settingsPrefs.edit {
+            putLong(KEY_ANKI_DECK_ID, deckId)
+            putString(KEY_ANKI_DECK_NAME, deckName)
+        }
+    }
+
+    fun getAnkiDeckId(): Long {
+        return settingsPrefs.getLong(KEY_ANKI_DECK_ID, 0L)
+    }
+
+    fun getAnkiDeckName(): String {
+        return settingsPrefs.getString(KEY_ANKI_DECK_NAME, "Alle Stapel") ?: "Alle Stapel"
+    }
+
+    fun getEarnApps(): Set<String> {
+        val defaultApps = setOf("com.ichi2.anki", "com.ichi2.anki.debug")
+        return settingsPrefs.getStringSet(KEY_EARN_APPS, defaultApps) ?: defaultApps
+    }
+
+    fun setEarnApps(apps: Set<String>) {
+        settingsPrefs.edit { putStringSet(KEY_EARN_APPS, apps) }
+    }
+
+    fun addEarnApp(packageName: String) {
+        val current = getEarnApps().toMutableSet()
+        current.add(packageName)
+        setEarnApps(current)
+    }
+
+    fun removeEarnApp(packageName: String) {
+        val current = getEarnApps().toMutableSet()
+        current.remove(packageName)
+        setEarnApps(current)
+    }
+
+    fun isEarnApp(packageName: String): Boolean {
+        return getEarnApps().contains(packageName)
+    }
+
+    fun getCreditBalanceSeconds(): Float {
+        checkAndApplyCreditReset()
+        return settingsPrefs.getFloat(KEY_CREDIT_BALANCE_SECONDS, 0.0f)
+    }
+
+    fun setCreditBalanceSeconds(seconds: Float) {
+        settingsPrefs.edit { putFloat(KEY_CREDIT_BALANCE_SECONDS, seconds.coerceAtLeast(0.0f)) }
+    }
+
+    fun addCreditSeconds(seconds: Float) {
+        val newBalance = (getCreditBalanceSeconds() + seconds).coerceAtLeast(0.0f)
+        setCreditBalanceSeconds(newBalance)
+    }
+
+    fun consumeCreditSeconds(seconds: Float): Boolean {
+        val current = getCreditBalanceSeconds()
+        if (current <= 0f) return false
+        val newBalance = (current - seconds).coerceAtLeast(0.0f)
+        setCreditBalanceSeconds(newBalance)
+        return true
+    }
+
+    fun getCreditRatio(): Float {
+        return settingsPrefs.getFloat(KEY_CREDIT_RATIO, 1.0f)
+    }
+
+    fun setCreditRatio(ratio: Float) {
+        settingsPrefs.edit { putFloat(KEY_CREDIT_RATIO, ratio) }
+    }
+
+    fun getCreditResetInterval(): String {
+        return settingsPrefs.getString(KEY_CREDIT_RESET_INTERVAL, "daily") ?: "daily"
+    }
+
+    fun setCreditResetInterval(interval: String) {
+        settingsPrefs.edit { putString(KEY_CREDIT_RESET_INTERVAL, interval) }
+    }
+
+    fun checkAndApplyCreditReset() {
+        val interval = settingsPrefs.getString(KEY_CREDIT_RESET_INTERVAL, "daily") ?: "daily"
+        if (interval == "never") return
+
+        val lastReset = settingsPrefs.getLong(KEY_LAST_CREDIT_RESET_TIMESTAMP, 0L)
+        val now = System.currentTimeMillis()
+
+        val calNow = java.util.Calendar.getInstance().apply { timeInMillis = now }
+        val calLast = java.util.Calendar.getInstance().apply { timeInMillis = lastReset }
+
+        val shouldReset = when (interval) {
+            "daily" -> {
+                calNow.get(java.util.Calendar.DAY_OF_YEAR) != calLast.get(java.util.Calendar.DAY_OF_YEAR) ||
+                        calNow.get(java.util.Calendar.YEAR) != calLast.get(java.util.Calendar.YEAR)
+            }
+            "weekly" -> {
+                calNow.get(java.util.Calendar.WEEK_OF_YEAR) != calLast.get(java.util.Calendar.WEEK_OF_YEAR) ||
+                        calNow.get(java.util.Calendar.YEAR) != calLast.get(java.util.Calendar.YEAR)
+            }
+            else -> false
+        }
+
+        if (shouldReset) {
+            settingsPrefs.edit {
+                putFloat(KEY_CREDIT_BALANCE_SECONDS, 0.0f)
+                putLong(KEY_LAST_CREDIT_RESET_TIMESTAMP, now)
+            }
+        }
+    }
+
     fun setBiometricAuthEnabled(enabled: Boolean) {
         settingsPrefs.edit { putBoolean(KEY_BIOMETRIC_AUTH_ENABLED, enabled) }
     }
@@ -170,6 +286,14 @@ class PreferencesRepository(context: Context) {
         settingsPrefs.edit { putBoolean(KEY_LOGGING_ENABLED, enabled) }
     }
 
+    fun isAppLockSelfLockEnabled(): Boolean {
+        return settingsPrefs.getBoolean(KEY_APPLOCK_SELF_LOCK_ENABLED, false)
+    }
+
+    fun setAppLockSelfLockEnabled(enabled: Boolean) {
+        settingsPrefs.edit { putBoolean(KEY_APPLOCK_SELF_LOCK_ENABLED, enabled) }
+    }
+
     companion object {
         private const val PREFS_NAME_APP_LOCK = "app_lock_prefs"
         private const val PREFS_NAME_SETTINGS = "app_lock_settings"
@@ -185,17 +309,28 @@ class PreferencesRepository(context: Context) {
         private const val KEY_COMMUNITY_LINK_SHOWN = "community_link_shown"
         private const val KEY_SHOW_DONATE_LINK = "show_donate_link"
         private const val KEY_LOGGING_ENABLED = "logging_enabled"
+        private const val KEY_APPLOCK_SELF_LOCK_ENABLED = "applock_self_lock_enabled"
         private const val LAST_VERSION_CODE = "last_version_code"
         private const val KEY_APPLOCK_ENABLED = "applock_enabled"
         private const val KEY_AUTO_UNLOCK = "auto_unlock"
         private const val KEY_SHOW_SYSTEM_APPS = "show_system_apps"
         private const val KEY_LOCK_TYPE = "lock_type"
+        private const val KEY_ANKI_CARDS_PER_LOCK = "anki_cards_per_lock"
+        private const val KEY_ANKI_DECK_ID = "anki_deck_id"
+        private const val KEY_ANKI_DECK_NAME = "anki_deck_name"
+        private const val KEY_EARN_APPS = "earn_apps"
+        private const val KEY_CREDIT_BALANCE_SECONDS = "credit_balance_seconds"
+        private const val KEY_CREDIT_RATIO = "credit_ratio"
+        private const val KEY_CREDIT_RESET_INTERVAL = "credit_reset_interval"
+        private const val KEY_LAST_CREDIT_RESET_TIMESTAMP = "last_credit_reset_timestamp"
 
         private const val DEFAULT_PROTECT_ENABLED = true
         private const val DEFAULT_UNLOCK_DURATION = 0
+        private const val DEFAULT_ANKI_CARDS_PER_LOCK = 1
 
         const val LOCK_TYPE_PIN = "pin"
         const val LOCK_TYPE_PATTERN = "pattern"
         const val LOCK_TYPE_PASSWORD = "password"
+        const val LOCK_TYPE_ANKI = "anki"
     }
 }

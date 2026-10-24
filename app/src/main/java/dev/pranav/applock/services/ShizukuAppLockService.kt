@@ -22,6 +22,7 @@ import dev.pranav.applock.core.utils.appLockRepository
 import dev.pranav.applock.data.repository.AppLockRepository
 import dev.pranav.applock.data.repository.AppLockRepository.Companion.shouldStartService
 import dev.pranav.applock.data.repository.BackendImplementation
+import dev.pranav.applock.data.repository.PreferencesRepository
 import dev.pranav.applock.features.lockscreen.ui.PasswordOverlayActivity
 import dev.pranav.applock.shizuku.ShizukuActivityManager
 import rikka.shizuku.Shizuku
@@ -193,6 +194,16 @@ class ShizukuAppLockService : Service() {
     }
 
     private fun checkAndLockApp(packageName: String, triggeringPackage: String, currentTime: Long) {
+        if (packageName == applicationContext.packageName) return
+
+        if (appLockRepository.getLockType() == PreferencesRepository.LOCK_TYPE_ANKI) {
+            val creditBalance = appLockRepository.getCreditBalanceSeconds()
+            if (creditBalance > 0f) {
+                AppLockManager.unlockApp(packageName)
+                return
+            }
+        }
+
         val lockedApps = appLockRepository.getLockedApps()
 
         if (packageName !in lockedApps) return
