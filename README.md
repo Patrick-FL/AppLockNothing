@@ -3,7 +3,7 @@
 </div>
 
 <h1 align="center">App Lock Nothing</h1>
-<p align="center"><b>Open Source Android App Locker & Privacy Guard</b></p>
+<p align="center"><b>Open Source Android App Locker & Privacy Guard with Anki & Usage Credit Integration</b></p>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
@@ -11,9 +11,6 @@
   </a>
   <a href="https://github.com/Patrick-FL/AppLockNothing/releases">
     <img src="https://img.shields.io/github/v/release/Patrick-FL/AppLockNothing?label=Release" alt="Latest Release">
-  </a>
-  <a href="https://apt.izzysoft.de/packages/dev.pranav.applock">
-    <img src="https://img.shields.io/badge/IzzyOnDroid-Available-brightgreen" alt="IzzyOnDroid">
   </a>
 </p>
 
@@ -36,96 +33,62 @@
 
 ## Overview
 
-App Lock Nothing is a modern, open-source Android app locker designed to protect your privacy and sensitive
-data. Lock any app, prevent unauthorized access, and enjoy a seamless Material You experience. No
-root required.
+**App Lock Nothing** is a modern, open-source Android app locker designed to protect your privacy, build productive habits, and secure sensitive data. Lock any app, prevent unauthorized access, and enjoy a seamless Material You experience without root required.
+
+This repository extends the original project with innovative learning and habit-building mechanics, such as **AnkiDroid Flashcard Reviews** and **Time-Credit App Locking**.
+
+<br/>
+
+## 🌟 Credits & Acknowledgements
+
+This project is a fork based on the fantastic open-source [AppLock](https://github.com/aload0/AppLock) created by [Pranav Purwar](https://github.com/PranavPurwar).
+
+Huge thanks and full credit to **Pranav Purwar** and all contributors of the original repository for providing such a solid, elegant, and secure foundation under the MIT License.
+
+---
+
+## ✨ New Features & Changes (in App Lock Nothing)
+
+Compared to the original upstream repository, **App Lock Nothing** introduces key habit-building and study integrations:
+
+* 🎴 **AnkiDroid Flashcard Integration**: Connects with AnkiDroid to require reviewing flashcards before unlocking blocked apps. Turn distraction into study time!
+* ⏱️ **Credit-Based Usage Lock**: Set up a time-credit system where restricted apps consume usage credits. Earn credits by spending time in designated productive ("Earn") apps or completing flashcards.
+* 🛡️ **Dynamic Overlay Screen Manager**: Supports seamless switching between standard PIN/Password overlays, Anki Flashcard overlays, and Usage Credit warning screens.
+* ⚙️ **Expanded Preferences & Settings**: Dedicated configuration options for Anki decks, credit rules, and enhanced Shizuku / Accessibility overlay controls.
+
+---
+
+## Features
+
+- **AnkiDroid Integration**: Unlock apps by answering Anki flashcards
+- **Usage Credit Lock**: Lock apps when your earned usage credits run out
+- **Material You design**: Automatically adapts to your system theme
+- **Biometric & PIN authentication**: Fingerprint, Face Unlock, and PIN support
+- **Lock any app**: Protect any installed application on your device
+- **Anti-uninstall protection**: Prevent unauthorized removal of locked apps
+- **Unlock timeout**: Configurable grace period for convenience
+- **No root required**: Works via standard Accessibility and Shizuku services
+- **Real-time protection**: On-device background monitoring with full privacy
 
 <br/>
 
 > [!CAUTION]
-> Google Play Protect is blocking some people from installing/updating App Lock Nothing because it uses Overlay Permission. It uses a false pretext of "this app may try to access sensitive information"
-> without any base or information. If this happens to you, consider disabling Play Protect temporarily as mentioned [here](https://www.airdroid.com/quick-guides/disable-google-play-protect).
->
-> You may enable it back later after you install the app. We understand this introduces unnecessary friction but there's nothing we can do about it. Google does not like it
-> when other developers try to fill the gaps they create themselves.
-
-<br/>
-
-> [!NOTE]
-> You may confirm that the app is completely secure
->
-> VirusTotal Analysis: [v1.5.0 Analysis](https://www.virustotal.com/gui/url/ead3a434b961ce332b49398d73a10598b2cee6d665c54bb4a66c825794465d72)
-> 
-> Exodus Privacy: [Privacy Report](https://reports.exodus-privacy.eu.org/en/reports/dev.pranav.applock/latest)
-
-<br/>
-
-## Features
-
-- Material You design, adapts to your theme
-- Biometric and PIN authentication
-- Fingerprint, Face Unlock, and PIN support
-- Lock any app on your device
-- Anti-uninstall protection
-- Anti-uninstall protection for user apps
-- Unlock timeout for convenience
-- No root required
-- One-tap app locking
-- All data stays on your device
-- Real-time background protection
-- Lightweight and fast
+> Google Play Protect may display warnings for apps using Overlay or Accessibility Permissions under the pretext of "accessing sensitive information". If this happens to you, consider temporarily disabling Play Protect as described [here](https://www.airdroid.com/quick-guides/disable-google-play-protect).
 
 <br/>
 
 ## Download
 
-The app is available for download via F-Droid, IzzyOnDroid aswell
-as [Github Releases](https://github.com/PranavPurwar/AppLock/releases/latest).
-
-<a href="https://f-droid.org/packages/dev.pranav.applock/">
-    <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="F-Droid" height="100"/>
-  </a>
-<a href="https://apt.izzysoft.de/packages/dev.pranav.applock">
-    <img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="IzzyOnDroid" height="100"/>
-  </a>
-
-Beta Builds can be
-found [here](https://github.com/PranavPurwar/AppLock/raw/refs/heads/master/app/debug/app-debug.apk)
+Releases and builds can be found on [GitHub Releases](https://github.com/Patrick-FL/AppLockNothing/releases/latest).
 
 <br/>
 
 ## Use Cases
 
-- Shared devices
-- Parental controls
-- Protecting work apps
-- General privacy
-
-<br/>
-
-## Support Development
-
-If you find AppLock useful, please consider supporting its development with a small donation.
-Every contribution matters.
-
-**OpenCollective:** https://opencollective.com/invokevirtual
-
-**Bitcoin (BTC):** `bc1qec5ccz85qn90a6zxnqnes0rx274cv6vw7j5x4g`
-
-**Ethereum (ETH):** `0xD80A8D6E0fa433A8bDFC2D3F325159Db70605816`
-
-**Solana (SOL):** `7FxTAJLmhXFp6wxVbUTpf8jDmzEX1CKVMdE8oLPNQvyb`
-
-**Litecoin (LTC):** `ltc1q3pqyj5ge5rdmqr00w03x4tlhm6rhcc6wrfyx8k`
-
-**Monero (XMR):**
-`44w9JtiXxwifyH5CU6Ln1BNViyWNz4z7pEZ4nqbCvUejiK3yEjdyAv6bAofXX2Eh6Fbe3DXJ6eCX6YWKh9SF15fyKBjeJ5H`
-
-<br/>
-
-**UPI (India):** `pranavpurwar@fam`
-
-<img src="https://github.com/PranavPurwar/Reef/raw/refs/heads/main/upi.jpeg" width="200" />
+- **Study & Focus**: Combine flashcards/study time with app restriction
+- **Digital Wellbeing**: Limit distracting app usage with earned credits
+- **Shared devices & Parental control**: Prevent unauthorized app access
+- **Privacy**: Keep personal and financial apps secure
 
 ---
 
@@ -135,6 +98,7 @@ Every contribution matters.
 MIT License
 
 Copyright (c) 2023-2025 Pranav Purwar
+Copyright (c) 2026 Patrick-FL
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
