@@ -6,39 +6,40 @@ import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.MaterialExpressiveTheme
 import androidx.compose.material3.MotionScheme
 import androidx.compose.material3.Shapes
-import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
-// Nothing OS Dark-First Color Scheme (Strictly Achromatic with Functional Accents)
-private val NothingColorScheme = darkColorScheme(
-    primary = NothingTextPrimary,
-    onPrimary = NothingBlack,
-    primaryContainer = NothingSurface,
-    onPrimaryContainer = NothingTextPrimary,
+// Nothing OS Light Mode Color Scheme (Light Background #F2F2F4, Solid Surface #FFFFFF, Dark Text #111111)
+private val NothingLightColorScheme = lightColorScheme(
+    primary = NothingLightTextPrimary,
+    onPrimary = NothingLightSurface,
+    primaryContainer = NothingLightSurface,
+    onPrimaryContainer = NothingLightTextPrimary,
     secondary = NothingSage,
-    onSecondary = NothingBlack,
-    secondaryContainer = NothingSurface,
+    onSecondary = NothingLightSurface,
+    secondaryContainer = NothingLightSurface,
     onSecondaryContainer = NothingSage,
     tertiary = NothingRed,
-    onTertiary = NothingTextPrimary,
-    background = NothingBlack,
-    onBackground = NothingTextPrimary,
-    surface = NothingSurface,
-    onSurface = NothingTextPrimary,
-    surfaceVariant = NothingDarkGray,
-    onSurfaceVariant = NothingTextSecondary,
-    outline = NothingBorder,
-    outlineVariant = NothingBorder,
+    onTertiary = NothingLightSurface,
+    background = NothingLightBackground,
+    onBackground = NothingLightTextPrimary,
+    surface = NothingLightSurface,
+    onSurface = NothingLightTextPrimary,
+    surfaceVariant = Color(0xFFE5E5E8),
+    onSurfaceVariant = NothingLightTextSecondary,
+    outline = NothingLightBorder,
+    outlineVariant = NothingLightBorder,
     error = NothingRed,
-    onError = NothingTextPrimary
+    onError = NothingLightSurface
 )
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun AppLockTheme(
-    darkTheme: Boolean = true, // Force Nothing OS Dark First
-    dynamicColor: Boolean = false, // Disable dynamic Material You colors to maintain Nothing OS identity
+    darkTheme: Boolean = false, // Enforce Nothing OS Light Mode
+    dynamicColor: Boolean = false, // Disable Material You dynamic colors
     content: @Composable () -> Unit
 ) {
     val shapes = Shapes(
@@ -50,7 +51,7 @@ fun AppLockTheme(
     )
 
     MaterialExpressiveTheme(
-        colorScheme = NothingColorScheme,
+        colorScheme = NothingLightColorScheme,
         typography = Typography,
         shapes = shapes,
         content = content,

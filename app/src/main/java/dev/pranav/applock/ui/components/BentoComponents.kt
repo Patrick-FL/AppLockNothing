@@ -280,7 +280,7 @@ fun BentoToggle(
                 .size(26.dp)
                 .padding(2.dp)
                 .clip(CircleShape)
-                .background(if (checked) NothingBlack else NothingTextPrimary)
+                .background(if (checked) NothingSurface else NothingTextPrimary)
         )
     }
 }
